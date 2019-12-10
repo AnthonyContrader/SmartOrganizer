@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
 --
 -- Host: localhost    Database: smartorganizer
 -- ------------------------------------------------------
--- Server version	8.0.15
+-- Server version	8.0.18
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
- SET NAMES utf8 ;
+/*!50503 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,7 +21,7 @@
 
 DROP TABLE IF EXISTS `admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `admin` (
   `idadmin` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(45) NOT NULL,
@@ -46,12 +46,11 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tools`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tools` (
   `idtools` int(11) NOT NULL AUTO_INCREMENT,
   `toolsname` varchar(45) DEFAULT NULL,
   `rawmaterial` varchar(45) DEFAULT NULL,
-  `toolscol` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idtools`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -62,7 +61,7 @@ CREATE TABLE `tools` (
 
 LOCK TABLES `tools` WRITE;
 /*!40000 ALTER TABLE `tools` DISABLE KEYS */;
-INSERT INTO `tools` VALUES (1,'martello',NULL,NULL),(2,'cacciavite',NULL,NULL),(3,'sega',NULL,NULL);
+INSERT INTO `tools` VALUES (1,'martello',NULL),(2,'cacciavite',NULL),(3,'sega',NULL);
 /*!40000 ALTER TABLE `tools` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -72,11 +71,11 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
   `idusers` int(11) NOT NULL AUTO_INCREMENT,
   `nomeutente` varchar(45) NOT NULL,
-  `cognome` varchar(45) DEFAULT NULL,
+  `cognome` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
   `checkin` varchar(45) DEFAULT NULL,
   `checkout` varchar(45) DEFAULT NULL,
@@ -91,7 +90,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'ivan',NULL,'ivan',NULL,NULL,NULL),(2,'angelo',NULL,'angelo',NULL,NULL,NULL);
+INSERT INTO `users` VALUES (1,'ivan','schillizzi','ivan',NULL,NULL,NULL),(2,'angelo','tozza','angelo',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -104,4 +103,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-10 12:08:11
+-- Dump completed on 2019-12-10 12:42:58
