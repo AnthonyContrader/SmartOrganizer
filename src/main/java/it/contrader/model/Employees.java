@@ -28,7 +28,7 @@ public class Employees {
 		
 	}
 
-	public Employees (String name, String surname, String fiscalCode, String WorkSector, String position, String numberOfRegistration) {
+	public Employees (String name, String surname, String fiscalCode, String workSector, String position, String numberOfRegistration) {
 		this.name = name;
 		this.surname = surname;
 		this.fiscalCode = fiscalCode;
@@ -37,7 +37,7 @@ public class Employees {
 		this.numberOfRegistration = numberOfRegistration;
 	}
 
-	public Employees (int idEmployees, String name, String surname, String fiscalCode, String workSector, String position, String numberOfRegistration) {
+	public Employees (int idEmployee, String name, String surname, String fiscalCode, String workSector, String position, String numberOfRegistration) {
 		this.idEmployee = idEmployee;
 		this.name = name;
 		this.surname = surname;
