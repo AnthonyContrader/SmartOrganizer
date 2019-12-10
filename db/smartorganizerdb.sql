@@ -51,7 +51,6 @@ CREATE TABLE `tools` (
   `idtools` int(11) NOT NULL AUTO_INCREMENT,
   `toolsname` varchar(45) DEFAULT NULL,
   `rawmaterial` varchar(45) DEFAULT NULL,
-  `toolscol` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idtools`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -62,7 +61,7 @@ CREATE TABLE `tools` (
 
 LOCK TABLES `tools` WRITE;
 /*!40000 ALTER TABLE `tools` DISABLE KEYS */;
-INSERT INTO `tools` VALUES (1,'martello',NULL,NULL),(2,'cacciavite',NULL,NULL),(3,'sega',NULL,NULL);
+INSERT INTO `tools` VALUES (1,'martello',NULL),(2,'cacciavite',NULL),(3,'sega',NULL);
 /*!40000 ALTER TABLE `tools` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,4 +103,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-10 12:08:05
+-- Dump completed on 2019-12-10 12:27:42
