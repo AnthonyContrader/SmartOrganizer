@@ -17,7 +17,7 @@ public class LoginView extends AbstractView {
 	 */
 	public void showOptions() {
 		
-		System.out.println("----- .:LOGIN:. ----");
+		System.out.println("----- .:LOGIN SMART ORGANIZER:. ----");
 		
 		System.out.println(" Nome utente:");
 		this.username = getInput();

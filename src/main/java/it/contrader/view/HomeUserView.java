@@ -7,34 +7,55 @@ import it.contrader.main.MainDispatcher;
 public class HomeUserView extends AbstractView{
 
 	String choice;
+	private Request request;
 
 	@Override
 	public void showResults(Request request) {
-		System.out.println("\n-----Purtroppo in questo sample l'utente non puà fare nulla, ci scusiamo per il disagio.-----");
+		System.out.println("\n-----Benvenuto in Gestione Utenti!-----");
 
 	}
 
 	@Override
 	public void showOptions() {
-		System.out.println("-------------MENU------------\n");
-		System.out.println("NESSUNA OPZIONE DISPONIBILE!");
-		System.out.println("\n Esatto, puoi solo uscire...");
+		System.out.println("-------------MENU USER------------\n");
+		System.out.println(" Seleziona cosa vuoi gestire:");
+	    System.out.println("[U]Lista Utenti [D]Lista Dipendenti [T]Tools [E]sci");
 		choice = this.getInput();
 
 	}
 
 	@Override
-	public void submit() {
 
-		switch (choice) {
 
-		case "e":
-			MainDispatcher.getInstance().callAction("Login", "doControl", null);
-			break;
 
-		default:
-			MainDispatcher.getInstance().callAction("Login", "doControl", null);
-		}
-	}
-
+		public void submit() {    
+	    	//crea una nuova Request (vedi classe Request)
+	    	request = new Request();
+	        switch (choice) {
+	        case "u":
+	        	this.request.put("mode", "USERLIST");
+	        	MainDispatcher.getInstance().callAction("User", "doControl", request);
+	        	break;
+	 
+	        case "e":
+	        	MainDispatcher.getInstance().callAction("Login", "doControl", null);
+	        	break;
+	        	
+	        case "d":
+	        	MainDispatcher.getInstance().callAction("Employee", "doControl", null);
+	        	break;
+	        	
+	        case "t":
+	        	MainDispatcher.getInstance().callAction("Tools", "doControl", null); // Aggiunto lista per la view (Angelo)
+	        	break;
+	        	
+	        case "l":
+	        	MainDispatcher.getInstance().callAction("Location", "doControl", null); //Aggiunto lista per la view (Ivan)
+	        	break;
+	        default:
+	        	
+	            request.put("choice", choice);
+	        	MainDispatcher.getInstance().callAction("Login", "doControl", request);
+	        }
+}
 }

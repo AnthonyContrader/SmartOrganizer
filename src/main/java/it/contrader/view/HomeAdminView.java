@@ -32,9 +32,9 @@ public class HomeAdminView extends AbstractView {
      * Chiede all'utente di effettuare una scelta (da console)
      */
     public void showOptions() {
-        System.out.println("-------------MENU------------\n");
+        System.out.println("-------------MENU SMART ORGANIZER------------\n");
         System.out.println(" Seleziona cosa vuoi gestire:");
-        System.out.println("[U]tenti  [E]sci");
+        System.out.println("[U]Utenti [D]Dipendenti [T]Tools [L]Location [E]sci");
         //Il metodo che salva l'input nella stringa choice.
         //getInput() è definito in AbstractView.
         choice = this.getInput();
@@ -55,6 +55,18 @@ public class HomeAdminView extends AbstractView {
  
         case "e":
         	MainDispatcher.getInstance().callAction("Login", "doControl", null);
+        	break;
+        	
+        case "d":
+        	MainDispatcher.getInstance().callAction("Employee", "doControl", null);
+        	break;
+        	
+        case "t":
+        	MainDispatcher.getInstance().callAction("Tools", "doControl", null); // Aggiunto lista per la view (Angelo)
+        	break;
+        	
+        case "l":
+        	MainDispatcher.getInstance().callAction("Location", "doControl", null); //Aggiunto lista per la view (Ivan)
         	break;
         default:
         	

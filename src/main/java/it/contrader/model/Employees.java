@@ -106,33 +106,58 @@ public class Employees {
 	public void setNumberOfRegistration(String numberOfRegistration) {
 		this.numberOfRegistration = numberOfRegistration;
 	}
-/*Metodo per il confronto degli oggetti
+//Metodo per il confronto degli oggetti
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
+	public boolean equals(Object objt) {
+		if (this == objt)
 			return true;
-		if (obj == null)
+		if (objt == null)
 			return false;
-		if (getClass() != obj.getClass())
+		if (getClass() != objt.getClass())
 			return false;
-		User other = (User) obj;
-		if (id != other.id)
+		Employees other = (Employees) objt;
+		if (idEmployee != other.idEmployee)
 			return false;
-		if (password == null) {
-			if (other.password != null)
+		if (name == null) {
+			if (other.name != null)
 				return false;
-		} else if (!password.equals(other.password))
+		} else if (!name.equals(other.name))
 			return false;
-		if (username == null) {
-			if (other.username != null)
+		if (surname == null) {
+			if (other.surname != null)
 				return false;
-		} else if (!username.equals(other.username))
+		} else if (!surname.equals(other.surname))
 			return false;
-		if (usertype == null) {
-			if (other.usertype != null)
+		if (fiscalCode == null) {
+			if (other.fiscalCode != null)
 				return false;
-		} else if (!usertype.equals(other.usertype))
+		} else if (!fiscalCode.equals(other.fiscalCode))
+			return false;
+		if (workSector == null) {
+			if (other.workSector != null)
+				return false;
+		} else if (!workSector.equals(other.workSector))
+			return false;
+		if (position == null) {
+			if (other.position != null)
+				return false;
+		} else if (!position.equals(other.position))
+			return false;
+		if (numberOfRegistration == null) {
+			if (other.numberOfRegistration != null)
+				return false;
+		} else if (!numberOfRegistration.equals(other.numberOfRegistration))
 			return false;
 		return true;
-	}*/
+	}
+
+	public void setId(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public int getId() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
