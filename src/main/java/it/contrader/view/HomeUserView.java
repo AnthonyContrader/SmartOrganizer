@@ -46,7 +46,8 @@ public class HomeUserView extends AbstractView{
 	        	break;
 	        	
 	        case "t":
-	        	MainDispatcher.getInstance().callAction("Tools", "doControl", null); // Aggiunto lista per la view (Angelo)
+	        	this.request.put("mode", "TOOLLIST");
+	        	MainDispatcher.getInstance().callAction("Tool", "doControl", request); // Aggiunto lista per la view (Angelo)
 	        	break;
 	        	
 	        case "l":

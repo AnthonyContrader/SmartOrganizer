@@ -7,7 +7,7 @@ import it.contrader.view.AbstractView;
 
 public class ToolReadView extends AbstractView {
 
-	private int idtools;
+	private int idtool;
 	private Request request;
 	private final String mode = "READ";
 
@@ -29,12 +29,13 @@ public class ToolReadView extends AbstractView {
 	@Override
 	public void showOptions() {
 		System.out.println("Inserisci l'ID dello strumento:");
-		idtools = Integer.parseInt(getInput());
+		idtool = Integer.parseInt(getInput());
 	}
 
 	@Override
 	public void submit() {
-		request.put("idtools", idtools);
+		request = new Request();
+		request.put("idtool", idtool);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Tool", "doControl", request);
 	}

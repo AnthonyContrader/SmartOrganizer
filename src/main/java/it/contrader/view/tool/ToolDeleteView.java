@@ -27,7 +27,7 @@ public class ToolDeleteView extends AbstractView {
 
 	@Override
 	public void showOptions() {
-		System.out.println("Inserisci id dell'utente:");
+		System.out.println("Inserisci id dello strumento:");
 		idtools = Integer.parseInt(getInput());
 
 	}

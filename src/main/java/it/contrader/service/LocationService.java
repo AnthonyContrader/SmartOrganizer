@@ -5,7 +5,6 @@ import java.util.List;
 import it.contrader.converter.LocationConverter;
 import it.contrader.dao.LocationDAO;
 import it.contrader.dto.LocationDTO;
-import it.contrader.dto.UserDTO;
 
 public class LocationService {
 
@@ -22,7 +21,7 @@ public class LocationService {
 	}
 	
 	public LocationDTO read(int idlocation) {
-		// Ottiene un'entità e la restituisce convertendola in DTO
+		// Ottiene un'entitï¿½ e la restituisce convertendola in DTO
 		return locationConverter.toDTO(locationDAO.read(idlocation));
 	}
 	

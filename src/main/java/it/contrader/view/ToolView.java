@@ -43,7 +43,7 @@ public class ToolView extends AbstractView {
 		request = new Request();
 		request.put("choice", choice);
 		request.put("mode", "GETCHOICE");
-		MainDispatcher.getInstance().callAction("Tools", "doControl", this.request);
+		MainDispatcher.getInstance().callAction("Tool", "doControl", this.request);
 		
 	}
 

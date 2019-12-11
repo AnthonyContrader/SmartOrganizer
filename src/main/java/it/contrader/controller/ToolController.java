@@ -22,20 +22,20 @@ public class ToolController implements Controller {
 		
 		String choice = (String) request.get("choice");
 	
-		int idtools;
+		int idtool;
 		String toolname;
 		String rawmaterial;
 		
 		switch(mode) {
 		case "READ":
-			idtools = Integer.parseInt(request.get("idtools").toString());
-			ToolDTO toolDTO = toolService.read(idtools);
+			idtool = Integer.parseInt(request.get("idtool").toString());
+			ToolDTO toolDTO = toolService.read(idtool);
 			request.put("tool", toolDTO);
 			MainDispatcher.getInstance().callView(sub_package+"ToolRead", request);
 			break;
 			
 		case "INSERT":
-			toolname = request.get("toolsname").toString();
+			toolname = request.get("toolname").toString();
 			rawmaterial = request.get("rawmaterial").toString();
 			
 			ToolDTO tooltoinsert = new ToolDTO(toolname, rawmaterial);
@@ -47,20 +47,20 @@ public class ToolController implements Controller {
 			break;
 			
 		case "DELETE":
-			idtools = Integer.parseInt(request.get("idtools").toString());
+			idtool = Integer.parseInt(request.get("idtools").toString());
 			
-			toolService.delete(idtools);
+			toolService.delete(idtool);
 			request = new Request();
 			request.put("mode", "mode");
 			MainDispatcher.getInstance().callView(sub_package+"ToolDelete", request);
 			break;
 			
 		case "UPDATE":
-			idtools = Integer.parseInt(request.get("idtools").toString());
+			idtool = Integer.parseInt(request.get("idtools").toString());
 			toolname = request.get("toolsname").toString();
 			rawmaterial = request.get("rawmaterial").toString();
 			ToolDTO tooltoupdate = new ToolDTO(toolname, rawmaterial);
-			tooltoupdate.setIdtool(idtools);
+			tooltoupdate.setIdtool(idtool);
 			toolService.update(tooltoupdate);
 			request = new Request();
 			request.put("mode", "mode");
@@ -97,7 +97,7 @@ public class ToolController implements Controller {
 				break;
 				
 			case "B":
-				MainDispatcher.getInstance().callView("HomeTools", null);
+				MainDispatcher.getInstance().callView("HomeAdmin", null);
 				break;
 				
 			default:
