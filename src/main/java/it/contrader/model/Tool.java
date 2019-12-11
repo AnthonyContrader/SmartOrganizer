@@ -48,4 +48,27 @@ public class Tool {
 	public String toString() {
 		return idtool + "\t" + toolname + "\t\t" + rawmaterial;
 	}
+	
+	public boolean equals(Object obj) {
+		if(this == obj)
+			return true;
+		if(obj == null)
+			return false;
+		if(getClass() != obj.getClass())
+			return false;
+		Tool other = (Tool)obj;
+		if(idtool != other.getIdtool())
+			return false;
+		if(toolname == null) {
+			if(other.toolname != null)
+				return false;
+		}else if(!toolname.equals(other.toolname))
+					return false;
+		if(rawmaterial == null) {
+			if(other.rawmaterial != null)
+				return false;
+		}else if(!rawmaterial.equals(other.rawmaterial))
+					return false;
+		return true;
+	}
 }

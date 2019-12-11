@@ -3,7 +3,6 @@ package it.contrader.controller;
 import java.util.List;
 
 import it.contrader.dto.LocationDTO;
-import it.contrader.dto.UserDTO;
 import it.contrader.main.MainDispatcher;
 import it.contrader.service.LocationService;
 
@@ -31,7 +30,7 @@ public class LocationController implements Controller{
 				worktype;
 		
 		switch(mode) {
-		//il commento seguente è preso da usercontroller
+		//il commento seguente ï¿½ preso da usercontroller
 		//Arriva qui dalla UserReadView. Invoca il Service con il parametro id e invia alla UserReadView uno user da mostrare 
 		
 		case "READ":
