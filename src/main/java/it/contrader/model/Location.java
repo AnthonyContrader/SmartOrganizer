@@ -80,6 +80,38 @@ public class Location {
 //	{
 //		if
 //	}
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Location other = (Location) obj;
+		if (idlocation != other.idlocation)
+			return false;
+		if (adress == null) {
+			if (other.adress != null)
+				return false;
+		} else if (!adress.equals(other.adress))
+			return false;
+		if (city == null) {
+			if (other.city != null)
+				return false;
+		} else if (!city.equals(other.city))
+			return false;
+		if (typeoflocation == null) {
+			if (other.typeoflocation != null)
+				return false;
+		} else if (!typeoflocation.equals(other.typeoflocation))
+			return false;
+		if (worktype == null) {
+			if (other.worktype != null)
+				return false;
+		} else if (!worktype.equals(other.worktype))
+			return false;
+		return true;
+	}
 	
 	
 	}//fine classe

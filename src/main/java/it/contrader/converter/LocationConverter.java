@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.contrader.dto.LocationDTO;
-import it.contrader.dto.UserDTO;
+
 import it.contrader.model.Location;
-import it.contrader.model.User;
+
 
 public class LocationConverter {
 
