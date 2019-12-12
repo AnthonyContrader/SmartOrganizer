@@ -22,7 +22,7 @@ public class ToolReadView extends AbstractView {
 		if (request != null) {
 			ToolDTO tool = (ToolDTO) request.get("tool");
 			System.out.println(tool);
-			MainDispatcher.getInstance().callView("Tool", null);
+			MainDispatcher.getInstance().callView("ToolAdmin", null);
 		}
 	}
 

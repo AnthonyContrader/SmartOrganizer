@@ -19,7 +19,7 @@ public class ToolAdminView extends AbstractView {
 	public void showResults(Request request) {
 		if(request != null) {
 			System.out.println("\n----------------- Gestione strumenti ---------------\n");
-			System.out.println("IDtool\tNome Strumento\tMateria Prima");
+			System.out.println("IDtool\t\tNome Strumento\t\tMateria Prima");
 			System.out.println("----------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")

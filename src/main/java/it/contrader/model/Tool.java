@@ -46,7 +46,7 @@ public class Tool {
 
 	@Override
 	public String toString() {
-		return idtool + "\t" + toolname + "\t" + rawmaterial;
+		return idtool + "\t\t" + toolname + "\t\t" + rawmaterial;
 	}
 	
 	public boolean equals(Object obj) {

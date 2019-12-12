@@ -22,7 +22,7 @@ public class ToolUpdateView extends AbstractView {
 	public void showResults(Request request) {
 		if (request!=null) {
 			System.out.println("Modifica andata a buon fine.\n");
-			MainDispatcher.getInstance().callView("Tool", null);
+			MainDispatcher.getInstance().callView("ToolAdmin", null);
 		}
 	}
 
