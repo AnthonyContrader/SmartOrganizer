@@ -1,62 +1,46 @@
 package it.contrader.dto;
-/**
- * Per dettagli vedi guida sez 4 Model
- */
+
 public class EmployeesDTO {
 
-	/**
-	 * Qui sotto definisco gli attributi di Employees. 
-	 */
-	private int idEmployee;
-
+	private int idemployee;
 	private String name;
-	
 	private String surname;
-	
-	private String fiscalCode;
-	
-	private String workSector;
-	
+	private String fiscalcode;
+	private String worksector;
 	private String position;
+	private String numberofregistration;
 	
-	private String numberOfRegistration;
-
-	/**
-	 * Definisco i due costruttori, uno vuoto e uno con sei parametri per costrire oggetti di tipo Employees
-	 */
 	public EmployeesDTO() {
 		
 	}
-
-	public EmployeesDTO (String name, String surname, String fiscalCode, String workSector, String position, String numberOfRegistration) {
-		this.name = name;
-		this.surname = surname;
-		this.fiscalCode = fiscalCode;
-		this.workSector = workSector;
-		this.position = position;
-		this.numberOfRegistration = numberOfRegistration;
-	}
-
-	public EmployeesDTO (int idEmployee, String name, String surname, String fiscalCode, String workSector, String position, String numberOfRegistration) {
-		this.idEmployee = idEmployee;
-		this.name = name;
-		this.surname = surname;
-		this.fiscalCode = fiscalCode;
-		this.workSector = workSector;
-		this.position = position;
-		this.numberOfRegistration = numberOfRegistration;
-	}
-
-	/**
-	 * Getter e Setter: servono alle altre classi a recuperare e modificare gli attributi di Employees
-	 */
 	
-	public int getIdEmployee() {
-		return idEmployee;
+	public EmployeesDTO(String name, String surname, String fiscalcode, String worksector, String position, String numberofregistration) {
+		this.name=name;
+		this.surname=surname;
+		this.fiscalcode=fiscalcode;
+		this.worksector=worksector;
+		this.position=position;
+		this.numberofregistration=numberofregistration;
+	}
+	
+	public EmployeesDTO(int idemployee,String name, String surname, String fiscalcode, String worksector, String position, String numberofregistration) {
+		this.idemployee=idemployee;
+		this.name=name;
+		this.surname=surname;
+		this.fiscalcode=fiscalcode;
+		this.worksector=worksector;
+		this.position=position;
+		this.numberofregistration=numberofregistration;
 	}
 
-	public void setIdEmployee(int idEmployee) {
-		this.idEmployee = idEmployee;
+	
+
+	public int getIdemployee() {
+		return idemployee;
+	}
+
+	public void setIdemployee(int idemployee) {
+		this.idemployee = idemployee;
 	}
 
 	public String getName() {
@@ -75,20 +59,20 @@ public class EmployeesDTO {
 		this.surname = surname;
 	}
 
-	public String getFiscalCode() {
-		return fiscalCode;
+	public String getFiscalcode() {
+		return fiscalcode;
 	}
 
-	public void setFiscalCode(String fiscalCode) {
-		this.fiscalCode = fiscalCode;
+	public void setFiscalcode(String fiscalcode) {
+		this.fiscalcode = fiscalcode;
 	}
 
-	public String getWorkSector() {
-		return workSector;
+	public String getWorksector() {
+		return worksector;
 	}
 
-	public void setWorkSector(String workSector) {
-		this.workSector = workSector;
+	public void setWorksector(String worksector) {
+		this.worksector = worksector;
 	}
 
 	public String getPosition() {
@@ -99,11 +83,16 @@ public class EmployeesDTO {
 		this.position = position;
 	}
 
-	public String getNumberOfRegistration() {
-		return numberOfRegistration;
+	public String getNumberofregistration() {
+		return numberofregistration;
 	}
 
-	public void setNumberOfRegistration(String numberOfRegistration) {
-		this.numberOfRegistration = numberOfRegistration;
+	public void setNumberofregistration(String numberofregistration) {
+		this.numberofregistration = numberofregistration;
+	}
+
+	@Override
+	public String toString() {
+		return idemployee + "\t" + name + "\t" + surname + "\t" + fiscalcode + "\t" + worksector + "\t" + position + "\t" + numberofregistration + "\t";
 	}
 }

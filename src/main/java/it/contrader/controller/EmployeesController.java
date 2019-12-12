@@ -6,37 +6,16 @@ import it.contrader.dto.EmployeesDTO;
 import it.contrader.main.MainDispatcher;
 import it.contrader.service.EmployeesService;
 
-/**
- * 
- * @author Vittorio
- *
- *Si osservi che nel Controller compaiono solo oggetti del DTO e non del Model!
- */
 public class EmployeesController implements Controller {
 
-	/**
-	 * definisce il pacchetto di vista employees.
-	 */
 	private static String sub_package = "employees.";
 	
 	private EmployeesService employeesService;
-	/**
-	 * Costruisce un oggetto di tipo EmployeesService per poterne usare i metodi
-	 */
+	
 	public EmployeesController() {
 		this.employeesService = new EmployeesService();
 	}
 	
-	
-	
-	/**
-	 * Metodo dell'interfaccia Controller. Estrae dalla request la mode
-	 * (che riceve dalle view specifiche e può essere la richesta di una 
-	 * scelta da parte dell'utente "GETCHOICE") e la scelta dell'utente.
-	 * 
-	 * Se la modalità corrisponde ad una CRUD il controller chiama i service,
-	 * altrimenti rimanda alla View della CRUD per richiedere i parametri
-	 */
 	@Override
 	public void doControl(Request request) {
 		
@@ -49,32 +28,32 @@ public class EmployeesController implements Controller {
 		int idemployee;
 		String name;
 		String surname;
-		String fiscalCode;
-		String workSector;
+		String fiscalcode;
+		String worksector;
 		String position;
-		String numberOfRegistration;
+		String numberofregistration;
 
 		switch (mode) {
 		
 		// Arriva qui dalla EmployeesReadView. Invoca il Service con il parametro id e invia alla EmployeesReadView un employee da mostrare 
 		case "READ":
-			idemployee = Integer.parseInt(request.get("id employee").toString());
+			idemployee = Integer.parseInt(request.get("idemployee").toString());
 			EmployeesDTO employeesDTO = employeesService.read(idemployee);
-			request.put("employee", employeesDTO);
-			MainDispatcher.getInstance().callView(sub_package + "EmployeeRead", request);
+			request.put("employees", employeesDTO);
+			MainDispatcher.getInstance().callView(sub_package + "EmployeesRead", request);
 			break;
 		
 		// Arriva qui dalla EmployeesInsertView. Estrae i parametri da inserire e chiama il service per inserire un employee con questi parametri
 		case "INSERT":
 			name = request.get("name").toString();
 			surname = request.get("surname").toString();
-			fiscalCode = request.get("fiscal code").toString();
-			workSector = request.get("work sector").toString();
+			fiscalcode = request.get("fiscalcode").toString();
+			worksector = request.get("worksector").toString();
 			position = request.get("position").toString();
-			numberOfRegistration = request.get("number of registration").toString();
+			numberofregistration = request.get("numberofregistration").toString();
 			
 			//costruisce l'oggetto employees da inserire
-			EmployeesDTO employeestoinsert = new EmployeesDTO(name, surname, fiscalCode, workSector, position, numberOfRegistration);
+			EmployeesDTO employeestoinsert = new EmployeesDTO(name, surname, fiscalcode, worksector, position, numberofregistration);
 			//invoca il service
 			employeesService.insert(employeestoinsert);
 			request = new Request();
@@ -85,7 +64,7 @@ public class EmployeesController implements Controller {
 		
 		// Arriva qui dalla EmployeesDeleteView. Estrae l'id del dipendente da cancellare e lo passa al Service
 		case "DELETE":
-			idemployee = Integer.parseInt(request.get("id employee").toString());
+			idemployee = Integer.parseInt(request.get("idemployee").toString());
 			//Qui chiama il service
 			employeesService.delete(idemployee);
 			request = new Request();
@@ -98,12 +77,12 @@ public class EmployeesController implements Controller {
 			idemployee = Integer.parseInt(request.get("idemployee").toString());
 			name = request.get("name").toString();
 			surname = request.get("surname").toString();
-			fiscalCode = request.get("fiscal code").toString();
-			workSector = request.get("work sector").toString();
+			fiscalcode = request.get("fiscalcode").toString();
+			worksector = request.get("worksector").toString();
 			position = request.get("position").toString();
-			numberOfRegistration = request.get("number of registration").toString();
-			EmployeesDTO employeestoupdate = new EmployeesDTO(name, surname, fiscalCode, workSector, position, numberOfRegistration);
-			employeestoupdate.setIdEmployee(idemployee);
+			numberofregistration = request.get("numberofregistration").toString();
+			EmployeesDTO employeestoupdate = new EmployeesDTO(name, surname, fiscalcode, worksector, position, numberofregistration);
+			employeestoupdate.setIdemployee(idemployee);
 			employeesService.update(employeestoupdate);
 			request = new Request();
 			request.put("mode", "mode");
@@ -114,7 +93,7 @@ public class EmployeesController implements Controller {
 		case "EMPLOYEESLIST":
 			List<EmployeesDTO> EmployeessDTO = employeesService.getAll();
 			//Impacchetta la request con la lista degli employees
-			request.put("employees", EmployeessDTO);
+			request.put("employeess", EmployeessDTO);
 			MainDispatcher.getInstance().callView("Employees", request);
 			break;
 			

@@ -6,19 +6,14 @@ import java.util.List;
 import it.contrader.main.ConnectionSingleton;
 import it.contrader.model.Employees;
 
-/**
- * 
- * @author Vittorio
- *
- *Per i dettagli della classe vedi Guida sez 6: DAO
- */
+
 public class EmployeesDAO {
 
 	private final String QUERY_ALL = "SELECT * FROM employees";
 	private final String QUERY_CREATE = "INSERT INTO employees (name, surname, fiscalcode, worksector, position, numberofregistration) VALUES (?,?,?,?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM employees WHERE idemployee=?";
-	private final String QUERY_UPDATE = "UPDATE employees SET name=?, surname=?, fiscalcode=?, worksector=?, position=?, numberofregistration=? WHERE idemployees=?";
-	private final String QUERY_DELETE = "DELETE FROM employees WHERE idemployees=?";
+	private final String QUERY_UPDATE = "UPDATE employees SET name=?, surname=?, fiscalcode=?, worksector=?, position=?, numberofregistration=? WHERE idemployee=?";
+	private final String QUERY_DELETE = "DELETE FROM employees WHERE idemployee=?";
 
 	public EmployeesDAO() {
 
@@ -32,15 +27,15 @@ public class EmployeesDAO {
 			ResultSet resultSet = statement.executeQuery(QUERY_ALL);
 			Employees employees;
 			while (resultSet.next()) {
-				int id = resultSet.getInt("id employee");
+				int idemployee = resultSet.getInt("idemployee");
 				String name = resultSet.getString("name");
 				String surname = resultSet.getString("surname");
 				String fiscalcode = resultSet.getString("fiscalcode");
 				String worksector = resultSet.getString("worksector");
 				String position = resultSet.getString("position");
-				String numberofregistration = resultSet.getString("number of registration");
+				String numberofregistration = resultSet.getString("numberofregistration");
 				employees = new Employees(name, surname, fiscalcode, worksector, position, numberofregistration);
-				employees.setId(id);
+				employees.setIdemployee(idemployee);
 				employeessList.add(employees);
 			}
 		} catch (SQLException e) {
@@ -55,10 +50,10 @@ public class EmployeesDAO {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
 			preparedStatement.setString(1, employeesToInsert.getName());
 			preparedStatement.setString(2, employeesToInsert.getSurname());
-			preparedStatement.setString(3, employeesToInsert.getFiscalCode());
-			preparedStatement.setString(3, employeesToInsert.getWorkSector());
-			preparedStatement.setString(3, employeesToInsert.getPosition());
-			preparedStatement.setString(3, employeesToInsert.getNumberOfRegistration());
+			preparedStatement.setString(3, employeesToInsert.getFiscalcode());
+			preparedStatement.setString(4, employeesToInsert.getWorksector());
+			preparedStatement.setString(5, employeesToInsert.getPosition());
+			preparedStatement.setString(6, employeesToInsert.getNumberofregistration());
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
@@ -67,13 +62,13 @@ public class EmployeesDAO {
 
 	}
 
-	public Employees read(int employeesId) {
+	public Employees read(int idemployee) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 
 
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_READ);
-			preparedStatement.setInt(1, employeesId);
+			preparedStatement.setInt(1, idemployee);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 			String name, surname, fiscalcode, worksector, position, numberofregistration;
@@ -83,9 +78,9 @@ public class EmployeesDAO {
 			fiscalcode = resultSet.getString("fiscalcode");
 			worksector = resultSet.getString("worksector");
 			position = resultSet.getString("position");
-			numberofregistration = resultSet.getString("number of registration");
+			numberofregistration = resultSet.getString("numberofregistration");
 			Employees employees = new Employees(name, surname, fiscalcode, worksector, position, numberofregistration);
-			employees.setId(resultSet.getInt("id"));
+			employees.setIdemployee(resultSet.getInt("idemployee"));
 
 			return employees;
 		} catch (SQLException e) {
@@ -98,10 +93,10 @@ public class EmployeesDAO {
 		Connection connection = ConnectionSingleton.getInstance();
 
 		// Check if id is present
-		if (employeesToUpdate.getId() == 0)
+		if (employeesToUpdate.getIdemployee() == 0)
 			return false;
 
-		Employees employeesRead = read(employeesToUpdate.getId());
+		Employees employeesRead = read(employeesToUpdate.getIdemployee());
 		if (!employeesRead.equals(employeesToUpdate)) {
 			try {
 				// Fill the employeesToUpdate object
@@ -113,12 +108,12 @@ public class EmployeesDAO {
 					employeesToUpdate.setSurname(employeesRead.getSurname());
 				}
 
-				if (employeesToUpdate.getFiscalCode() == null || employeesToUpdate.getFiscalCode().equals("")) {
-					employeesToUpdate.setFiscalCode(employeesRead.getFiscalCode());
+				if (employeesToUpdate.getFiscalcode() == null || employeesToUpdate.getFiscalcode().equals("")) {
+					employeesToUpdate.setFiscalcode(employeesRead.getFiscalcode());
 				}
 				
-				if (employeesToUpdate.getWorkSector() == null || employeesToUpdate.getWorkSector().equals("")) {
-					employeesToUpdate.setWorkSector(employeesRead.getWorkSector());
+				if (employeesToUpdate.getWorksector() == null || employeesToUpdate.getWorksector().equals("")) {
+					employeesToUpdate.setWorksector(employeesRead.getWorksector());
 				
 				}
 				
@@ -126,8 +121,8 @@ public class EmployeesDAO {
 					employeesToUpdate.setPosition(employeesRead.getPosition());
 				}
 				
-				if (employeesToUpdate.getNumberOfRegistration() == null || employeesToUpdate.getNumberOfRegistration().equals("")) {
-					employeesToUpdate.setNumberOfRegistration(employeesRead.getNumberOfRegistration());
+				if (employeesToUpdate.getNumberofregistration() == null || employeesToUpdate.getNumberofregistration().equals("")) {
+					employeesToUpdate.setNumberofregistration(employeesRead.getNumberofregistration());
 				}
 
 
@@ -135,11 +130,11 @@ public class EmployeesDAO {
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				preparedStatement.setString(1, employeesToUpdate.getName());
 				preparedStatement.setString(2, employeesToUpdate.getSurname());
-				preparedStatement.setString(3, employeesToUpdate.getFiscalCode());
-				preparedStatement.setString(3, employeesToUpdate.getWorkSector());
-				preparedStatement.setString(3, employeesToUpdate.getPosition());
-				preparedStatement.setString(3, employeesToUpdate.getNumberOfRegistration());
-				preparedStatement.setInt(4, employeesToUpdate.getId());
+				preparedStatement.setString(3, employeesToUpdate.getFiscalcode());
+				preparedStatement.setString(4, employeesToUpdate.getWorksector());
+				preparedStatement.setString(5, employeesToUpdate.getPosition());
+				preparedStatement.setString(6, employeesToUpdate.getNumberofregistration());
+				preparedStatement.setInt(7, employeesToUpdate.getIdemployee());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return true;
@@ -155,11 +150,11 @@ public class EmployeesDAO {
 
 	}
 
-	public boolean delete(int id) {
+	public boolean delete(int idemployee) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_DELETE);
-			preparedStatement.setInt(1, id);
+			preparedStatement.setInt(1, idemployee);
 			int n = preparedStatement.executeUpdate();
 			if (n != 0)
 				return true;

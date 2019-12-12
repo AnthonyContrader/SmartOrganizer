@@ -1,62 +1,49 @@
 package it.contrader.model;
-/**
- * Per dettagli vedi guida sez 4 Model
- */
+
 public class Employees {
 
-	/**
-	 * Qui sotto definisco gli attributi di Employees. 
-	 */
-	private int idEmployee;
+	private int idemployee;
 
 	private String name;
 	
 	private String surname;
 	
-	private String fiscalCode;
+	private String fiscalcode;
 	
-	private String workSector;
+	private String worksector;
 	
 	private String position;
 	
-	private String numberOfRegistration;
+	private String numberofregistration;
 
-	/**
-	 * Definisco i due costruttori, uno vuoto e uno con sei parametri per costrire oggetti di tipo Employees
-	 */
 	public Employees() {
 		
 	}
 
-	public Employees (String name, String surname, String fiscalCode, String workSector, String position, String numberOfRegistration) {
+	public Employees (String name, String surname, String fiscalcode, String worksector, String position, String numberofregistration) {
 		this.name = name;
 		this.surname = surname;
-		this.fiscalCode = fiscalCode;
-		this.workSector = workSector;
+		this.fiscalcode = fiscalcode;
+		this.worksector = worksector;
 		this.position = position;
-		this.numberOfRegistration = numberOfRegistration;
+		this.numberofregistration = numberofregistration;
 	}
 
-	public Employees (int idEmployee, String name, String surname, String fiscalCode, String workSector, String position, String numberOfRegistration) {
-		this.idEmployee = idEmployee;
+	public Employees (int idemployee, String name, String surname, String fiscalcode, String worksector, String position, String numberofregistration) {
+		this.idemployee = idemployee;
 		this.name = name;
 		this.surname = surname;
-		this.fiscalCode = fiscalCode;
-		this.workSector = workSector;
+		this.fiscalcode = fiscalcode;
+		this.worksector = worksector;
 		this.position = position;
-		this.numberOfRegistration = numberOfRegistration;
+		this.numberofregistration = numberofregistration;
 	}
-
-	/**
-	 * Getter e Setter: servono alle altre classi a recuperare e modificare gli attributi di Employees
-	 */
 	
-	public int getIdEmployee() {
-		return idEmployee;
+	public int getIdemployee() {
+		return idemployee;
 	}
-
-	public void setIdEmployee(int idEmployee) {
-		this.idEmployee = idEmployee;
+	public void setIdemployee(int idemployee) {
+		this.idemployee = idemployee;
 	}
 
 	public String getName() {
@@ -75,20 +62,20 @@ public class Employees {
 		this.surname = surname;
 	}
 
-	public String getFiscalCode() {
-		return fiscalCode;
+	public String getFiscalcode() {
+		return fiscalcode;
 	}
 
-	public void setFiscalCode(String fiscalCode) {
-		this.fiscalCode = fiscalCode;
+	public void setFiscalcode(String fiscalcode) {
+		this.fiscalcode = fiscalcode;
 	}
 
-	public String getWorkSector() {
-		return workSector;
+	public String getWorksector() {
+		return worksector;
 	}
 
-	public void setWorkSector(String workSector) {
-		this.workSector = workSector;
+	public void setWorksector(String worksector) {
+		this.worksector = worksector;
 	}
 
 	public String getPosition() {
@@ -99,65 +86,62 @@ public class Employees {
 		this.position = position;
 	}
 
-	public String getNumberOfRegistration() {
-		return numberOfRegistration;
+	public String getNumberofregistration() {
+		return numberofregistration;
 	}
 
-	public void setNumberOfRegistration(String numberOfRegistration) {
-		this.numberOfRegistration = numberOfRegistration;
+	public void setNumberofregistration(String numberofregistration) {
+		this.numberofregistration = numberofregistration;
 	}
 //Metodo per il confronto degli oggetti
 	@Override
-	public boolean equals(Object objt) {
-		if (this == objt)
+	public String toString() {
+		return idemployee + "\t" + name + "\t" + surname + "\t" + fiscalcode + "\t" + worksector + "\t" + position + "\t" + numberofregistration;
+		
+	}
+	public boolean equals(Object obj) {
+		if(this == obj)
 			return true;
-		if (objt == null)
+		if(obj == null)
 			return false;
-		if (getClass() != objt.getClass())
+		if(getClass() != obj.getClass())
 			return false;
-		Employees other = (Employees) objt;
-		if (idEmployee != other.idEmployee)
+		Employees other = (Employees)obj;
+		if(idemployee != other.getIdemployee())
 			return false;
-		if (name == null) {
-			if (other.name != null)
+		if(name == null) {
+			if(other.name != null)
 				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (surname == null) {
-			if (other.surname != null)
+		}else if(!name.equals(other.name))
+					return false;
+		if(surname == null) {
+			if(other.surname != null)
 				return false;
-		} else if (!surname.equals(other.surname))
-			return false;
-		if (fiscalCode == null) {
-			if (other.fiscalCode != null)
+		}else if(!surname.equals(other.surname))
+					return false;
+		if(fiscalcode == null) {
+			if(other.fiscalcode != null)
 				return false;
-		} else if (!fiscalCode.equals(other.fiscalCode))
-			return false;
-		if (workSector == null) {
-			if (other.workSector != null)
+		}else if(!fiscalcode.equals(other.fiscalcode))
+					return false;
+		if(worksector == null) {
+			if(other.worksector != null)
 				return false;
-		} else if (!workSector.equals(other.workSector))
-			return false;
-		if (position == null) {
-			if (other.position != null)
+		}else if(!worksector.equals(other.worksector))
+					return false;
+		if(position == null) {
+			if(other.position != null)
 				return false;
-		} else if (!position.equals(other.position))
-			return false;
-		if (numberOfRegistration == null) {
-			if (other.numberOfRegistration != null)
+		}else if(!position.equals(other.position))
+					return false;
+		if(numberofregistration == null) {
+			if(other.numberofregistration != null)
 				return false;
-		} else if (!numberOfRegistration.equals(other.numberOfRegistration))
-			return false;
+		}else if(!numberofregistration.equals(other.numberofregistration))
+					return false;
 		return true;
 	}
 
-	public void setId(int id) {
-		// TODO Auto-generated method stub
-		
-	}
 
-	public int getId() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 }

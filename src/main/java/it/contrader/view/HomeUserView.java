@@ -42,7 +42,8 @@ public class HomeUserView extends AbstractView{
 	        	break;
 	        	
 	        case "d":
-	        	MainDispatcher.getInstance().callAction("Employee", "doControl", null);
+	        	this.request.put("mode", "EMPLOYEESLIST");
+	        	MainDispatcher.getInstance().callAction("Employees", "doControl", request);
 	        	break;
 	        	
 	        case "t":

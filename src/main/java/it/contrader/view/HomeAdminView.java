@@ -58,7 +58,8 @@ public class HomeAdminView extends AbstractView {
         	break;
         	
         case "d":
-        	MainDispatcher.getInstance().callAction("Employee", "doControl", null);
+        	request.put("mode", "EMPLOYEESLIST");
+        	MainDispatcher.getInstance().callAction("Employees", "doControl", request);
         	break;
         	
         case "t":
