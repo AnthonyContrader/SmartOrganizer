@@ -2,25 +2,25 @@ package it.contrader.model;
 
 public class Location {
 	private int idlocation;
-	private String 	adress,
+	private String 	address,
 					city,
 					typeoflocation,
 					worktype;
 	
 	public Location() {}
 
-	public Location(String adress, String city, String typeoflocation, String worktype) {
-		super();
-		this.adress = adress;
+	public Location(String address, String city, String typeoflocation, String worktype) {
+		
+		this.address = address;
 		this.city = city;
 		this.typeoflocation = typeoflocation;
 		this.worktype = worktype;
 	}
 
-	public Location(int idlocation, String adress, String city, String typeoflocation, String worktype) {
-		super();
+	public Location(int idlocation, String address, String city, String typeoflocation, String worktype) {
+	
 		this.idlocation = idlocation;
-		this.adress = adress;
+		this.address = address;
 		this.city = city;
 		this.typeoflocation = typeoflocation;
 		this.worktype = worktype;
@@ -34,12 +34,12 @@ public class Location {
 		this.idlocation = idlocation;
 	}
 
-	public String getAdress() {
-		return adress;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setAdress(String adress) {
-		this.adress = adress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getCity() {
@@ -68,18 +68,11 @@ public class Location {
 
 	@Override
 	public String toString() {
-		return idlocation + "\t"+ adress + "\t" + city + "\t" + typeoflocation + "\t" + worktype;
+		return idlocation + "\t"+ address + "\t" + city + "\t" + typeoflocation + "\t" + worktype;
 	}
-	
-	
-	
-	//ci riserviamo di implementare il metodo equals in futuro se servirà
-	
-//	@Override
-//	public boolean equals(Object obj)
-//	{
-//		if
-//	}
+
+
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -88,17 +81,17 @@ public class Location {
 		if (getClass() != obj.getClass())
 			return false;
 		Location other = (Location) obj;
-		if (idlocation != other.idlocation)
-			return false;
-		if (adress == null) {
-			if (other.adress != null)
+		if (address == null) {
+			if (other.address != null)
 				return false;
-		} else if (!adress.equals(other.adress))
+		} else if (!address.equals(other.address))
 			return false;
 		if (city == null) {
 			if (other.city != null)
 				return false;
 		} else if (!city.equals(other.city))
+			return false;
+		if (idlocation != other.idlocation)
 			return false;
 		if (typeoflocation == null) {
 			if (other.typeoflocation != null)
@@ -112,6 +105,17 @@ public class Location {
 			return false;
 		return true;
 	}
+	
+	
+	
+	//ci riserviamo di implementare il metodo equals in futuro se servirà
+	
+//	@Override
+//	public boolean equals(Object obj)
+//	{
+//		if
+//	}
+	
 	
 	
 	}//fine classe

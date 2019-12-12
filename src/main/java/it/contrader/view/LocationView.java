@@ -20,12 +20,12 @@ public class LocationView extends AbstractView{
 
 		if (request != null) {
 			System.out.println("\n------------------- Gestione luogo di lavoro ----------------\n");
-			System.out.println("ID\tAdress\tCity\tTypeof location, worktype");
+			System.out.println("ID\tAddress\tCity\tType of location, worktype");
 			System.out.println("----------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")
-			List<LocationDTO> location = (List<LocationDTO>) request.get("users");
-			for (LocationDTO l: location)
+			List<LocationDTO> locations = (List<LocationDTO>) request.get("locations");
+			for (LocationDTO l: locations)
 				System.out.println(l);
 			System.out.println();
 		}

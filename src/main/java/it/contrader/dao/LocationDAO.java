@@ -10,17 +10,17 @@ import it.contrader.model.Location;
 
 public class LocationDAO {
 	private final String QUERY_ALL = "SELECT * FROM location";
-	private final String QUERY_CREATE = "INSERT INTO location (adress, city, typeoflocation, worktype) VALUES (?,?,?,?)";
-	private final String QUERY_READ = "SELECT * FROM location WHERE id=?";
-	private final String QUERY_UPDATE = "UPDATE location SET adress=?, city=?, typeoflocation=?,worktype=? WHERE id=?";
-	private final String QUERY_DELETE = "DELETE FROM location WHERE id=?";
+	private final String QUERY_CREATE = "INSERT INTO location (address, city, typeoflocation, worktype) VALUES (?,?,?,?)";
+	private final String QUERY_READ = "SELECT * FROM location WHERE idlocation=?";
+	private final String QUERY_UPDATE = "UPDATE location SET address=?, city=?, typeoflocation=?,worktype=? WHERE idlocation=?";
+	private final String QUERY_DELETE = "DELETE FROM location WHERE idlocation=?";
 
 	public LocationDAO() {
 		
 	}
 	
 	public List<Location> getALL(){
-		List<Location> locationList = new ArrayList<Location>();
+		List<Location> locationList = new ArrayList<>();
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			Statement statement = connection.createStatement();
@@ -28,12 +28,12 @@ public class LocationDAO {
 			Location location;
 			while(resultSet.next()) {
 				int idlocation = resultSet.getInt("idlocation");
-				String adress = resultSet.getString("adress");
+				String address = resultSet.getString("address");
 				String city = resultSet.getString("city");
 				String typeoflocation = resultSet.getString("typeoflocation");
 				String worktype = resultSet.getString("worktype");
 				
-				location= new Location(adress, city, typeoflocation, worktype);
+				location= new Location(address, city, typeoflocation, worktype);
 				location.setIdlocation(idlocation);
 				locationList.add(location);
 						
@@ -55,10 +55,10 @@ public class LocationDAO {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
-			preparedStatement.setString(1, locationToInsert.getAdress());
+			preparedStatement.setString(1, locationToInsert.getAddress());
 			preparedStatement.setString(2, locationToInsert.getCity());
 			preparedStatement.setString(3, locationToInsert.getTypeoflocation());
-			preparedStatement.setString(2, locationToInsert.getWorktype());
+			preparedStatement.setString(4, locationToInsert.getWorktype());
 			preparedStatement.execute();
 			return true;
 		
@@ -73,30 +73,30 @@ public class LocationDAO {
 		
 	}//fine insert
 	
-	public Location read(int locationID) {
+	public Location read(int idlocation) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 
 
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_READ);
-			preparedStatement.setInt(1, locationID);
+			preparedStatement.setInt(1, idlocation);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
-			String adress, city, typeoflocation,worktype;
+			String address, city, typeoflocation,worktype;
 
-			adress = resultSet.getString("adress");
+			address = resultSet.getString("address");
 			city = resultSet.getString("city");
 			typeoflocation = resultSet.getString("typeoflocation");
 			worktype = resultSet.getString("worktype");
 			
-			Location location = new Location(adress, city, typeoflocation, worktype);
+			Location location = new Location(address, city, typeoflocation, worktype);
 			location.setIdlocation(resultSet.getInt("idlocation"));
 
 			return location;
 		}
 		//fine try read
 		catch (SQLException e) {
-			System.out.println("\"errore in LocationDAO metodo read controlla le: query, connection,  result etc \"");
+			System.out.println("\"errore in LocationDAO metodo read prova 1 controlla le: query, connection,  result etc \"");
 			return null;
 		}
 			
@@ -115,9 +115,9 @@ public class LocationDAO {
 		if(!locationRead.equals(locationToUpdate))
 		{
 			try {
-			if (locationToUpdate.getAdress() == null || locationToUpdate.getAdress().equals("")) 
+			if (locationToUpdate.getAddress() == null || locationToUpdate.getAddress().equals("")) 
 			{
-				locationToUpdate.setAdress(locationRead.getAdress());
+				locationToUpdate.setAddress(locationRead.getAddress());
 			}
 			if (locationToUpdate.getCity() == null || locationToUpdate.getCity().equals("")) 
 			{
@@ -133,7 +133,7 @@ public class LocationDAO {
 			}
 //update user
 			PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
-			preparedStatement.setString(1, locationToUpdate.getAdress());
+			preparedStatement.setString(1, locationToUpdate.getAddress());
 			preparedStatement.setString(2, locationToUpdate.getCity());
 			preparedStatement.setString(3, locationToUpdate.getTypeoflocation());
 			preparedStatement.setString(4, locationToUpdate.getWorktype());

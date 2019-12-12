@@ -24,7 +24,7 @@ public class LocationController implements Controller{
 		String choice = (String) request.get("choice");
 		//Definisce i campi della classe (serviranno sempre, tanto vale definirli una sola volta)
 		int idlocation;
-		String 	adress,
+		String 	address,
 				city,
 				typeoflocation,
 				worktype;
@@ -37,23 +37,23 @@ public class LocationController implements Controller{
 			idlocation= Integer.parseInt(request.get("idlocation").toString());
 			LocationDTO locationDTO = locationService.read(idlocation);
 			request.put("location", locationDTO);
-			MainDispatcher.getInstance().callView(sub_package + "locationRead", request);
+			MainDispatcher.getInstance().callView(sub_package + "LocationRead", request);
 			break;
 	
 		case "INSERT":
-			adress = request.get("adress").toString();
+			address = request.get("address").toString();
 			city = request.get("city").toString();
 			typeoflocation = request.get("typeoflocation").toString();
 			worktype=request.get("worktype").toString();
 			
 			//costruisce l'oggetto location da inserire
-			LocationDTO locationtoinsert = new LocationDTO(adress, city, typeoflocation, worktype);
+			LocationDTO locationtoinsert = new LocationDTO(address, city, typeoflocation, worktype);
 			//invoca il service
 			locationService.insert(locationtoinsert);
 			request = new Request();
 			request.put("mode", "mode");
 			//Rimanda alla view con la risposta
-			MainDispatcher.getInstance().callView(sub_package + "locationInsert", request);
+			MainDispatcher.getInstance().callView(sub_package + "LocationInsert", request);
 			break;
 			
 			// Arriva qui dalla UserDeleteView. Estrae l'id dell'utente da cancellare e lo passa al Service
@@ -69,12 +69,12 @@ public class LocationController implements Controller{
 		case "UPDATE":
 			idlocation = Integer.parseInt(request.get("idlocation").toString());
 			
-			adress = request.get("adress").toString();
+			address = request.get("address").toString();
 			city = request.get("city").toString();
 			typeoflocation = request.get("typeoflocation").toString();
 			worktype=request.get("worktype").toString();
 			
-			LocationDTO locationtoupdate = new LocationDTO(adress, city, typeoflocation, worktype);
+			LocationDTO locationtoupdate = new LocationDTO(address, city, typeoflocation, worktype);
 			locationtoupdate.setIdlocation(idlocation);
 			locationService.update(locationtoupdate);
 			request = new Request();
@@ -85,7 +85,7 @@ public class LocationController implements Controller{
 		case "LOCATIONLIST":
 			List<LocationDTO> locationsDTO = locationService.getAll();
 			//Impacchetta la request con la lista degli user
-			request.put("location", locationsDTO);
+			request.put("locations", locationsDTO);
 			MainDispatcher.getInstance().callView("Location", request);
 			break;
 			

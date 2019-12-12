@@ -68,7 +68,8 @@ public class HomeAdminView extends AbstractView {
         	break;
         	
         case "l":
-        	MainDispatcher.getInstance().callAction("Location", "doControl", null); //Aggiunto lista per la view (Ivan)
+        	request.put("mode", "LOCATIONLIST");
+        	MainDispatcher.getInstance().callAction("Location", "doControl", request); //Aggiunto lista per la view (Ivan)
         	break;
         default:
         	

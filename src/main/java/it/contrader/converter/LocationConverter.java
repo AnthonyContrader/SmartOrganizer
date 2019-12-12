@@ -12,12 +12,12 @@ public class LocationConverter {
 
 	public LocationDTO toDTO(Location location) {
 		
-		LocationDTO locationDTO = new LocationDTO(location.getIdlocation(), location.getAdress(), location.getCity(), location.getTypeoflocation(), location.getWorktype());
+		LocationDTO locationDTO = new LocationDTO(location.getIdlocation(), location.getAddress(), location.getCity(), location.getTypeoflocation(), location.getWorktype());
 			return locationDTO;
 	}//fine LocationDTO
 	
 	public Location toEntity(LocationDTO locationDTO) {
-		Location location = new Location(locationDTO.getIdlocation(), locationDTO.getAdress(), locationDTO.getCity(), locationDTO.getTypeoflocation(), locationDTO.getWorktype());
+		Location location = new Location(locationDTO.getIdlocation(), locationDTO.getAddress(), locationDTO.getCity(), locationDTO.getTypeoflocation(), locationDTO.getWorktype());
 		return location;
 	}//fine entity
 	

@@ -3,30 +3,30 @@ package it.contrader.dto;
 public class LocationDTO {
 
 	private int idlocation;
-	private String 	adress,
+	private String 	address,
 					city,
 					typeoflocation,
 					worktype;
 	
 	
 	public LocationDTO() {
-		super();
+		
 	}
 
 
-	public LocationDTO(String adress, String city, String typeoflocation, String worktype) {
-		super();
-		this.adress = adress;
+	public LocationDTO(String address, String city, String typeoflocation, String worktype) {
+		
+		this.address = address;
 		this.city = city;
 		this.typeoflocation = typeoflocation;
 		this.worktype = worktype;
 	}
 
 
-	public LocationDTO(int idlocation, String adress, String city, String typeoflocation, String worktype) {
-		super();
+	public LocationDTO(int idlocation, String address, String city, String typeoflocation, String worktype) {
+		
 		this.idlocation = idlocation;
-		this.adress = adress;
+		this.address = address;
 		this.city = city;
 		this.typeoflocation = typeoflocation;
 		this.worktype = worktype;
@@ -43,13 +43,13 @@ public class LocationDTO {
 	}
 
 
-	public String getAdress() {
-		return adress;
+	public String getAddress() {
+		return address;
 	}
 
 
-	public void setAdress(String adress) {
-		this.adress = adress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 
@@ -85,7 +85,7 @@ public class LocationDTO {
 
 	@Override
 	public String toString() {
-		return  idlocation + "\t" + adress +  "\t\t" + city +  "\t\t"
+		return  idlocation + "\t" + address +  "\t\t" + city +  "\t\t"
 				+ typeoflocation +  "\t\t" + worktype;
 	}
 	
