@@ -1,0 +1,49 @@
+package it.contrader.view;
+
+import java.util.List;
+
+import it.contrader.controller.Request;
+import it.contrader.dto.ToolDTO;
+import it.contrader.main.MainDispatcher;
+
+public class ToolUserView extends AbstractView{
+	private Request request;
+	private String choice;
+	
+	public ToolUserView() {
+		
+	}
+	
+	@Override
+	public void showResults(Request request) {
+		if(request != null) {
+			System.out.println("\n----------------- Gestione strumenti ---------------\n");
+			System.out.println("IDtool\tNome Strumento\tMateria Prima");
+			System.out.println("----------------------------------------------------\n");
+			
+			@SuppressWarnings("unchecked")
+			List<ToolDTO> tools = (List<ToolDTO>) request.get("tools");
+			for(ToolDTO t : tools)
+				System.out.println(t);
+			System.out.println();
+		}
+	}
+
+	@Override
+	public void showOptions() {
+		
+		System.out.println("          Scegli l'operazione da effettuare:");
+		System.out.println("[B]ack [E]sci");
+
+		this.choice = getInput();
+	}
+
+	@Override
+	public void submit() {
+		request = new Request();
+		request.put("choice", choice);
+		request.put("mode", "GETCHOICE");
+		MainDispatcher.getInstance().callAction("ToolUser", "doControl", this.request);
+		
+	}
+}

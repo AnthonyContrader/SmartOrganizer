@@ -37,7 +37,7 @@ public class ToolReadView extends AbstractView {
 		request = new Request();
 		request.put("idtool", idtool);
 		request.put("mode", mode);
-		MainDispatcher.getInstance().callAction("Tool", "doControl", request);
+		MainDispatcher.getInstance().callAction("ToolAdmin", "doControl", request);
 	}
 
 }

@@ -6,12 +6,12 @@ import it.contrader.dto.ToolDTO;
 import it.contrader.main.MainDispatcher;
 import it.contrader.service.ToolService;
 
-public class ToolController implements Controller {
+public class ToolAdminController implements Controller {
 
 	private static String sub_package = "tool.";
 	private ToolService toolService;
 	
-	public ToolController() {
+	public ToolAdminController() {
 		this.toolService = new ToolService();
 	}
 	
@@ -70,7 +70,7 @@ public class ToolController implements Controller {
 		case "TOOLLIST":
 			List<ToolDTO> toolsDTO = toolService.getAll();
 			request.put("tools", toolsDTO);
-			MainDispatcher.getInstance().callView("Tool", request);
+			MainDispatcher.getInstance().callView("ToolAdmin", request);
 			break;
 			
 		case "GETCHOICE":

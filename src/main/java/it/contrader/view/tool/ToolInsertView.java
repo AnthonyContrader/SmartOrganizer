@@ -39,7 +39,7 @@ public class ToolInsertView extends AbstractView {
 		request.put("toolname", toolname);
 		request.put("rawmaterial", rawmaterial);
 		request.put("mode", mode);
-		MainDispatcher.getInstance().callAction("Tool", "doControl", request);
+		MainDispatcher.getInstance().callAction("ToolAdmin", "doControl", request);
 	}
 
 }

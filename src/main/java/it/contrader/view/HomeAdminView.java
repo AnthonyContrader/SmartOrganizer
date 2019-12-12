@@ -64,13 +64,13 @@ public class HomeAdminView extends AbstractView {
         	
         case "t":
         	request.put("mode", "TOOLLIST");
-        	MainDispatcher.getInstance().callAction("Tool", "doControl", request); // Aggiunto lista per la view (Angelo)
+        	MainDispatcher.getInstance().callAction("ToolAdmin", "doControl", request); // Aggiunto lista per la view (Angelo)
         	break;
         	
         case "l":
         	request.put("mode", "LOCATIONLIST");
         	MainDispatcher.getInstance().callAction("Location", "doControl", request); //Aggiunto lista per la view (Ivan)
-        	break;
+        break;
         default:
         	
             request.put("choice", choice);

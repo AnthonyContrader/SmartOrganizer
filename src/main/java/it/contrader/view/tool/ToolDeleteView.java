@@ -37,7 +37,7 @@ public class ToolDeleteView extends AbstractView {
 		request = new Request();
 		request.put("idtools", idtools);
 		request.put("mode", mode);
-		MainDispatcher.getInstance().callAction("Tool", "doControl", request);
+		MainDispatcher.getInstance().callAction("ToolAdmin", "doControl", request);
 	}
 
 }

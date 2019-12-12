@@ -6,12 +6,12 @@ import it.contrader.controller.Request;
 import it.contrader.dto.ToolDTO;
 import it.contrader.main.MainDispatcher;
 
-public class ToolView extends AbstractView {
+public class ToolAdminView extends AbstractView {
 
 	private Request request;
 	private String choice;
 	
-	public ToolView() {
+	public ToolAdminView() {
 		
 	}
 	
@@ -43,7 +43,7 @@ public class ToolView extends AbstractView {
 		request = new Request();
 		request.put("choice", choice);
 		request.put("mode", "GETCHOICE");
-		MainDispatcher.getInstance().callAction("Tool", "doControl", this.request);
+		MainDispatcher.getInstance().callAction("ToolAdmin", "doControl", this.request);
 		
 	}
 

@@ -47,7 +47,7 @@ public class ToolUpdateView extends AbstractView {
 		request.put("toolsname", toolsname);
 		request.put("rawmaterial", rawmaterial);
 		request.put("mode", mode);
-		MainDispatcher.getInstance().callAction("Tool", "doControl", request);
+		MainDispatcher.getInstance().callAction("ToolAdmin", "doControl", request);
 	}
 
 }
