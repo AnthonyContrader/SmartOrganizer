@@ -19,7 +19,7 @@ public class HomeUserView extends AbstractView{
 	public void showOptions() {
 		System.out.println("-------------MENU USER------------\n");
 		System.out.println(" Seleziona cosa vuoi gestire:");
-	    System.out.println("[U]Lista Utenti [D]Lista Dipendenti [T]Tools [E]sci");
+	    System.out.println("[U]Lista Utenti [D]Lista Dipendenti [L]Lista Località [T]Tools [E]sci");
 		choice = this.getInput();
 
 	}
@@ -52,7 +52,8 @@ public class HomeUserView extends AbstractView{
 	        	break;
 	        	
 	        case "l":
-	        	MainDispatcher.getInstance().callAction("Location", "doControl", null); //Aggiunto lista per la view (Ivan)
+	        	this.request.put("mode", "LOCATIONLIST");
+	        	MainDispatcher.getInstance().callAction("LocationUser", "doControl", request); //Aggiunto lista per la view (Ivan)
 	        	break;
 	        default:
 	        	

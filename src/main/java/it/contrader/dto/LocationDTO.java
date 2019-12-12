@@ -85,7 +85,7 @@ public class LocationDTO {
 
 	@Override
 	public String toString() {
-		return  idlocation + "\t" + address +  "\t\t" + city +  "\t\t"
+		return  idlocation + "\t" + address +  "\t" + city +  "\t\t"
 				+ typeoflocation +  "\t\t" + worktype;
 	}
 	
