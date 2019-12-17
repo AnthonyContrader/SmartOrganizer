@@ -27,10 +27,10 @@
 	<tr> 
 		<th>Name</th>
 		<th>Surname</th>
-		<th>Fiscalcode</th>
-		<th>Worksector</th>
+		<th>FiscalCode</th>
+		<th>WorkSector</th>
 		<th>Position</th>
-		<th>Numberofregistration</th>
+		<th>NumberOfRegistration</th>
 	</tr>
 	<tr>
 		<td><%=e.getName()%></td>

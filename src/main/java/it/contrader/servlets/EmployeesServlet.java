@@ -33,7 +33,7 @@ public class EmployeesServlet extends HttpServlet {
 		Service<EmployeesDTO> service = new EmployeesService();
 		String mode = request.getParameter("mode");
 		EmployeesDTO dto;
-		int id;
+		int idemployee;
 		boolean ans;
 
 		switch (mode.toUpperCase()) {
@@ -44,8 +44,8 @@ public class EmployeesServlet extends HttpServlet {
 			break;
 
 		case "READ":
-			id = Integer.parseInt(request.getParameter("id"));
-			dto = service.read(id);
+			idemployee = Integer.parseInt(request.getParameter("idemployee"));
+			dto = service.read(idemployee);
 			request.setAttribute("dto", dto);
 			
 			if (request.getParameter("update") == null) {
@@ -72,22 +72,23 @@ public class EmployeesServlet extends HttpServlet {
 			break;
 			
 		case "UPDATE":
-			name = request.getParameter("name");
-			surname = request.getParameter("surname");
-			fiscalcode = request.getParameter("fiscalcode");
-			worksector = request.getParameter("worksector");
-			position = request.getParameter("position");
-			numberofregistration = request.getParameter("numberofregistration");
-			id = Integer.parseInt(request.getParameter("idemployee"));
-			dto = new EmployeesDTO (id,name, surname, fiscalcode, worksector, position, numberofregistration);
+			name = request.getParameter("name").toString();
+			surname = request.getParameter("surname").toString();
+			fiscalcode = request.getParameter("fiscalcode").toString();
+			worksector = request.getParameter("worksector").toString();
+			position = request.getParameter("position").toString();
+			numberofregistration = request.getParameter("numberofregistration").toString();
+			idemployee = Integer.parseInt(request.getParameter("idemployee"));
+			dto = new EmployeesDTO (idemployee,name, surname, fiscalcode, worksector, position, numberofregistration);
 			ans = service.update(dto);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/employees/employeesmanager.jsp").forward(request, response);
 			break;
 
 		case "DELETE":
-			id = Integer.parseInt(request.getParameter("id"));
-			ans = service.delete(id);
+			idemployee = Int
+			eger.parseInt(request.getParameter("idemployee"));
+			ans = service.delete(idemployee);
 			request.setAttribute("ans", ans);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/employees/employeesmanager.jsp").forward(request, response);

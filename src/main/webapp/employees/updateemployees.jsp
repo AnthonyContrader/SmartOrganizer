@@ -8,7 +8,8 @@
 <title>Edit Employees</title>
 </head>
 <body>
-<%@ include file="../css/header.jsp" %>
+<%@include file="../css/header.jsp" %>
+
 <div class="navbar">
   <a  href="homeadmin.jsp">Home</a>
   <a class="active" href="UserServlet?mode=userlist">Users</a>
@@ -19,57 +20,60 @@
 </div>
 <br>
 <div class="main">
-
-<%EmployeesDTO e = (EmployeesDTO) request.getAttribute("dto");%>
-
-
-<form id="floatleft" action="EmployeesServlet?mode=update&id=<%=e.getIdemployee()%>" method="post">
-  <div class="row">
-    <div class="col-25">
-      <label for="name">Name</label>
-    </div>
-    <div class="col-75">
-      <input type="text" id="name" name="name" placeholder="inserisci il tuo nome">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-     <label for="surname">Surname</label>
-    </div>
-    <div class="col-75">
-      <input type="text" id="surname" name="surname" placeholder="inserisci il tuo cognome"> 
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-      <label for="fiscalcode">Fiscalcode</label>
-    </div>
-    <div class="col-75">
-      <input type="text" id="fiscalcode" name="fiscalcode" placeholder="inserisci il tuo codice fiscale">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-      <label for="worksector">Worksector</label>
-    </div>
-    <div class="col-75">
-      <input type="text" id="worksector" name="worksector" placeholder="inserisci il settore di lavoro">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-      <label for="position">Position</label>
-    </div>
-    <div class="col-75">
-      <input type="text" id="position" name="position" placeholder="inserisci la tua posizione lavorativa">
-    </div>
-  </div>
-      <button type="submit" >Insert</button>
+<%EmployeesDTO e = (EmployeesDTO) request.getAttribute("dto"); %>
+<form id ="floatleft" action="EmployeesServlet?mode=update&idemployee=<%=e.getIdemployee() %>" method="post">
+	<div class="row">
+		<div class="col-25">
+			<label for="name">name</label>
+		</div>
+		<div class="col-75">
+			<input type="text" id="name" name="name" value=<%=e.getName() %>> 
+		</div>
+	</div>
+		<div class="row">
+		<div class="col-25">
+			<label for="surname">surname</label>
+		</div>
+		<div class="col-75">
+			<input type="text" id="surname" name="surname" value=<%=e.getSurname() %>> 
+		</div>
+	</div>
+		<div class="row">
+		<div class="col-25">
+			<label for="fiscalcode">fiscalcode</label>
+		</div>
+		<div class="col-75">
+			<input type="text" id="fiscalcode" name="fiscalcode" value=<%=e.getFiscalcode() %>> 
+		</div>
+	</div>
+		<div class="row">
+		<div class="col-25">
+			<label for="worksector">worksector</label>
+		</div>
+		<div class="col-75">
+			<input type="text" id="worksector" name="worksector" value=<%=e.getWorksector() %>> 
+		</div>
+	</div>
+		<div class="row">
+		<div class="col-25">
+			<label for="position">position</label>
+		</div>
+		<div class="col-75">
+			<input type="text" id="position" name="position" value=<%=e.getPosition() %>> 
+		</div>
+	</div>
+		<div class="row">
+		<div class="col-25">
+			<label for="numberofregistration">numberofregistration</label>
+		</div>
+		<div class="col-75">
+			<input type="text" id="numberofregistration" name="numberofregistration" value=<%=e.getNumberofregistration() %>> 
+		</div>
+	</div>
+		<button type="submit">Edit</button>
 </form>
-
 </div>
 <br>
-<br>
-<%@ include file="../css/footer.jsp" %>	
+<%@ include file="../css/footer.jsp" %>
 </body>
 </html>

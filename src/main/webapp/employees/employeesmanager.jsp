@@ -41,7 +41,7 @@
 			for (EmployeesDTO e : list) {
 		%>
 		<tr>
-			<td><a href=EmployeesServlet?mode=read&id=<%=e.getIdemployee()%>>
+			<td><a href=EmployeesServlet?mode=read&idemployee=<%=e.getIdemployee()%>>
 					<%=e.getName()%>
 			</a></td>
 			<td><%=e.getSurname()%></td>
@@ -65,7 +65,7 @@
 <form id="floatright" action="EmployeesServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="name">Name</label>
+      <label for="name">name</label>
     </div>
     <div class="col-75">
       <input type="text" id="name" name="name" placeholder="inserisci il tuo nome">
@@ -73,7 +73,7 @@
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="surname">Surname</label>
+     <label for="surname">surname</label>
     </div>
     <div class="col-75">
       <input type="text" id="surname" name="surname" placeholder="inserisci il tuo cognome"> 
@@ -81,7 +81,7 @@
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="fiscalcode">Fiscalcode</label>
+      <label for="fiscalcode">fiscalcode</label>
     </div>
     <div class="col-75">
       <input type="text" id="fiscalcode" name="fiscalcode" placeholder="inserisci il tuo codice fiscale">
@@ -89,7 +89,7 @@
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="worksector">Worksector</label>
+      <label for="worksector">worksector</label>
     </div>
     <div class="col-75">
       <input type="text" id="worksector" name="worksector" placeholder="inserisci il settore di lavoro">
@@ -97,10 +97,18 @@
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="position">Position</label>
+      <label for="position">position</label>
     </div>
     <div class="col-75">
       <input type="text" id="position" name="position" placeholder="inserisci la tua posizione lavorativa">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="numberofregistration">numberofregistration</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="numberofregistration" name="numberofregistration" placeholder="inserisci il numero di matricola">
     </div>
   </div>
       <button type="submit" >Insert</button>
