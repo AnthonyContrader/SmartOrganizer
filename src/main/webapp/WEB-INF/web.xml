@@ -42,5 +42,15 @@
   <servlet-name>ToolServlet</servlet-name>
   <url-pattern>/ToolServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+<description></description>
+<display-name>LocationServlet</display-name>
+<servlet-name>LocationServlet</servlet-name>
+<servlet-class>it.contrader.servlets.LocationServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>LocationServlet</servlet-name>
+<url-pattern>/LocationServlet</url-pattern>
+ </servlet-mapping>
   
 </web-app>
