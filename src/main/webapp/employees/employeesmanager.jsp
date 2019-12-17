@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" import="it.contrader.dto.EmployeesDTO"
+    import="java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +13,10 @@
 
 <div class="navbar">
   <a  href="homeadmin.jsp">Home</a>
+  <a class="active" href="UserServlet?mode=userlist">Users</a>
   <a class="active" href="EmployeesServlet?mode=employeeslist">Employees</a>
+  <a class="active" href="ToolServlet?mode=toollist">Tools</a>
+  <a class="active" href="LocationServlet?mode=location">Locations</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <div class="main">
