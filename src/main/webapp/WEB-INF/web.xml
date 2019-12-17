@@ -52,5 +52,15 @@
 <servlet-name>LocationServlet</servlet-name>
 <url-pattern>/LocationServlet</url-pattern>
  </servlet-mapping>
+   <servlet>
+<description></description>
+<display-name>EmployeesServlet</display-name>
+<servlet-name>EmployeesServlet</servlet-name>
+<servlet-class>it.contrader.servlets.EmployeesServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>EmployeesServlet</servlet-name>
+<url-pattern>/EmployeesServlet</url-pattern>
+ </servlet-mapping>
   
 </web-app>
