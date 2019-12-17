@@ -23,7 +23,10 @@
 
 <div class="main">
 <h1>Welcome ${user.getUsername()}</h1>
-
+<br>
+Account Type: ADMIN
+<br>
+<br>
 "Software for the management of construction activities, managing the resources, employees, the workplace and the equipment that the workers will use"
 "Software for the management of construction activities, managing the resources, employees, the workplace and the equipment that the workers will use"
 "Software for the management of construction activities, managing the resources, employees, the workplace and the equipment that the workers will use"
