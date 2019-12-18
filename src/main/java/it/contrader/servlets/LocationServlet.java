@@ -36,7 +36,11 @@ public class LocationServlet extends HttpServlet {
 		
 		case "LOCATIONLIST":
 			updateList(request);
-			getServletContext().getRequestDispatcher("/location/locationmanager.jsp").forward(request, response);
+			boolean usermode = Boolean.parseBoolean((request.getParameter("usermode")));
+			if(!usermode)
+				getServletContext().getRequestDispatcher("/location/locationmanager.jsp").forward(request, response);
+			else
+				getServletContext().getRequestDispatcher("/location/locationmanager2.jsp").forward(request, response);
 			break;
 			
 		case "READ":

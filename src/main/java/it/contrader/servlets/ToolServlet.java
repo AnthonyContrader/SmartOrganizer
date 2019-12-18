@@ -35,7 +35,11 @@ public class ToolServlet extends HttpServlet {
 		switch (mode.toUpperCase()) {
 		case "TOOLLIST":
 			updateList(request);
-			getServletContext().getRequestDispatcher("/tool/toolmanager.jsp").forward(request, response);
+			boolean usermode = Boolean.parseBoolean((request.getParameter("usermode")));
+			if(!usermode)
+				getServletContext().getRequestDispatcher("/tool/toolmanager.jsp").forward(request, response);
+			else
+				getServletContext().getRequestDispatcher("/tool/toolmanager2.jsp").forward(request, response);
 			break;
 			
 		case "READ":

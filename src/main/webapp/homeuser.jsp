@@ -14,10 +14,10 @@
 
 <div class="navbar">
   <a class="active" href="homeuser.jsp">Home</a>
-  <a href="UserServlet?mode=userlist">Users</a>
-  <a href="EmployeesServlet?mode=employeeslist">Employees</a>
-  <a href="ToolServlet?mode=toollist">Tools</a>
-  <a href="LocationServlet?mode=locationlist">Locations</a>
+  <a href="UserServlet?mode=userlist&usermode=true">Users</a>
+  <a href="EmployeesServlet?mode=employeeslist&usermode=true">Employees</a>
+  <a href="ToolServlet?mode=toollist&usermode=true">Tools</a>
+  <a href="LocationServlet?mode=locationlist&usermode=true">Locations</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 

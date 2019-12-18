@@ -62,5 +62,14 @@
 <servlet-name>EmployeesServlet</servlet-name>
 <url-pattern>/EmployeesServlet</url-pattern>
  </servlet-mapping>
-  
+  <servlet>
+  <description></description>
+  <display-name>WorkgroupServlet</display-name>
+  <servlet-name>WorkgroupServlet</servlet-name>
+  <servlet-class>it.contrader.servlets.WorkgroupServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>WorkgroupServlet</servlet-name>
+  <url-pattern>/WorkgroupServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -40,7 +40,11 @@ public class EmployeesServlet extends HttpServlet {
 
 		case "EMPLOYEESLIST":
 			updateList(request);
-			getServletContext().getRequestDispatcher("/employees/employeesmanager.jsp").forward(request, response);
+			boolean usermode = Boolean.parseBoolean((request.getParameter("usermode")));
+			if(!usermode)
+				getServletContext().getRequestDispatcher("/employees/employeesmanager.jsp").forward(request, response);
+			else
+				getServletContext().getRequestDispatcher("/employees/employeesmanager2.jsp").forward(request, response);
 			break;
 
 		case "READ":

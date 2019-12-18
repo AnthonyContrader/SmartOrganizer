@@ -40,7 +40,11 @@ public class UserServlet extends HttpServlet {
 
 		case "USERLIST":
 			updateList(request);
-			getServletContext().getRequestDispatcher("/user/usermanager.jsp").forward(request, response);
+			boolean usermode = Boolean.parseBoolean((request.getParameter("usermode")));
+			if(!usermode)
+				getServletContext().getRequestDispatcher("/user/usermanager.jsp").forward(request, response);
+			else
+				getServletContext().getRequestDispatcher("/user/usermanager2.jsp").forward(request, response);
 			break;
 
 		case "READ":
