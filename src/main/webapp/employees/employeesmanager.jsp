@@ -49,9 +49,9 @@
 			<td><%=e.getWorksector()%></td>
 			<td><%=e.getPosition()%></td>
 			<td><%=e.getNumberofregistration()%></td>
-			<td><a href=EmployeesServlet?mode=read&update=true&id=<%=e.getIdemployee()%>>Edit</a>
+			<td><a href=EmployeesServlet?mode=read&update=true&idemployee=<%=e.getIdemployee()%>>Edit</a>
 			</td>
-			<td><a href=EmployeesServlet?mode=delete&id=<%=e.getIdemployee()%>>Delete</a>
+			<td><a href=EmployeesServlet?mode=delete&idemployee=<%=e.getIdemployee()%>>Delete</a>
 			</td>
 
 		</tr>

@@ -14,7 +14,7 @@
   <a class="active" href="UserServlet?mode=userlist">Users</a>
   <a class="active" href="EmployeesServlet?mode=employeeslist">Employees</a>
   <a class="active" href="ToolServlet?mode=toollist">Tools</a>
-  <a class="active" href="LocationServlet?mode=location">Locations</a>
+  <a class="active" href="LocationServlet?mode=locationlist">Locations</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 
 </div>
@@ -28,7 +28,7 @@
 <div class="col-25">
 <label for="adress">Address</label>
 </div>
-<div class=col-75">
+<div class=col-75>
 <input type="text" id="address" name="address" value=<%=l.getAddress() %>>
 </div>
 </div>
@@ -37,7 +37,7 @@
 <div class="col-25">
 <label for="city">City</label>
 </div>
-<div class=col-75">
+<div class=col-75>
 <input type="text" id="city" name="city" value=<%=l.getCity() %>>
 </div>
 </div>
@@ -46,7 +46,7 @@
 <div class="col-25">
 <label for="typeoflocation">Typeoflocation</label>
 </div>
-<div class=col-75">
+<div class=col-75>
 <input type="text" id="typeoflocation" name="typeoflocation" value=<%=l.getTypeoflocation() %>>
 </div>
 </div>
@@ -55,12 +55,12 @@
 <div class="col-25">
 <label for="worktype">worktype</label>
 </div>
-<div class=col-75">
+<div class=col-75>
 <input type="text" id="worktype" name="worktype" value=<%=l.getWorktype() %>>
 </div>
 </div>
 <button type="submit" >Edit</button>
 </form>
-
+</div>
 </body>
 </html>
