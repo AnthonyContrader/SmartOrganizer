@@ -1,9 +1,9 @@
 package it.contrader.service;
 
 import it.contrader.converter.LocationConverter;
-import it.contrader.converter.UserConverter;
+
 import it.contrader.dao.LocationDAO;
-import it.contrader.dao.UserDAO;
+
 import it.contrader.dto.LocationDTO;
 
 import it.contrader.model.Location;
