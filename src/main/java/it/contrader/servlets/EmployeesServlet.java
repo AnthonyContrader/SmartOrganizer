@@ -86,8 +86,7 @@ public class EmployeesServlet extends HttpServlet {
 			break;
 
 		case "DELETE":
-			idemployee = Int
-			eger.parseInt(request.getParameter("idemployee"));
+			idemployee = Integer.parseInt(request.getParameter("idemployee"));
 			ans = service.delete(idemployee);
 			request.setAttribute("ans", ans);
 			updateList(request);
