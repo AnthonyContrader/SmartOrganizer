@@ -19,6 +19,7 @@
   <a href="ToolServlet?mode=toollist">Tools</a>
   <a href="LocationServlet?mode=locationlist">Locations</a>
   <a href="WorkgroupServlet?mode=workgrouplist">Workgroups</a>
+  <a href="CalendarServlet?mode=calendarlist">Calendar</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 

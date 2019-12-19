@@ -18,6 +18,8 @@
   <a href="EmployeesServlet?mode=employeeslist&usermode=true">Employees</a>
   <a href="ToolServlet?mode=toollist&usermode=true">Tools</a>
   <a href="LocationServlet?mode=locationlist&usermode=true">Locations</a>
+  <a href="WorkgroupServlet?mode=workgrouplist&usermode=true">Workgroups</a>
+  <a href="CalendarServlet?mode=calendarlist&usermode=true">Calendar</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 

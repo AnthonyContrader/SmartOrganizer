@@ -17,6 +17,8 @@
   <a class="active" href="EmployeesServlet?mode=employeeslist&usermode=true">Employees</a>
   <a class="active" href="ToolServlet?mode=toollist&usermode=true">Tools</a>
   <a class="active" href="LocationServlet?mode=locationlist&usermode=true">Locations</a>
+  <a class="active" href="WorkgroupServlet?mode=workgrouplist&usermode=true">Workgroups</a>
+  <a class="active" href="CalendarServlet?mode=calendarlist&usermode=true">Calendar</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <div class="main">

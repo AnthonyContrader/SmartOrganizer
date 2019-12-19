@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="it.contrader.dto.ToolDTO"%>
+    pageEncoding="ISO-8859-1" import="it.contrader.dto.CalendarDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>Edit Tool</title>
+<title>Edit Calendar</title>
 </head>
 <body>
 <%@include file="../css/header.jsp" %>
@@ -22,25 +22,41 @@
 </div>
 <br>
 <div class="main">
-<%ToolDTO t = (ToolDTO) request.getAttribute("dto"); %>
-<form id ="floatleft" action="ToolServlet?mode=update&idtool=<%=t.getIdtool() %>" method="post">
+<% CalendarDTO c = (CalendarDTO) request.getAttribute("dto"); %>
+<form id="floatleft" action="CalendarServlet?mode=update&idcalendar=<%=c.getIdcalendar() %>" method="post">
 	<div class="row">
 		<div class="col-25">
-			<label for="tool">Toolname</label>
+			<label for="date">Date</label>
 		</div>
 		<div class="col-75">
-			<input type="text" id="tool" name="toolname" value=<%=t.getToolname() %>> 
+			<input type="date" id="date" name="date">
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-25">
-			<label for="rawm">Raw Material</label>
+			<label for="checkin">Checkin</label>
 		</div>
 		<div class="col-75">
-			<input type="text" id="rawm" name ="rawmaterial" value=<%=t.getRawmaterial() %>>
+			<input type="text" id="checkin" name="checkin" placeholder="inserisci l'ora del checkin">
 		</div>
 	</div>
-		<button type="submit">Edit</button>
+	<div class="row">
+		<div class="col-25">
+			<label for="checkout">Checkout</label>
+		</div>
+		<div class="col-75">
+			<input type="text" id="checkout" name="checkout" placeholder="inserisci l'ora del checkout">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-25">
+			<label for="employee">Employee</label>
+		</div>
+		<div class="col-75">
+			<input type="text" id="employee" name="employee" placeholder="inserisci il nome del dipendente">
+		</div>
+	</div>
+	<button type="submit">Insert</button>
 </form>
 </div>
 <br>

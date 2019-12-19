@@ -1,17 +1,16 @@
-<%@page import="it.contrader.model.Tool"%>
+<%@page import="it.contrader.model.Calendar"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="java.util.List"
-    import="it.contrader.dto.ToolDTO"%>
+    import="it.contrader.dto.CalendarDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>Tool Manager</title>
+<title>Calendar Manager</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
-
 <div class="navbar">
   <a  href="homeuser.jsp">Home</a>
   <a class="active" href="UserServlet?mode=userlist&usermode=true">Users</a>
@@ -24,24 +23,29 @@
 </div>
 <div class="main">
 <%
-List<ToolDTO> list = (List<ToolDTO>) request.getAttribute("list");
+List<CalendarDTO> list = (List<CalendarDTO>) request.getAttribute("list");
 %>
 <br>
 	<table>
-		<tr>
-			<th>ToolName</th>
-			<th>RawMaterial</th>
-		</tr>
-		<%
-			for(ToolDTO t : list){
-		%>
-		<tr>
-			<td><%=t.getToolname()%></td>
-			<td><%=t.getRawmaterial() %></td>
-		</tr>
-		<%
-			}
-		%>
+	<tr>
+		<th>Date</th>
+		<th>Checkin</th>
+		<th>Checkout</th>
+		<th>Employee</th>
+	</tr>
+	<%
+		for(CalendarDTO c : list){
+	%>
+	<tr>
+		<td><%=c.getDate().toString()%></td>
+		<td><%=c.getCheckin() %></td>
+		<td><%=c.getCheckout() %></td>
+		<td><%=c.getEmployee() %></td>
+		
+	</tr>
+	<%
+		}
+	%>
 	</table>
 </div>
 <br>
