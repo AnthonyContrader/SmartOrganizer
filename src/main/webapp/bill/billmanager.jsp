@@ -32,7 +32,6 @@
 
 	<table>
 		<tr>
-		    <th>Idbill</th>
 			<th>Numberbill</th>
 			<th>Date</th>
 			<th>Customer</th>
@@ -45,9 +44,7 @@
 			for (BillDTO b : list) {
 		%>
 		<tr>
-			<td><a href=BillServlet?mode=read&idbill=<%=b.getIdbill()%>></a>
-			<%=b.getIdbill()%></td>
-			<td><%=b.getNumberbill()%></td>
+			<td><a href=BillServlet?mode=read&idbill=<%=b.getIdbill()%>><%=b.getNumberbill()%></a></td>
 			<td><%=b.getDate()%></td>
 			<td><%=b.getCustomer()%></td>
 			<td><%=b.getPrice()%></td>
