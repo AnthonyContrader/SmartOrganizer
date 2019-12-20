@@ -38,7 +38,7 @@
 			<label for="date">date</label>
 		</div>
 		<div class="col-75">
-			<input type="text" id="date" name="date" value=<%=b.getDate() %>> 
+			<input type="date" id="date" name="date" value=<%=b.getDate() %>> 
 		</div>
 	</div>
 		<div class="row">

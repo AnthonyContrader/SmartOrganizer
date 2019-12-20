@@ -76,7 +76,7 @@
      <label for="date">date</label>
     </div>
     <div class="col-75">
-      <input type="text" id="date" name="date" placeholder="inserisci la data della fattura"> 
+      <input type="date" id="date" name="date" placeholder="inserisci la data della fattura"> 
     </div>
   </div>
   <div class="row">

@@ -4,7 +4,6 @@ package it.contrader.servlets;
 import java.util.List;
 import java.io.IOException;
 import java.sql.Date;
-import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -15,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import it.contrader.dto.BillDTO;
 import it.contrader.service.Service;
 import it.contrader.service.BillService;
-import it.contrader.model.*;
 
 public class BillServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -36,9 +34,6 @@ public class BillServlet extends HttpServlet {
 		BillDTO dto;
 		int idbill;
 		boolean ans;
-
-		Date Date;
-		java.sql.Date date = null;
 		switch (mode.toUpperCase()) {
 
 		case "BILLLIST":
@@ -73,7 +68,7 @@ public class BillServlet extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			Date = new Date(time.getTime());
+			Date date = new Date(time.getTime());
 			int numberbill = Integer.parseInt(request.getParameter("numberbill"));
 			String customer = request.getParameter("customer").toString();
 			float price = Float.parseFloat(request.getParameter("price").toString());
@@ -94,7 +89,7 @@ public class BillServlet extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			Date = new Date(time.getTime());
+			date = new Date(time.getTime());
 			numberbill = Integer.parseInt(request.getParameter("numberbill"));
 			customer = request.getParameter("customer").toString();
 			price = Float.parseFloat(request.getParameter("price").toString());
