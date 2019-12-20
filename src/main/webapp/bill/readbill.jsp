@@ -35,9 +35,7 @@
 			<th>Price</th>
 			<th>Location</th>
 		</tr>
-		<%
-			for (BillDTO b : list) {
-		%>
+		
 		<tr>
 		    <td><%=b.getIdbill()%></td>
 			<td><%=b.getNumberbill()%></td>
@@ -46,6 +44,7 @@
 			<td><%=b.getPrice()%></td>
 			<td><%=b.getLocation()%></td>
 	</tr>	
+	
 </table>
 
 <br>

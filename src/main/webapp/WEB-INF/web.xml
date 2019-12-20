@@ -82,4 +82,14 @@
     <servlet-name>BillServlet</servlet-name>
     <url-pattern>/BillServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CalendarServlet</display-name>
+    <servlet-name>CalendarServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.CalendarServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CalendarServlet</servlet-name>
+    <url-pattern>/CalendarServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

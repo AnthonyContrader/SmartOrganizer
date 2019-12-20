@@ -76,6 +76,7 @@ public class CalendarServlet extends HttpServlet {
 			break;
 		
 		case "UPDATE":
+			
 			sdf = new SimpleDateFormat("yyyy-MM-dd");
 			time = null;
 			try {
