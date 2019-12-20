@@ -29,7 +29,7 @@
 			<label for="date">Date</label>
 		</div>
 		<div class="col-75">
-			<input type="date" id="date" name="date">
+			<input type="date" id="date" name="date" value=<%=c.getDate() %>>
 		</div>
 	</div>
 	<div class="row">
@@ -37,7 +37,7 @@
 			<label for="checkin">Checkin</label>
 		</div>
 		<div class="col-75">
-			<input type="text" id="checkin" name="checkin" placeholder="inserisci l'ora del checkin">
+			<input type="text" id="checkin" name="checkin" value=<%=c.getCheckin() %>>
 		</div>
 	</div>
 	<div class="row">
@@ -45,7 +45,7 @@
 			<label for="checkout">Checkout</label>
 		</div>
 		<div class="col-75">
-			<input type="text" id="checkout" name="checkout" placeholder="inserisci l'ora del checkout">
+			<input type="text" id="checkout" name="checkout" value=<%=c.getCheckout() %>>
 		</div>
 	</div>
 	<div class="row">
@@ -53,7 +53,7 @@
 			<label for="employee">Employee</label>
 		</div>
 		<div class="col-75">
-			<input type="text" id="employee" name="employee" placeholder="inserisci il nome del dipendente">
+			<input type="text" id="employee" name="employee" value=<%=c.getEmployee()%>>
 		</div>
 	</div>
 	<button type="submit">Insert</button>
