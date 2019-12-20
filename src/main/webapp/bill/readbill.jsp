@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="it.contrader.dto.UserDTO"%>
+    pageEncoding="ISO-8859-1" import="it.contrader.dto.BillDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>Read User</title>
+<title>Read Bill</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
@@ -17,25 +17,34 @@
   <a class="active" href="LocationServlet?mode=locationlist">Locations</a>
   <a class="active" href="WorkgroupServlet?mode=workgrouplist">Workgroups</a>
   <a class="active" href="CalendarServlet?mode=calendarlist">Calendar</a>
-  <a class="active" href="BillServlet?mode=billlist">Bills</a>
+  <a class="active" href="BillServlet?mode=billList">Bills</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <br>
 
 <div class="main">
-<%UserDTO u = (UserDTO) request.getAttribute("dto");%>
+<%BillDTO b = (BillDTO) request.getAttribute("dto");%>
 
 
 <table>
 	<tr> 
-		<th>Username</th>
-		<th>Password</th>
-		<th>Usertype</th>
-	</tr>
-	<tr>
-		<td><%=u.getUsername()%></td>
-		<td> <%=u.getPassword()%></td>
-		<td> <%=u.getUsertype()%></td>
+		    <th>Idbill</th>
+			<th>Numberbill</th>
+			<th>Date</th>
+			<th>Customer</th>
+			<th>Price</th>
+			<th>Location</th>
+		</tr>
+		<%
+			for (BillDTO b : list) {
+		%>
+		<tr>
+		    <td><%=b.getIdbill()%></td>
+			<td><%=b.getNumberbill()%></td>
+			<td><%=b.getDate()%></td>
+			<td><%=b.getCustomer()%></td>
+			<td><%=b.getPrice()%></td>
+			<td><%=b.getLocation()%></td>
 	</tr>	
 </table>
 

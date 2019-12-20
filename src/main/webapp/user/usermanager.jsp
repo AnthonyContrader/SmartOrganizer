@@ -19,7 +19,7 @@
   <a class="active" href="LocationServlet?mode=locationlist">Locations</a>
   <a class="active" href="WorkgroupServlet?mode=workgrouplist">Workgroups</a>
   <a class="active" href="CalendarServlet?mode=calendarlist">Calendar</a>
-  
+  <a class="active" href="BillServlet?mode=billlist">Bills</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <div class="main">

@@ -33,53 +33,53 @@
     <url-pattern>/UserServlet</url-pattern>
   </servlet-mapping>
   <servlet>
-  <description></description>
-  <display-name>ToolServlet</display-name>
-  <servlet-name>ToolServlet</servlet-name>
-  <servlet-class>it.contrader.servlets.ToolServlet</servlet-class>
+    <description></description>
+    <display-name>ToolServlet</display-name>
+    <servlet-name>ToolServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.ToolServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  <servlet-name>ToolServlet</servlet-name>
-  <url-pattern>/ToolServlet</url-pattern>
+    <servlet-name>ToolServlet</servlet-name>
+    <url-pattern>/ToolServlet</url-pattern>
   </servlet-mapping>
   <servlet>
-<description></description>
-<display-name>LocationServlet</display-name>
-<servlet-name>LocationServlet</servlet-name>
-<servlet-class>it.contrader.servlets.LocationServlet</servlet-class>
-</servlet>
-<servlet-mapping>
-<servlet-name>LocationServlet</servlet-name>
-<url-pattern>/LocationServlet</url-pattern>
- </servlet-mapping>
-   <servlet>
-<description></description>
-<display-name>EmployeesServlet</display-name>
-<servlet-name>EmployeesServlet</servlet-name>
-<servlet-class>it.contrader.servlets.EmployeesServlet</servlet-class>
-</servlet>
-<servlet-mapping>
-<servlet-name>EmployeesServlet</servlet-name>
-<url-pattern>/EmployeesServlet</url-pattern>
- </servlet-mapping>
-  <servlet>
-  <description></description>
-  <display-name>WorkgroupServlet</display-name>
-  <servlet-name>WorkgroupServlet</servlet-name>
-  <servlet-class>it.contrader.servlets.WorkgroupServlet</servlet-class>
+    <description></description>
+    <display-name>LocationServlet</display-name>
+    <servlet-name>LocationServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.LocationServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  <servlet-name>WorkgroupServlet</servlet-name>
-  <url-pattern>/WorkgroupServlet</url-pattern>
+    <servlet-name>LocationServlet</servlet-name>
+    <url-pattern>/LocationServlet</url-pattern>
   </servlet-mapping>
   <servlet>
-  <description></description>
-  <display-name>CalendarServlet</display-name>
-  <servlet-name>CalendarServlet</servlet-name>
-  <servlet-class>it.contrader.servlets.CalendarServlet</servlet-class>
+    <description></description>
+    <display-name>EmployeesServlet</display-name>
+    <servlet-name>EmployeesServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.EmployeesServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  <servlet-name>CalendarServlet</servlet-name>
-  <url-pattern>/CalendarServlet</url-pattern>
+    <servlet-name>EmployeesServlet</servlet-name>
+    <url-pattern>/EmployeesServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>WorkgroupServlet</display-name>
+    <servlet-name>WorkgroupServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.WorkgroupServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WorkgroupServlet</servlet-name>
+    <url-pattern>/WorkgroupServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BillServlet</display-name>
+    <servlet-name>BillServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.BillServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BillServlet</servlet-name>
+    <url-pattern>/BillServlet</url-pattern>
   </servlet-mapping>
 </web-app>

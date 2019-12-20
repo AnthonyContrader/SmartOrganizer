@@ -13,13 +13,14 @@
 
 
 <div class="navbar">
-  <a class="active" href="homeadmin.jsp">Home</a>
-  <a href="UserServlet?mode=userlist">Users</a>
-  <a href="EmployeesServlet?mode=employeeslist">Employees</a>
-  <a href="ToolServlet?mode=toollist">Tools</a>
-  <a href="LocationServlet?mode=locationlist">Locations</a>
-  <a href="WorkgroupServlet?mode=workgrouplist">Workgroups</a>
-  <a href="CalendarServlet?mode=calendarlist">Calendar</a>
+  <a  href="homeadmin.jsp">Home</a>
+  <a class="active" href="UserServlet?mode=userlist">Users</a>
+  <a class="active" href="EmployeesServlet?mode=employeeslist">Employees</a>
+  <a class="active" href="ToolServlet?mode=toollist">Tools</a>
+  <a class="active" href="LocationServlet?mode=locationlist">Locations</a>
+  <a class="active" href="WorkgroupServlet?mode=workgrouplist">Workgroups</a>
+  <a class="active" href="CalendarServlet?mode=calendarlist">Calendar</a>
+  <a class="active" href="BillServlet?mode=billlist">Bills</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 

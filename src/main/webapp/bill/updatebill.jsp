@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="it.contrader.dto.EmployeesDTO"%>
+    pageEncoding="ISO-8859-1" import="it.contrader.dto.BillDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>Edit Employees</title>
+<title>Edit Bill</title>
 </head>
 <body>
 <%@include file="../css/header.jsp" %>
@@ -18,59 +18,51 @@
   <a class="active" href="LocationServlet?mode=locationlist">Locations</a>
   <a class="active" href="WorkgroupServlet?mode=workgrouplist">Workgroups</a>
   <a class="active" href="CalendarServlet?mode=calendarlist">Calendar</a>
-  <a class="active" href="BillServlet?mode=billlist">Bills</a>
+  <a class="active" href="BillServlet?mode=billList">Bills</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <br>
 <div class="main">
-<%EmployeesDTO e = (EmployeesDTO) request.getAttribute("dto"); %>
-<form id ="floatleft" action="EmployeesServlet?mode=update&idemployee=<%=e.getIdemployee() %>" method="post">
+<%BillDTO b = (BillDTO) request.getAttribute("dto"); %>
+<form id ="floatleft" action="BillServlet?mode=update&idbill=<%=b.getIdbill() %>" method="post">
 	<div class="row">
 		<div class="col-25">
-			<label for="name">name</label>
+			<label for="numberbill">numberbill</label>
 		</div>
 		<div class="col-75">
-			<input type="text" id="name" name="name" value=<%=e.getName() %>> 
+			<input type="text" id="numberbill" name="numberbill" value=<%=b.getNumberbill() %>> 
 		</div>
 	</div>
 		<div class="row">
 		<div class="col-25">
-			<label for="surname">surname</label>
+			<label for="date">date</label>
 		</div>
 		<div class="col-75">
-			<input type="text" id="surname" name="surname" value=<%=e.getSurname() %>> 
+			<input type="text" id="date" name="date" value=<%=b.getDate() %>> 
 		</div>
 	</div>
 		<div class="row">
 		<div class="col-25">
-			<label for="fiscalcode">fiscalcode</label>
+			<label for="customer">customer</label>
 		</div>
 		<div class="col-75">
-			<input type="text" id="fiscalcode" name="fiscalcode" value=<%=e.getFiscalcode() %>> 
+			<input type="text" id="customer" name="customer" value=<%=b.getCustomer() %>> 
 		</div>
 	</div>
 		<div class="row">
 		<div class="col-25">
-			<label for="worksector">worksector</label>
+			<label for="price">price</label>
 		</div>
 		<div class="col-75">
-			<input type="text" id="worksector" name="worksector" value=<%=e.getWorksector() %>> 
+			<input type="text" id="price" name="price" value=<%=b.getPrice() %>> 
 		</div>
 	</div>
 		<div class="row">
 		<div class="col-25">
-			<label for="position">position</label>
+			<label for="location">location</label>
 		</div>
 		<div class="col-75">
-			<input type="text" id="position" name="position" value=<%=e.getPosition() %>> 
-		</div>
-	</div>
-		<div class="row">
-		<div class="col-25">
-			<label for="numberofregistration">numberofregistration</label>
-		</div>
-		<div class="col-75">
-			<input type="text" id="numberofregistration" name="numberofregistration" value=<%=e.getNumberofregistration() %>> 
+			<input type="text" id="location" name="location" value=<%=b.getLocation() %>> 
 		</div>
 	</div>
 		<button type="submit">Edit</button>
