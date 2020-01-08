@@ -19,6 +19,8 @@
   <a class="active" href="/user/getall">Users</a>
   <a href=/employees/getall>Employees</a>
   <a href=/tool/getall>Tools</a>
+  <a href=/location/getall>Location</a>
+		<a href=/workgroup/getall>Workgroup</a>
   <a href="/user/logout" id="logout">Logout</a>
 </div>
 <br>
