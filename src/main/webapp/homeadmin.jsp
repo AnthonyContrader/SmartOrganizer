@@ -21,12 +21,14 @@
 
 
 	<div class="navbar">
-		<a class="active" href="/homeadmin.jsp">Home</a> <a href=/user/getall>Users</a>
+		<a class="active" href="/homeadmin.jsp">Home</a> 
+		<a href=/user/getall>Users</a>
 		<a href=/employees/getall>Employees</a>
-		<a href=/tool/getall>Tools</a>
-		<a href=/location/getall>Location</a>
-		<a href=/workgroup/getall>Workgroup</a>
-		<a href=/calendar/getall>Calendar</a>
+        <a href=/tool/getall>Tools</a>
+        <a href=/location/getall>Locations</a>
+		<a href=/workgroup/getall>Workgroups</a>
+        <a href=/calendar/getall>Calendar</a>
+		<a href=/bill/getall>Bills</a>
 		<a href="/user/logout" id="logout">Logout</a>
 	</div>
 
