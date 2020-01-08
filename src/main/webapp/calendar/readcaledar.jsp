@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="it.contrader.dto.ToolDTO"%>
+	pageEncoding="ISO-8859-1" import="it.contrader.dto.CalendarDTO"%>
 <html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Tool Read">
+<meta name="description" content="Calendar Read">
 <meta name="author" content="Angelo Tozza">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
 <title>Read Tool</title>
@@ -14,27 +14,31 @@
 	<%@ include file="../css/header.jsp"%>
 	<div class="navbar">
 		<a href="/homeadmin.jsp">Home</a> <a href="/user/getall">Users</a>
-		<a class="active" href="/tool/getall">Tools</a>
+		<a href="/tool/getall">Tools</a>
 		<a href="/user/logout" id="logout">Logout</a>
 	</div>
-	<br>
+<br>
 
 	<div class="main">
 		<%
-			ToolDTO u = (ToolDTO) request.getSession().getAttribute("dto");
+			CalendarDTO u = (CalendarDTO) request.getSession().getAttribute("dto");
 		%>
 
 
 		<table>
 			<tr>
-				<th>IDTool</th>
-				<th>Toolname</th>
-				<th>Rawmaterial</th>
+				<th>IDCalendar</th>
+				<th>Date</th>
+				<th>Checkin</th>
+				<th>Checkout</th>
+				<th>Employee</th>
 			</tr>
 			<tr>
-				<td><%=u.getIdtool()%></td>
-				<td><%=u.getToolname()%></td>
-				<td><%=u.getRawmaterial()%></td>
+				<td><%=u.getIdcalendar()%></td>
+				<td><%=u.getDate()%></td>
+				<td><%=u.getCheckin()%></td>
+				<td><%=u.getCheckout()%></td>
+				<td><%=u.getEmployee()%></td>
 			</tr>
 		</table>
 

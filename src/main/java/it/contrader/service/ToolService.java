@@ -9,6 +9,7 @@ import it.contrader.dto.ToolDTO;
 import it.contrader.model.Tool;
 
 @Service
+@SuppressWarnings(value = { "unused" })
 public class ToolService extends AbstractService<Tool, ToolDTO> {
 
 	@Autowired

@@ -1,5 +1,7 @@
 package it.contrader.model;
 
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,14 +15,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-
-public class Tool {
+public class Calendar {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idtool;
+	private Long idcalendar;
 	
+	private Date date;
+	private String checkin;
+	private String checkout;
+	private String employee;
 	
-	private String toolname;
-	private String rawmaterial;
 }
-

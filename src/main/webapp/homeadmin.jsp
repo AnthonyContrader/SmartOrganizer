@@ -26,6 +26,7 @@
 		<a href=/tool/getall>Tools</a>
 		<a href=/location/getall>Location</a>
 		<a href=/workgroup/getall>Workgroup</a>
+		<a href=/calendar/getall>Calendar</a>
 		<a href="/user/logout" id="logout">Logout</a>
 	</div>
 
