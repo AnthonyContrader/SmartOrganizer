@@ -11,11 +11,12 @@
 
 </head>
 <body>
-	<%@ include file="./css/header.jsp"%>
+	<%@ include file="../css/header.jsp"%>
 
 	<div class="navbar">
 		<a href="/homeadmin.jsp">Home</a> <a class="active"
 			href="/user/getall">Users</a> 
+			<a href=/employees/getall>Employees</a>
 			<a href=/tool/getall>Tools</a>
 			<a href="/user/logout" id="logout">Logout</a>
 	</div>
@@ -91,6 +92,6 @@
 
 	</div>
 	<br>
-	<%@ include file="./css/footer.jsp"%>
+	<%@ include file="../css/footer.jsp"%>
 </body>
 </html>
