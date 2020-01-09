@@ -42,7 +42,7 @@ public class EmployeesController {
 
 	@PostMapping("/update")
 	public String update(HttpServletRequest request, @RequestParam("idemployee") Long idemployee, @RequestParam("name") String name,
-			@RequestParam("surname") String surname, @RequestParam("fiscalcode") String fiscalcode, @RequestParam("worksector") String worksector, @RequestParam("position") String position, @RequestParam("numberofregistration") String numberofregistration) {
+			@RequestParam("surname") String surname, @RequestParam("fiscalcode") String fiscalcode, @RequestParam("worksector") String worksector, @RequestParam("position") String position, @RequestParam("numberofregistration") String numberofregistration, @RequestParam("workgroup") String workgroup) {
         EmployeesDTO dto = new EmployeesDTO();
 		dto.setIdemployee(idemployee);
 		dto.setName(name);
@@ -51,6 +51,7 @@ public class EmployeesController {
 		dto.setWorksector(worksector);
 		dto.setPosition(position);
 		dto.setNumberofregistration(numberofregistration);
+		dto.setWorkgroup(workgroup);
 		service.update(dto);
 		setAll(request);
 		return "employees/employeess";
@@ -59,7 +60,7 @@ public class EmployeesController {
 
 	@PostMapping("/insert")
 	public String insert(HttpServletRequest request, @RequestParam("name") String name,
-			@RequestParam("surname") String surname, @RequestParam("fiscalcode") String fiscalcode, @RequestParam("worksector") String worksector, @RequestParam("position") String position, @RequestParam("numberofregistration") String numberofregistration) {
+			@RequestParam("surname") String surname, @RequestParam("fiscalcode") String fiscalcode, @RequestParam("worksector") String worksector, @RequestParam("position") String position, @RequestParam("numberofregistration") String numberofregistration, @RequestParam("workgroup") String workgroup) {
 		EmployeesDTO dto = new EmployeesDTO();
 		dto.setName(name);
 		dto.setSurname(surname);
@@ -67,6 +68,7 @@ public class EmployeesController {
 		dto.setWorksector(worksector);
 		dto.setPosition(position);
 		dto.setNumberofregistration(numberofregistration);
+		dto.setWorkgroup(workgroup);
 		service.insert(dto);
 		setAll(request);
 		return "employees/employeess";

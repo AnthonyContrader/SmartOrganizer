@@ -13,7 +13,7 @@ public class EmployeesConverter extends AbstractConverter<Employees, EmployeesDT
 	public Employees toEntity(EmployeesDTO employeesDTO) {
 		Employees employees = null;
 		if (employeesDTO != null) {
-			employees = new Employees(employeesDTO.getIdemployee(), employeesDTO.getName(), employeesDTO.getSurname(), employeesDTO.getFiscalcode(), employeesDTO.getWorksector(), employeesDTO.getPosition(), employeesDTO.getNumberofregistration());
+			employees = new Employees(employeesDTO.getIdemployee(), employeesDTO.getName(), employeesDTO.getSurname(), employeesDTO.getFiscalcode(), employeesDTO.getWorksector(), employeesDTO.getPosition(), employeesDTO.getNumberofregistration(), employeesDTO.getWorkgroup());
 		}
 		return employees;
 	}
@@ -22,7 +22,7 @@ public class EmployeesConverter extends AbstractConverter<Employees, EmployeesDT
 	public EmployeesDTO toDTO(Employees employees) {
 		EmployeesDTO employeesDTO = null;
 		if (employees != null) {
-			employeesDTO = new EmployeesDTO(employees.getIdemployee(), employees.getName(), employees.getSurname(), employees.getFiscalcode(), employees.getWorksector(), employees.getPosition(), employees.getNumberofregistration());
+			employeesDTO = new EmployeesDTO(employees.getIdemployee(), employees.getName(), employees.getSurname(), employees.getFiscalcode(), employees.getWorksector(), employees.getPosition(), employees.getNumberofregistration(), employees.getWorkgroup());
 
 		}
 		return employeesDTO;

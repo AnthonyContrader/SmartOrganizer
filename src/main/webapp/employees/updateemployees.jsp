@@ -78,6 +78,14 @@
       <input type="text" id="numberofregistration" name="numberofregistration" value=<%=e.getNumberofregistration()%>>
     </div>
   </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="workgroup">workgroup</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="workgroup" name="workgroup" value=<%=e.getWorkgroup()%>>
+    </div>
+  </div>
     	<input type="hidden" name="idemployee" value =<%=e.getIdemployee() %>>
   </div>
       <button type="submit" >Edit</button>

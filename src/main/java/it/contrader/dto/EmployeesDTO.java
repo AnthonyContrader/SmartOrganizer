@@ -23,6 +23,8 @@ public class EmployeesDTO {
 	private String position;
 	
 	private String numberofregistration;
+	
+	private String workgroup;
 
 
 }

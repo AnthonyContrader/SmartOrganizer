@@ -66,7 +66,7 @@
 				</div>
 			<div class="col-75">
 					<input type="text" id="date" name="date"
-						placeholder="dd-MM-yyyy">
+						placeholder="YYYY-MM-DD">
 			</div>
 			</div>
 			<div class="row">

@@ -35,6 +35,7 @@
 				<th>Worksector</th>
 				<th>Position</th>
 				<th>Numberofregistration</th>
+				<th>Workgroup</th>
 			</tr>
 			<tr>
 				<td><%=e.getIdemployee()%></td>
@@ -44,6 +45,7 @@
 				<td><%=e.getWorksector()%></td>
 				<td><%=e.getPosition()%></td>
 				<td><%=e.getNumberofregistration()%></td>
+				<td><%=e.getWorkgroup()%></td>
 			</tr>
 		</table>
 

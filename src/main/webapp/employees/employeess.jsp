@@ -35,6 +35,7 @@
 				<th>Worksector</th>
 				<th>Position</th>
 				<th>Numberofregistration</th>
+				<th>Workgroup</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -49,6 +50,7 @@
 				<td><%=e.getWorksector()%></td>
 				<td><%=e.getPosition()%></td>
 				<td><%=e.getNumberofregistration()%></td>
+				<td><%=e.getWorkgroup()%></td>
 				<td><a href="/employees/preupdate?idemployee=<%=e.getIdemployee()%>">Edit</a></td>
 
 
@@ -115,6 +117,15 @@
 				<div class="col-75">
 					<input type="text" id="numberofregistration" name="numberofregistration"
 						placeholder="inserisci il tuo numero di matricola">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label for="workgroup">workgroup</label>
+				</div>
+				<div class="col-75">
+					<input type="text" id="workgroup" name="workgroup"
+						placeholder="inserisci il tuo gruppo di lavoro">
 				</div>
 			</div>
 			<button type="submit">Insert</button>
