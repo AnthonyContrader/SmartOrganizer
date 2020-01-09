@@ -27,7 +27,6 @@
 		<table>
 			<tr>
 				<th>Name</th>
-				<th>Members</th>
 				<th>Responsible</th>
 				<th>work</th>
 				<th></th>
@@ -38,7 +37,6 @@
 			%>
 			<tr>
 				<td><a href="/workgroup/read?idworkgroup=<%=l.getIdworkgroup()%>"> <%=l.getName()%></a></td>
-				<td><%=l.getMembers()%></td>
 				<td><%=l.getResponsible()%></td>
 				<td><%=l.getWork()%></td>
 				<td><a href="/workgroup/preupdate?idworkgroup=<%=l.getIdworkgroup()%>">Edit</a></td>
@@ -64,15 +62,7 @@
 						placeholder="inserisci il nome del gruppo di lavoro">
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-25">
-					<label for="members">Members</label>
-				</div>
-				<div class="col-75">
-					<input type="text" id="members" name="members"
-						placeholder="inserisci i membri del gruppo">
-				</div>
-			</div>
+			
 			
 				<div class="row">
 				<div class="col-25">

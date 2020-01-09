@@ -13,7 +13,7 @@ public class WorkgroupConverter extends AbstractConverter<Workgroup, WorkgroupDT
 		// TODO Auto-generated method stub
 		Workgroup workgroup = null;
 		if(workgroupDTO!= null) {
-			workgroup = new Workgroup(workgroupDTO.getIdworkgroup(),workgroupDTO.getName(),workgroupDTO.getMembers(),workgroupDTO.getResponsible(),workgroupDTO.getWork());
+			workgroup = new Workgroup(workgroupDTO.getIdworkgroup(),workgroupDTO.getName(),workgroupDTO.getResponsible(),workgroupDTO.getWork());
 		}
 		return workgroup;
 	}
@@ -23,7 +23,7 @@ public class WorkgroupConverter extends AbstractConverter<Workgroup, WorkgroupDT
 		WorkgroupDTO workgroupDTO =null;
 		if(workgroup!=null)
 		{
-			workgroupDTO = new WorkgroupDTO(workgroup.getIdworkgroup(), workgroup.getName(), workgroup.getMembers(), workgroup.getResponsible(), workgroup.getWork());
+			workgroupDTO = new WorkgroupDTO(workgroup.getIdworkgroup(), workgroup.getName(), workgroup.getResponsible(), workgroup.getWork());
 		}
 		return workgroupDTO;
 				

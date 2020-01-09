@@ -23,7 +23,6 @@ public class Workgroup {
 	
 	@Column(unique=true)
 	private String name;
-	private String members;
 	private String responsible;
 	private String work;
 }
