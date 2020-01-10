@@ -76,7 +76,7 @@ public class CalendarController {
 	
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("idcalendar") Long idcalendar) {
-		request.getSession().setAttribute("dto", service.read(idcalendar));
+		request.getSession().setAttribute("dto",service.read(idcalendar));
 		return "/calendar/readcalendar";
 	}
 	

@@ -54,7 +54,7 @@
 					<label for="employee">Employee</label>
 				</div>
 			<div class="col-75">
-					<input type="text" id="employee" name="employee" value=<%=u.getEmployee() %>>
+					<input type="text" id="employee" name="employee" value=<%=u.getEmployee().getIdemployee() %>>
 			</div>
 			<input type="hidden" name="idcalendar" value=<%=u.getIdcalendar()%>>
 			</div>
