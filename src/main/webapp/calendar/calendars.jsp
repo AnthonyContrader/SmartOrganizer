@@ -39,7 +39,7 @@
 				<td><a href="/calendar/read?idcalendar=<%=c.getIdcalendar()%>"><%=c.getDate()%></a></td>
 				<td><%=c.getCheckin() %></td>
 				<td><%=c.getCheckout() %></td>
-				<td><%=c.getEmployee() %></td>
+				<td><a href="/calendar/filter?employee=<%=c.getEmployee().getIdemployee()%>"><%=c.getEmployee().getName()+" "+c.getEmployee().getSurname()%></a></td>
 				<td><a href="/calendar/preupdate?idcalendar=<%=c.getIdcalendar() %>">Edit</a></td>
 				<td><a href="/calendar/delete?idcalendar=<%=c.getIdcalendar() %>">Delete</a></td>
 			</tr>

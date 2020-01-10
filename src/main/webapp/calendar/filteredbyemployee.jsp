@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="it.contrader.dto.CalendarDTO"%>
+	pageEncoding="ISO-8859-1" import="it.contrader.dto.CalendarDTO"
+	import="java.util.List"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -8,24 +9,25 @@
 <meta name="description" content="Calendar Read">
 <meta name="author" content="Angelo Tozza">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>Read Calendar</title>
+<title>Filtered Calendar</title>
 </head>
 <body>
 	<%@ include file="../css/header.jsp"%>
 	<div class="navbar">
-		<a href="/homeadmin.jsp">Home</a> <a href="/user/getall">Users</a>
-		<a href="/tool/getall">Tools</a>
+		<a href="/homeadmin.jsp">Home</a>
+		<a class="active" href="/calendar/getall">Calendar</a>
 		<a href="/user/logout" id="logout">Logout</a>
 	</div>
 <br>
 
 	<div class="main">
 		<%
-			CalendarDTO u = (CalendarDTO) request.getSession().getAttribute("dto");
+			List<CalendarDTO> list =(List<CalendarDTO>) request.getSession().getAttribute("filteredlist");
 		%>
 
 
 		<table>
+		<%for(CalendarDTO u : list){ %>
 			<tr>
 				<th>IDCalendar</th>
 				<th>Date</th>
@@ -38,8 +40,11 @@
 				<td><%=u.getDate()%></td>
 				<td><%=u.getCheckin()%></td>
 				<td><%=u.getCheckout()%></td>
-				<td><%=u.getEmployee()%></td>
+				<td><%=u.getEmployee().getIdemployee()+" - "+u.getEmployee().getName()+" "+u.getEmployee().getSurname()%></td>
 			</tr>
+			<%
+				}
+			%>
 		</table>
 
 		<br> <br> <br> <br> <br> <br> <br>

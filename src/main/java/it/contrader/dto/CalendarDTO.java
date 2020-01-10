@@ -15,5 +15,5 @@ public class CalendarDTO {
 	private Date date;
 	private String checkin;
 	private String checkout;
-	private String employee;
+	private EmployeesDTO employee;
 }

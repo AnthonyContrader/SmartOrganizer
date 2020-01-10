@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.dto.CalendarDTO;
+import it.contrader.dto.EmployeesDTO;
 import it.contrader.service.CalendarService;
+import it.contrader.service.EmployeesService;
 
 @Controller
 @RequestMapping("/calendar")
@@ -20,6 +22,9 @@ public class CalendarController {
 
 	@Autowired
 	private CalendarService service;
+	
+	@Autowired
+	private EmployeesService serviceEmp;
 	
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
@@ -42,13 +47,14 @@ public class CalendarController {
 	
 	@PostMapping("/update")
 	public String update(HttpServletRequest request, @RequestParam("idcalendar") Long idcalendar, @RequestParam("date") Date date, @RequestParam("checkin") String checkin,
-			@RequestParam("checkout") String checkout, @RequestParam("employee") String employee ) {
+			@RequestParam("checkout") String checkout, @RequestParam("employee") Long employee ) {
 		CalendarDTO dto = new CalendarDTO();
 		dto.setIdcalendar(idcalendar);
 		dto.setDate(date);
 		dto.setCheckin(checkin);
 		dto.setCheckout(checkout);
-		dto.setEmployee(employee);
+		EmployeesDTO emp = serviceEmp.read(employee);
+		dto.setEmployee(emp);
 		service.update(dto);
 		setAll(request);
 		return "/calendar/calendars";
@@ -56,12 +62,13 @@ public class CalendarController {
 	
 	@PostMapping("/insert")
 	public String insert(HttpServletRequest request, @RequestParam("date") Date date, @RequestParam("checkin") String checkin,
-			@RequestParam("checkout") String checkout, @RequestParam("employee") String employee ) {
+			@RequestParam("checkout") String checkout, @RequestParam("employee") Long employee ) {
 		CalendarDTO dto = new CalendarDTO();
 		dto.setDate(date);
 		dto.setCheckin(checkin);
 		dto.setCheckout(checkout);
-		dto.setEmployee(employee);
+		EmployeesDTO emp = serviceEmp.read(employee);
+		dto.setEmployee(emp);
 		service.insert(dto);
 		setAll(request);
 		return "/calendar/calendars";
@@ -71,6 +78,12 @@ public class CalendarController {
 	public String read(HttpServletRequest request, @RequestParam("idcalendar") Long idcalendar) {
 		request.getSession().setAttribute("dto", service.read(idcalendar));
 		return "/calendar/readcalendar";
+	}
+	
+	@GetMapping("/filter")
+	public String filterByEmployee(HttpServletRequest request, @RequestParam("employee") Long employee) {
+		request.getSession().setAttribute("filteredlist", service.findAllByEmployee(employee));
+		return "/calendar/filteredbyemployee";
 	}
 	
 	private void setAll(HttpServletRequest request) {
