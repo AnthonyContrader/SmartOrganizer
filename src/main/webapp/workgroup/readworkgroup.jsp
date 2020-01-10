@@ -28,14 +28,12 @@
 			<tr>
 				<th>ID</th>
 				<th>Name</th>
-				<th>Members</th>
 				<th>Responsible</th>
 				<th>Work</th>
 			</tr>
 			<tr>
 				<td><%=l.getIdworkgroup()%></td>
 				<td><%=l.getName()%></td>
-				<td><%=l.getMembers()%></td>
 				<td><%=l.getResponsible()%></td>
 				<td><%=l.getWork()%></td>
 			</tr>

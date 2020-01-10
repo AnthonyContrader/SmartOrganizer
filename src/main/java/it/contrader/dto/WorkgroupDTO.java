@@ -9,7 +9,6 @@ import lombok.*;
 public class WorkgroupDTO {
 private long idworkgroup;
 private String name;
-private String members;
 private String responsible;
 private String work;
 }

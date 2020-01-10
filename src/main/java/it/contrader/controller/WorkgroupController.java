@@ -43,11 +43,10 @@ private WorkgroupService service;
 	}
 	
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("idworkgroup") Long idworkgroup,@RequestParam("name")String name,@RequestParam("members") String members, @RequestParam("responsible") String responsible, @RequestParam("work") String work) {
+	public String update(HttpServletRequest request, @RequestParam("idworkgroup") Long idworkgroup,@RequestParam("name")String name, @RequestParam("responsible") String responsible, @RequestParam("work") String work) {
 		WorkgroupDTO dto = new WorkgroupDTO();
 		dto.setIdworkgroup(idworkgroup);
 		dto.setName(name);
-		dto.setMembers(members);
 		dto.setResponsible(responsible);
 		dto.setWork(work);
 		service.update(dto);
@@ -56,11 +55,10 @@ private WorkgroupService service;
 	}
 	
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("name") String name,@RequestParam("members") String members, @RequestParam("responsible") String responsible, @RequestParam("work") String work)
+	public String insert(HttpServletRequest request, @RequestParam("name") String name, @RequestParam("responsible") String responsible, @RequestParam("work") String work)
 	{
 		WorkgroupDTO dto= new WorkgroupDTO();
 		dto.setName(name);
-		dto.setMembers(members);
 		dto.setResponsible(responsible);
 		dto.setWork(work);
 		service.insert(dto);

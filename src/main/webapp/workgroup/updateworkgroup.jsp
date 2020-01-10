@@ -34,15 +34,7 @@
       <input type="text" id="name" name="name" value=<%=l.getName()%>>
     </div>
   </div>
-  <div class="row">
-    <div class="col-25">
-     <label for="city">Members</label>
-    </div>
-    <div class="col-75">
-      <input
-			type="text" id="members" name="members" value=<%=l.getMembers()%>> 
-    </div>
-  </div>
+  
     <div class="row">
     <div class="col-25">
      <label for="responsible">Responsible</label>
