@@ -1,4 +1,4 @@
-<%@ page import="it.contrader.dto.EmployeesDTO" import="java.util.*"%>
+<%@ page import="it.contrader.dto.EmployeesDTO" import="java.util.*" import="it.contrader.dto.WorkgroupDTO"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -50,7 +50,7 @@
 				<td><%=e.getWorksector()%></td>
 				<td><%=e.getPosition()%></td>
 				<td><%=e.getNumberofregistration()%></td>
-				<td><%=e.getWorkgroup()%></td>
+				<td><%=e.getWorkgroupDTO().getName()%></td> 
 				<td><a href="/employees/preupdate?idemployee=<%=e.getIdemployee()%>">Edit</a></td>
 
 
@@ -124,14 +124,23 @@
 					<label for="workgroup">workgroup</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="workgroup" name="workgroup"
-						placeholder="inserisci il tuo gruppo di lavoro">
+				
+					 <select id="type" name="idworkgroup"  >
+						 <%List<WorkgroupDTO> listWorkgroup = (List<WorkgroupDTO>) request.getSession().getAttribute("leggiw");%>
+						<% for (WorkgroupDTO w : listWorkgroup) {%>
+						<option value="<%=w.getIdworkgroup() %>"><%=w.getName().toString() %></option>
+						<%} %>  
+					</select> 
 				</div>
 			</div>
 			<button type="submit">Insert</button>
+		
 		</form>
+		
+		
 
 	</div>
+
 	<br>
 	<%@ include file="../css/footer.jsp"%>
 </body>

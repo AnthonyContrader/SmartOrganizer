@@ -2,6 +2,7 @@ package it.contrader.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.hibernate.cfg.Environment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,8 +10,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import ch.qos.logback.core.pattern.Converter;
+import it.contrader.converter.EmployeesConverter;
+import it.contrader.converter.WorkgroupConverter;
 import it.contrader.dto.EmployeesDTO;
+import it.contrader.dto.WorkgroupDTO;
+
 import it.contrader.service.EmployeesService;
+import it.contrader.service.WorkgroupService;
 
 @Controller
 @RequestMapping("/employees")
@@ -18,6 +25,9 @@ public class EmployeesController {
 
 	@Autowired
 	private EmployeesService service;
+	
+	@Autowired
+	private WorkgroupService servicew;
 
 	
 
@@ -42,16 +52,19 @@ public class EmployeesController {
 
 	@PostMapping("/update")
 	public String update(HttpServletRequest request, @RequestParam("idemployee") Long idemployee, @RequestParam("name") String name,
-			@RequestParam("surname") String surname, @RequestParam("fiscalcode") String fiscalcode, @RequestParam("worksector") String worksector, @RequestParam("position") String position, @RequestParam("numberofregistration") String numberofregistration, @RequestParam("workgroup") String workgroup) {
-        EmployeesDTO dto = new EmployeesDTO();
-		dto.setIdemployee(idemployee);
+			@RequestParam("surname") String surname, @RequestParam("fiscalcode") String fiscalcode, @RequestParam("worksector") String worksector, @RequestParam("position") String position, @RequestParam("numberofregistration") String numberofregistration, @RequestParam("idworkgroup") Long idworkgroup ) {
+        
+		EmployeesDTO dto = new EmployeesDTO();
+		WorkgroupDTO wor = servicew.read(idworkgroup);
+        
+		dto.setIdemployee(idemployee); 
 		dto.setName(name);
 		dto.setSurname(surname);
 		dto.setFiscalcode(fiscalcode);
 		dto.setWorksector(worksector);
 		dto.setPosition(position);
 		dto.setNumberofregistration(numberofregistration);
-		dto.setWorkgroup(workgroup);
+ 		dto.setWorkgroupDTO(wor);
 		service.update(dto);
 		setAll(request);
 		return "employees/employeess";
@@ -60,15 +73,16 @@ public class EmployeesController {
 
 	@PostMapping("/insert")
 	public String insert(HttpServletRequest request, @RequestParam("name") String name,
-			@RequestParam("surname") String surname, @RequestParam("fiscalcode") String fiscalcode, @RequestParam("worksector") String worksector, @RequestParam("position") String position, @RequestParam("numberofregistration") String numberofregistration, @RequestParam("workgroup") String workgroup) {
+			@RequestParam("surname") String surname, @RequestParam("fiscalcode") String fiscalcode, @RequestParam("worksector") String worksector, @RequestParam("position") String position, @RequestParam("numberofregistration") String numberofregistration, @RequestParam("idworkgroup") Long workgroup) {
 		EmployeesDTO dto = new EmployeesDTO();
+		WorkgroupDTO wor = servicew.read(workgroup);
 		dto.setName(name);
 		dto.setSurname(surname);
 		dto.setFiscalcode(fiscalcode);
 		dto.setWorksector(worksector);
 		dto.setPosition(position);
 		dto.setNumberofregistration(numberofregistration);
-		dto.setWorkgroup(workgroup);
+		dto.setWorkgroupDTO(wor);
 		service.insert(dto);
 		setAll(request);
 		return "employees/employeess";
@@ -80,7 +94,17 @@ public class EmployeesController {
 		return "employees/reademployees";
 	}
 
+	@GetMapping("/leggiw")
+	public String readworkgroup(HttpServletRequest request, @RequestParam("idworkgroup") Long idworkgroup) {
+		request.getSession().setAttribute("leggiw", servicew.getAll());
+		return "employees/employees";
+	}
+	
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", service.getAll());
+		request.getSession().setAttribute("leggiw", servicew.getAll());
+		
+		
+	
 	}
 }

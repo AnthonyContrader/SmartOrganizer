@@ -1,5 +1,6 @@
 package it.contrader.dto;
 
+import it.contrader.model.Workgroup;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,7 +25,9 @@ public class EmployeesDTO {
 	
 	private String numberofregistration;
 	
-	private String workgroup;
+	
+	private WorkgroupDTO workgroupDTO;
+	// private String workgroup;
 
 
 }

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="it.contrader.dto.EmployeesDTO"%>
+    pageEncoding="ISO-8859-1" import="it.contrader.dto.EmployeesDTO" import="it.contrader.dto.WorkgroupDTO" import="java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -83,7 +83,12 @@
       <label for="workgroup">workgroup</label>
     </div>
     <div class="col-75">
-      <input type="text" id="workgroup" name="workgroup" value=<%=e.getWorkgroup()%>>
+       <select id="type" name="idworkgroup"  >
+						 <%List<WorkgroupDTO> listWorkgroup = (List<WorkgroupDTO>) request.getSession().getAttribute("leggiw");%>
+						<% for (WorkgroupDTO w : listWorkgroup) {%>
+						<option value="<%=w.getIdworkgroup() %>"><%=w.getName().toString() %></option>
+						<%} %>  
+					</select> 
     </div>
   </div>
     	<input type="hidden" name="idemployee" value =<%=e.getIdemployee() %>>

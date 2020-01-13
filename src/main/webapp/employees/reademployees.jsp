@@ -45,7 +45,7 @@
 				<td><%=e.getWorksector()%></td>
 				<td><%=e.getPosition()%></td>
 				<td><%=e.getNumberofregistration()%></td>
-				<td><%=e.getWorkgroup()%></td>
+				<td><%=e.getWorkgroupDTO().getName()%></td>
 			</tr>
 		</table>
 
