@@ -1,0 +1,101 @@
+<div class="container-fluid">
+    <div class="row mt-5">
+      <div class="col-md-50">
+  
+      </div>
+      <div class="col-md-10">
+        <table>
+          <tr>
+            <th>
+              Name
+            </th>
+            <th>
+              Surname
+            </th>
+            <th>
+              Fiscalcode
+            </th>
+            <th>
+              Position
+            </th>
+            <th>
+              Worksector
+            </th>
+            <th>
+              Numberofregistration
+            </th>
+            <th>
+              Workgroup
+            </th>
+            <th>
+              Edit
+            </th>
+            <th>
+              Employees
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <input placeholder="Name" [(ngModel)]="employeetoinsert.name">
+            </td>
+            <td>
+              <input placeholder="Surname" [(ngModel)]="employeetoinsert.surname">
+            </td>
+            <td>
+              <input placeholder="Fiscalcode" [(ngModel)]="employeetoinsert.fiscalcode">
+            </td>
+            <td>
+              <input placeholder="Position" [(ngModel)]="employeetoinsert.position">
+            </td>
+            <td>
+              <input placeholder="Worksector" [(ngModel)]="employeetoinsert.worksector">
+            </td>
+            <td>
+              <input placeholder="Numberofregistration" [(ngModel)]="employeetoinsert.numberofregistration">
+            </td>
+            <td>
+              <input placeholder="Workgroup" [(ngModel)]="employeetoinsert.workgroup">
+            </td>
+            <td>
+              <button (click)="insert(employeetoinsert)">Insert</button>
+            </td>
+            <td>
+              <button (click)="clear()">Clear</button>
+            </td>
+            </tr>
+            <tr *ngFor="let employee of employees">
+            <td>
+              <input [(ngModel)]="employee.name">
+            </td>
+            <td>
+              <input [(ngModel)]="employee.surname">
+            </td>
+            <td>
+              <input [(ngModel)]="employee.fiscalcode">
+            </td>
+            <td>
+              <input [(ngModel)]="employee.worksector">
+            </td>
+            <td>
+              <input [(ngModel)]="employee.position">
+            </td>
+            <td>
+              <input [(ngModel)]="employee.numberofregistration">
+            </td>
+            <td>
+              <input [(ngModel)]="employee.workgroup">
+            </td>
+            <td>
+              <button (click)="update(employee)">Save</button>
+            </td>
+            <td>
+              <button (click)="delete(employee)">Delete</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-10">
+  
+      </div>
+    </div>
+  </div>
