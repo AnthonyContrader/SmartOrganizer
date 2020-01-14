@@ -30,28 +30,36 @@ public abstract class AbstractController <DTO>{
 	
 	@GetMapping("/getall")
 	public Iterable<DTO> getAll(){
-		return service.getAll();		
+		return getService().getAll();		
 	}
 	
 	@DeleteMapping("/delete")
 	public void delete(@RequestParam("id") long id) {
-		service.delete(id);
+		getService().delete(id);
 	}
 	
 	@PutMapping("/update")
 	public DTO update(@RequestBody DTO dto){
-		service.update(dto);
+		getService().update(dto);
 		return dto;
 	}
 	
 	@PostMapping("/insert")
 	public DTO insert (@RequestBody DTO dto) {
-		service.insert(dto);
+		getService().insert(dto);
 		return dto;
 	}
 	
 	@GetMapping("/read")
 	public DTO read(long id) {
-		return service.read(id);
+		return getService().read(id);
+	}
+
+	public ServiceDTO<DTO> getService() {
+		return service;
+	}
+
+	public void setService(ServiceDTO<DTO> service) {
+		this.service = service;
 	}
 }
