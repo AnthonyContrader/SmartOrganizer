@@ -14,6 +14,7 @@ export class AdminMenuComponent implements OnInit {
   isEmployeeCollapsed = false;
   isToolCollapsed = false;
   isLocationCollapsed = false;
+  isBillCollapsed = false;
 
   constructor(private router: Router) {
   }
@@ -53,5 +54,10 @@ export class AdminMenuComponent implements OnInit {
     if (this.isLocationCollapsed === false) {
       this.isLocationCollapsed = true;
     } else { this.isLocationCollapsed = false; }
+  }
+  billscollapse() {
+    if (this.isBillCollapsed === false) {
+      this.isBillCollapsed = true;
+    } else { this.isBillCollapsed = false; }
   }
 }

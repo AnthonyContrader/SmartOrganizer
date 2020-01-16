@@ -7,6 +7,7 @@ import { UsersComponent } from './users/users.component';
 import { EmployeesComponent } from '../employees/employees.component';
 import { ToolsComponent } from '../tools/tools.component';
 import {LocationsComponent} from'../location/locations.component';
+import { BillsComponent } from '../bills/bills.component';
 
 /**
  * Modulo dell'admin, qui vengono dichiarate le component che utilizza 
@@ -17,7 +18,7 @@ import {LocationsComponent} from'../location/locations.component';
  * @see AdminRoutingModule
  */
 @NgModule({
-  declarations: [AdminDashboardComponent, UsersComponent, EmployeesComponent, ToolsComponent, LocationsComponent],
+  declarations: [AdminDashboardComponent, UsersComponent, EmployeesComponent, ToolsComponent, LocationsComponent, BillsComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
