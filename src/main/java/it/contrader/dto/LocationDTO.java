@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 public class LocationDTO {
 	
-	private long id;
+	private Long id;
 	
 	private String address;
 	private String city;

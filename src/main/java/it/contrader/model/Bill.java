@@ -22,17 +22,14 @@ public class Bill {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idbill;
-
-	@Column(unique = true)
+	private Long id;
+	
+	
 	private Long numberbill;
-	
-	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private Date date;
-	
 	private String customer;
-
-	private Float price;
+    private Float price;
 	
-	private String location;
+	@OneToOne
+	private Location location;
 	}
