@@ -1,0 +1,83 @@
+<div class="container-fluid">
+    <div class="row mt-5">
+      <div class="col-md-50">
+  
+      </div>
+      <div class="col-md-10">
+        <table>
+          <tr>
+            <th>
+              Customer
+            </th>
+            <th>
+              Date
+            </th>
+            <th>
+              Location
+            </th>
+            <th>
+              Numberbill
+            </th>
+            <th>
+              Price
+            </th>
+            <th>
+              Edit
+            </th>
+            <th>
+              Bills
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <input placeholder="Customer" [(ngModel)]="billtoinsert.customer">
+            </td>
+            <td>
+              <input placeholder="Date" [(ngModel)]="billtoinsert.date">
+            </td>
+            <td>
+              <input placeholder="Location" [(ngModel)]="billtoinsert.location">
+            </td>
+            <td>
+              <input placeholder="Numberbill" [(ngModel)]="billtoinsert.numberbill">
+            </td>
+            <td>
+              <input placeholder="Price" [(ngModel)]="billtoinsert.price">
+            </td>
+            <td>
+              <button (click)="insert(billtoinsert)">Insert</button>
+            </td>
+            <td>
+              <button (click)="clear()">Clear</button>
+            </td>
+            </tr>
+            <tr *ngFor="let bill of bills">
+            <td>
+              <input [(ngModel)]="bill.date">
+            </td>
+            <td>
+              <input [(ngModel)]="bill.surname">
+            </td>
+            <td>
+              <input [(ngModel)]="bill.location">
+            </td>
+            <td>
+              <input [(ngModel)]="bill.numberbill">
+            </td>
+            <td>
+              <input [(ngModel)]="bill.price">
+            </td>
+            <td>
+              <button (click)="update(bill)">Save</button>
+            </td>
+            <td>
+              <button (click)="delete(bill)">Delete</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-10">
+  
+      </div>
+    </div>
+  </div>
