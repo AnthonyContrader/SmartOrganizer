@@ -9,6 +9,7 @@ import { ToolsComponent } from '../tools/tools.component';
 import {LocationsComponent} from'../location/locations.component';
 import { BillsComponent } from '../bills/bills.component';
 import { CalendarsComponent } from '../calendars/calendars.component';
+import{WorkgroupComponent} from '../workgroup/workgroup.component';
 
 /**
  * Modulo dell'admin, qui vengono dichiarate le component che utilizza 
@@ -19,7 +20,7 @@ import { CalendarsComponent } from '../calendars/calendars.component';
  * @see AdminRoutingModule
  */
 @NgModule({
-  declarations: [AdminDashboardComponent, UsersComponent, EmployeesComponent, ToolsComponent, LocationsComponent, BillsComponent, CalendarsComponent],
+  declarations: [AdminDashboardComponent, UsersComponent, EmployeesComponent, ToolsComponent, LocationsComponent, BillsComponent, CalendarsComponent,WorkgroupComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

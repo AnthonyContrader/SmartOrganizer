@@ -8,6 +8,7 @@ import { ToolsComponent } from '../tools/tools.component';
 import {LocationsComponent} from '../location/locations.component'
 import { BillsComponent } from '../bills/bills.component';
 import { CalendarsComponent } from '../calendars/calendars.component';
+import {WorkgroupComponent} from '../workgroup/workgroup.component';
 
 /**
  * Modulo di routing dell'admin. Qui ci sono i percorsi che un admin può seguire:
@@ -29,7 +30,8 @@ const routes: Routes = [
     { path: 'tools', component: ToolsComponent},
     {path: 'locations', component:LocationsComponent},
     { path: 'bills', component:BillsComponent},
-    { path: 'calendars', component: CalendarsComponent}
+    { path: 'calendars', component: CalendarsComponent},
+    {path:'workgroups',component: WorkgroupComponent}
   ]}
 ];
 
