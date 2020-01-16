@@ -15,6 +15,7 @@ export class AdminMenuComponent implements OnInit {
   isToolCollapsed = false;
   isLocationCollapsed = false;
   isBillCollapsed = false;
+  isCalendarCollapsed = false;
 
   constructor(private router: Router) {
   }
@@ -59,5 +60,11 @@ export class AdminMenuComponent implements OnInit {
     if (this.isBillCollapsed === false) {
       this.isBillCollapsed = true;
     } else { this.isBillCollapsed = false; }
+  }
+
+  calendarscollapse(){
+    if(this.isCalendarCollapsed === false) {
+      this.isCalendarCollapsed = true;
+    } else { this.isCalendarCollapsed = false; }
   }
 }

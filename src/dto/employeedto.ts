@@ -1,7 +1,7 @@
 
 export class EmployeeDTO {
 
-   idemployee: number;
+   id: number;
 
    name: string;
 

@@ -24,7 +24,7 @@ export class EmployeesComponent implements OnInit {
   }
 
   delete(employee: EmployeeDTO) {
-    this.service.delete(employee.idemployee).subscribe(() => this.getEmployees());
+    this.service.delete(employee.id).subscribe(() => this.getEmployees());
   }
 
   update(employee: EmployeeDTO) {
