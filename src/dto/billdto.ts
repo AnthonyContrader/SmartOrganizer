@@ -1,13 +1,14 @@
+import { LocationDTO } from './locationdto';
 
 export class BillDTO {
 
-    idbill: number;
+    id: number;
  
     customer: string;
  
     date: Date;
  
-    location: string;
+    location: LocationDTO = new LocationDTO();
  
     position: string;
  

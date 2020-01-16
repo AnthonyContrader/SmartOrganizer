@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BillDTO } from 'src/dto/billdto';
 import { BillService } from 'src/service/bill.service';
+import { LocationDTO } from 'src/dto/locationdto';
+import { LocationService } from 'src/service/location.service';
 
 @Component({
   selector: 'app-bills',
@@ -11,11 +13,13 @@ export class BillsComponent implements OnInit {
 
   bills: BillDTO[];
   billtoinsert: BillDTO = new BillDTO();
+  locations: LocationDTO[];
 
-  constructor(private service: BillService) { }
+  constructor(private service: BillService, private locser: LocationService) { }
 
   ngOnInit() {
     this.getBills();
+    this.locser.getAll().subscribe(locations => this.locations = locations);
   
   }
 
@@ -24,7 +28,7 @@ export class BillsComponent implements OnInit {
   }
 
   delete(bill: BillDTO) {
-    this.service.delete(bill.idbill).subscribe(() => this.getBills());
+    this.service.delete(bill.id).subscribe(() => this.getBills());
   }
 
   update(bill: BillDTO) {

@@ -7,10 +7,10 @@
         <table>
           <tr>
             <th>
-              Customer
+              Date
             </th>
             <th>
-              Date
+              Customer
             </th>
             <th>
               Location
@@ -30,13 +30,15 @@
           </tr>
           <tr>
             <td>
+              <input type="Date" placeholder="date" [(ngModel)]="billtoinsert.date">
+            </td>
+            <td>
               <input placeholder="Customer" [(ngModel)]="billtoinsert.customer">
             </td>
             <td>
-              <input placeholder="Date" [(ngModel)]="billtoinsert.date">
-            </td>
-            <td>
-              <input placeholder="Location" [(ngModel)]="billtoinsert.location">
+              <select placeholder="Location" [(ngModel)]="billtoinsert.location.id">
+              <option *ngFor="let location of locations" value="{{location.id}}">{{location.id}}</option>
+              </select>
             </td>
             <td>
               <input placeholder="Numberbill" [(ngModel)]="billtoinsert.numberbill">
@@ -53,13 +55,15 @@
             </tr>
             <tr *ngFor="let bill of bills">
             <td>
-              <input [(ngModel)]="bill.date">
+              <input type="date" [(ngModel)]="bill.date">
             </td>
             <td>
-              <input [(ngModel)]="bill.surname">
+              <input [(ngModel)]="bill.customer">
             </td>
             <td>
-              <input [(ngModel)]="bill.location">
+              <select [(ngModel)]="bill.location.id">
+              <option *ngFor="let location of locations" value="{{location.id}}">{{location.id}}</option>
+              </select>
             </td>
             <td>
               <input [(ngModel)]="bill.numberbill">
