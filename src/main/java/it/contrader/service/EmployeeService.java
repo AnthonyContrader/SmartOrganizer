@@ -1,8 +1,6 @@
 package it.contrader.service;
 
 import org.springframework.stereotype.Service;
-
-import it.contrader.dao.EmployeeRepository;
 import it.contrader.dto.EmployeeDTO;
 import it.contrader.model.Employee;
 

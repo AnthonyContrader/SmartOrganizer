@@ -5,18 +5,15 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import it.contrader.dto.EmployeeDTO;
-import it.contrader.service.EmployeeService;
+import it.contrader.dto.BillDTO;
+import it.contrader.service.BillService;
+
 
 @RestController
-@RequestMapping("/employee")
+@RequestMapping("/bill")
 @CrossOrigin(origins = "http://localhost:4200")
-public class EmployeeController extends AbstractController<EmployeeDTO>{
-	
-	@Autowired
-	private EmployeeService employeeService;
-	
+public class BillController extends AbstractController<BillDTO> {
 
-	
-	
+	@Autowired
+	private BillService billService;
 }
