@@ -1,0 +1,6 @@
+export class ToolDTO{
+
+    id: number;
+    toolname: string;
+    rawmaterial: string;
+}
