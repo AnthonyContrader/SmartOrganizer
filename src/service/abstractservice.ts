@@ -15,7 +15,7 @@ import { UserDTO } from 'src/dto/userdto';
 export abstract class AbstractService<DTO> implements Service<DTO> {
 
     type: string;
-    port: string = '8080';
+    port: string;
 
     constructor(protected http: HttpClient) {
     }
@@ -30,26 +30,44 @@ export abstract class AbstractService<DTO> implements Service<DTO> {
         }
     
       }
-
-    getAll(): Observable<DTO[]> {
-        return this.http.get<DTO[]>('http://localhost:' + this.port + '/' + this.type + '/getall');
-    }
-
-    read(id: number): Observable<DTO> {
-        return this.http.get<DTO>('http://localhost:' + this.port + '/' + this.type + '/read?id=' + id);
-    }
-
-    delete(id: number): Observable<any> {
-        return this.http.delete('http://localhost:' + this.port + '/' + this.type + '/delete?id=' + id);
-    }
-
-    insert(dto: DTO): Observable<any> {
-        return this.http.post('http://localhost:' + this.port + '/' + this.type + '/insert', dto);
-    }
-
-    update(dto: DTO): Observable<DTO> {
-        return this.http.put<DTO>('http://localhost:' + this.port + '/' + this.type + '/update', dto);
-
-    }
-
+      getAll(): Observable<DTO[]> {
+        return this.http.get<DTO[]>('http://localhost:' + this.port + '/' + 'api' + '/' + this.type , {
+          headers: {
+            Authorization : this.auth()
+          }
+        });
+      }
+    
+      read(id: number): Observable<DTO> {
+        return this.http.get<DTO>('http://localhost:' + this.port + '/' + 'api' + '/'  + this.type + id , {
+          headers: {
+            Authorization : this.auth()
+          }
+        });
+      }
+    
+      delete(id: number): Observable<DTO> {
+        return this.http.delete<DTO>('http://localhost:' + this.port + '/' + 'api' + '/' + this.type + '/' + id , {
+          headers: {
+            Authorization : this.auth()
+          }
+        });
+      }
+    
+      insert(dto: DTO): Observable<DTO> {
+        return this.http.post<DTO>('http://localhost:' + this.port + '/' + 'api' + '/' + this.type, dto , {
+          headers: {
+            Authorization : this.auth()
+          }
+        });
+      }
+    
+      update(dto: DTO): Observable<DTO> {
+        return this.http.put<DTO>('http://localhost:' + this.port + '/' + 'api' + '/' + this.type, dto , {
+          headers: {
+            Authorization : this.auth()
+          }
+        });
+    
+      }
 }
