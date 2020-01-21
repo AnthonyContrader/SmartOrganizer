@@ -17,20 +17,20 @@
     <!--
         Added the entity Calendar.
     -->
-    <changeSet id="20200120222342-1" author="jhipster">
+    <changeSet id="20200121105144-1" author="jhipster">
         <createTable tableName="calendar">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="jhi_date" type="varchar(255)">
+            <column name="jhi_date" type="date">
                 <constraints nullable="true" />
             </column>
 
-            <column name="checkin" type="datetime">
+            <column name="checkin" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="checkout" type="datetime">
+            <column name="checkout" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="employee_id" type="bigint">
@@ -38,8 +38,6 @@
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
-        <dropDefaultValue tableName="calendar" columnName="checkin" columnDataType="datetime"/>
-        <dropDefaultValue tableName="calendar" columnName="checkout" columnDataType="datetime"/>
         
     </changeSet>
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->

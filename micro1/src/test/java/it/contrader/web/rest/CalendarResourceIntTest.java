@@ -24,14 +24,11 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
-import java.time.Instant;
-import java.time.ZonedDateTime;
-import java.time.ZoneOffset;
+import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.List;
 
 
-import static it.contrader.web.rest.TestUtil.sameInstant;
 import static it.contrader.web.rest.TestUtil.createFormattingConversionService;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
@@ -47,14 +44,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = Micro1App.class)
 public class CalendarResourceIntTest {
 
-    private static final String DEFAULT_DATE = "AAAAAAAAAA";
-    private static final String UPDATED_DATE = "BBBBBBBBBB";
+    private static final LocalDate DEFAULT_DATE = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_DATE = LocalDate.now(ZoneId.systemDefault());
 
-    private static final ZonedDateTime DEFAULT_CHECKIN = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
-    private static final ZonedDateTime UPDATED_CHECKIN = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
+    private static final String DEFAULT_CHECKIN = "AAAAAAAAAA";
+    private static final String UPDATED_CHECKIN = "BBBBBBBBBB";
 
-    private static final ZonedDateTime DEFAULT_CHECKOUT = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
-    private static final ZonedDateTime UPDATED_CHECKOUT = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
+    private static final String DEFAULT_CHECKOUT = "AAAAAAAAAA";
+    private static final String UPDATED_CHECKOUT = "BBBBBBBBBB";
 
     @Autowired
     private CalendarRepository calendarRepository;
@@ -164,8 +161,8 @@ public class CalendarResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(calendar.getId().intValue())))
             .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())))
-            .andExpect(jsonPath("$.[*].checkin").value(hasItem(sameInstant(DEFAULT_CHECKIN))))
-            .andExpect(jsonPath("$.[*].checkout").value(hasItem(sameInstant(DEFAULT_CHECKOUT))));
+            .andExpect(jsonPath("$.[*].checkin").value(hasItem(DEFAULT_CHECKIN.toString())))
+            .andExpect(jsonPath("$.[*].checkout").value(hasItem(DEFAULT_CHECKOUT.toString())));
     }
     
     @Test
@@ -180,8 +177,8 @@ public class CalendarResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(calendar.getId().intValue()))
             .andExpect(jsonPath("$.date").value(DEFAULT_DATE.toString()))
-            .andExpect(jsonPath("$.checkin").value(sameInstant(DEFAULT_CHECKIN)))
-            .andExpect(jsonPath("$.checkout").value(sameInstant(DEFAULT_CHECKOUT)));
+            .andExpect(jsonPath("$.checkin").value(DEFAULT_CHECKIN.toString()))
+            .andExpect(jsonPath("$.checkout").value(DEFAULT_CHECKOUT.toString()));
     }
 
     @Test

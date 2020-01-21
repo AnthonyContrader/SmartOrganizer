@@ -14,18 +14,18 @@
     "fields": [
         {
             "fieldName": "date",
-            "fieldType": "String"
+            "fieldType": "LocalDate"
         },
         {
             "fieldName": "checkin",
-            "fieldType": "ZonedDateTime"
+            "fieldType": "String"
         },
         {
             "fieldName": "checkout",
-            "fieldType": "ZonedDateTime"
+            "fieldType": "String"
         }
     ],
-    "changelogDate": "20200120222342",
+    "changelogDate": "20200121105144",
     "dto": "mapstruct",
     "searchEngine": false,
     "service": "serviceImpl",

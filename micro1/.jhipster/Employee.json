@@ -27,7 +27,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20200120222031",
+    "changelogDate": "20200121105000",
     "dto": "mapstruct",
     "searchEngine": false,
     "service": "serviceImpl",

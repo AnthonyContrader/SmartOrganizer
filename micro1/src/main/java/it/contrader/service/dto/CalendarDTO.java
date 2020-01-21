@@ -1,6 +1,6 @@
 package it.contrader.service.dto;
 
-import java.time.ZonedDateTime;
+import java.time.LocalDate;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -11,11 +11,11 @@ public class CalendarDTO implements Serializable {
 
     private Long id;
 
-    private String date;
+    private LocalDate date;
 
-    private ZonedDateTime checkin;
+    private String checkin;
 
-    private ZonedDateTime checkout;
+    private String checkout;
 
     private Long employeeId;
 
@@ -27,27 +27,27 @@ public class CalendarDTO implements Serializable {
         this.id = id;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    public ZonedDateTime getCheckin() {
+    public String getCheckin() {
         return checkin;
     }
 
-    public void setCheckin(ZonedDateTime checkin) {
+    public void setCheckin(String checkin) {
         this.checkin = checkin;
     }
 
-    public ZonedDateTime getCheckout() {
+    public String getCheckout() {
         return checkout;
     }
 
-    public void setCheckout(ZonedDateTime checkout) {
+    public void setCheckout(String checkout) {
         this.checkout = checkout;
     }
 

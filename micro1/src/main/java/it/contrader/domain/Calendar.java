@@ -4,7 +4,7 @@ package it.contrader.domain;
 import javax.persistence.*;
 
 import java.io.Serializable;
-import java.time.ZonedDateTime;
+import java.time.LocalDate;
 import java.util.Objects;
 
 /**
@@ -21,13 +21,13 @@ public class Calendar implements Serializable {
     private Long id;
 
     @Column(name = "jhi_date")
-    private String date;
+    private LocalDate date;
 
     @Column(name = "checkin")
-    private ZonedDateTime checkin;
+    private String checkin;
 
     @Column(name = "checkout")
-    private ZonedDateTime checkout;
+    private String checkout;
 
     @OneToOne
     @JoinColumn(unique = true)
@@ -42,42 +42,42 @@ public class Calendar implements Serializable {
         this.id = id;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public Calendar date(String date) {
+    public Calendar date(LocalDate date) {
         this.date = date;
         return this;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    public ZonedDateTime getCheckin() {
+    public String getCheckin() {
         return checkin;
     }
 
-    public Calendar checkin(ZonedDateTime checkin) {
+    public Calendar checkin(String checkin) {
         this.checkin = checkin;
         return this;
     }
 
-    public void setCheckin(ZonedDateTime checkin) {
+    public void setCheckin(String checkin) {
         this.checkin = checkin;
     }
 
-    public ZonedDateTime getCheckout() {
+    public String getCheckout() {
         return checkout;
     }
 
-    public Calendar checkout(ZonedDateTime checkout) {
+    public Calendar checkout(String checkout) {
         this.checkout = checkout;
         return this;
     }
 
-    public void setCheckout(ZonedDateTime checkout) {
+    public void setCheckout(String checkout) {
         this.checkout = checkout;
     }
 
