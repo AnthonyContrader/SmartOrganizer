@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "micro1",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "members",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "responsible",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "work",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20200120221747",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceImpl",
+    "entityTableName": "workgroup",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination",
+    "microserviceName": "micro1"
+}

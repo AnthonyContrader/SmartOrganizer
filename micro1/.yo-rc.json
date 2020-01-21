@@ -1,0 +1,32 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "it.contrader"
+    },
+    "jhipsterVersion": "5.3.1",
+    "applicationType": "microservice",
+    "baseName": "micro1",
+    "packageName": "it.contrader",
+    "packageFolder": "it/contrader",
+    "serverPort": "8081",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "consul",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ODk1Y2Q2ODBlYzZhMThlYzhhMWMxMDMxYjI5MGVmZDI3MjZlMWQyZGZlMTJiMzhmMGExYmNhYzkwYjVlMmQ1YTJkNGFlMTY0OGNkNDkzNDIwZmVhZGM1MGYxN2ZkYmE3NjRiNjdkNWM5MmNjMDkyN2UwOThlMTNkMmFhYzRhYjQ=",
+    "enableTranslation": false,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "clientPackageManager": "npm",
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
