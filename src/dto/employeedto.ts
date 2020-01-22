@@ -11,10 +11,6 @@ export class EmployeeDTO {
 
    position: string;
 
-   worksector: string;
-
-   numberofregistration: string;
-
    workgroup: string;
 
 }

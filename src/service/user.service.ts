@@ -4,6 +4,7 @@ import { UserDTO } from 'src/dto/userdto';
 import { HttpClient } from '@angular/common/http';
 import { LoginDTO } from 'src/dto/logindto';
 import { Observable } from 'rxjs';
+import { AbstractUService } from './abstractUservice';
 
 /**
  * I service sono decorati da @Injectable. 
@@ -17,7 +18,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService extends AbstractService<UserDTO>{
+export class UserService extends AbstractUService<UserDTO>{
 
   constructor(http: HttpClient) {
     super(http);
