@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "typeoflocation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "worktype",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20200122142306",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceImpl",
+    "entityTableName": "location",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination",
+    "microserviceName": "SmartOrganizerMicro"
+}

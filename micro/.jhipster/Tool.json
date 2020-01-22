@@ -1,0 +1,23 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "rawmaterial",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "toolname",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20200122142034",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceImpl",
+    "entityTableName": "tool",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination",
+    "microserviceName": "SmartOrganizerMicro"
+}
