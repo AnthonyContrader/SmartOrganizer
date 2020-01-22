@@ -12,7 +12,7 @@ export class WorkgroupService extends AbstractService<WorkgroupDTO>{
     constructor(http: HttpClient){
         super(http);
         this.type = 'workgroups';
-        this.name = 'micro1';
+        this.name = 'SmartOrganizerMicro';
         this.port = '8080';
     }
 
