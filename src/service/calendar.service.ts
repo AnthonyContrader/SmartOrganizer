@@ -12,7 +12,7 @@ export class CalendarService extends AbstractService<CalendarDTO>{
   constructor(http: HttpClient) {
     super(http);
     this.type = 'calendars';
-    this.name = 'SmartOrganizerMicro';
+    this.name = 'micro2';
     this.port = '8080'
   }
 

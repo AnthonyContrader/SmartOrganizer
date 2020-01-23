@@ -8,7 +8,7 @@ export class BillDTO {
  
     date: Date;
  
-    location: LocationDTO = new LocationDTO();
+    location: number;
  
     position: string;
  

@@ -12,7 +12,7 @@ export class EmployeeService extends AbstractService<EmployeeDTO>{
   constructor(http: HttpClient) {
     super(http);
     this.type = 'employees';
-    this.name = 'SmartOrganizerMicro';
+    this.name = 'micro2';
     this.port = '8080';
   }
 

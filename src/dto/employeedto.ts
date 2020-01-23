@@ -11,6 +11,6 @@ export class EmployeeDTO {
 
    position: string;
 
-   workgroup: string;
+   workgroupId: number;
 
 }

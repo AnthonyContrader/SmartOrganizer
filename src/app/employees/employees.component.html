@@ -42,7 +42,7 @@
               <input placeholder="Position" [(ngModel)]="employeetoinsert.position">
             </td>
             <td>
-              <input placeholder="Workgroup" [(ngModel)]="employeetoinsert.workgroup">
+              <input placeholder="Workgroup" [(ngModel)]="employeetoinsert.workgroupId">
             </td>
             <td>
               <button (click)="insert(employeetoinsert)">Insert</button>
@@ -65,7 +65,7 @@
               <input [(ngModel)]="employee.position">
             </td>
             <td>
-              <input [(ngModel)]="employee.workgroup">
+              <input [(ngModel)]="employee.workgroupId">
             </td>
             <td>
               <button (click)="update(employee)">Save</button>

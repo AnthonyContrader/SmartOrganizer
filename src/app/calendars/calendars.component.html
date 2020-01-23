@@ -36,7 +36,7 @@
             <input placeholder="checkout" [(ngModel)]="calendartoinsert.checkout">
           </td>
           <td>
-            <select placeholder="employee" [(ngModel)]="calendartoinsert.employee.id">
+            <select placeholder="employee" [(ngModel)]="calendartoinsert.employeeId">
               <option *ngFor="let employee of employees" value="{{employee.id}}">{{employee.name}}</option>
             </select>
           </td>
@@ -58,7 +58,7 @@
             <input [(ngModel)]="calendar.checkout">
           </td>
           <td>
-            <select [(ngModel)]="calendar.employee.id">
+            <select [(ngModel)]="calendar.employeeId">
               <option *ngFor="let employee of employees" value="{{employee.id}}">{{employee.name}}</option>
             </select>
           </td>

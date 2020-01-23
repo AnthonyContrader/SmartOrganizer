@@ -6,5 +6,5 @@ export class CalendarDTO{
     date: Date;
     checkin: string;
     checkout: string;
-    employee: EmployeeDTO = new EmployeeDTO();
+    employeeId: number;
 }
