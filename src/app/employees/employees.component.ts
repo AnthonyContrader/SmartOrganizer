@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeDTO } from 'src/dto/employeedto';
 import { EmployeeService } from 'src/service/employee.service';
+import {WorkgroupDTO} from 'src/dto/workgroupdto';
+import {WorkgroupService} from 'src/service/workgroup.service';
 
 @Component({
   selector: 'app-employees',
@@ -11,11 +13,13 @@ export class EmployeesComponent implements OnInit {
 
   employees: EmployeeDTO[];
   employeetoinsert: EmployeeDTO = new EmployeeDTO();
+  workgroups: WorkgroupDTO[];
 
-  constructor(private service: EmployeeService) { }
+  constructor(private service: EmployeeService, private service2: WorkgroupService) { }
 
   ngOnInit() {
     this.getEmployees();
+    this.service2.getAll().subscribe(workgroups => this.workgroups = workgroups);
   
   }
 

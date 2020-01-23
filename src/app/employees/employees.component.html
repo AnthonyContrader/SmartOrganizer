@@ -42,7 +42,9 @@
               <input placeholder="Position" [(ngModel)]="employeetoinsert.position">
             </td>
             <td>
-              <input placeholder="Workgroup" [(ngModel)]="employeetoinsert.workgroupId">
+              <select placeholder="Workgroup" [(ngModel)]="employeetoinsert.workgroupId">
+                <option *ngFor="let workgroup of workgroups" value="{{workgroup.id}}">{{workgroup.name}}</option>
+              </select>
             </td>
             <td>
               <button (click)="insert(employeetoinsert)">Insert</button>
@@ -65,7 +67,9 @@
               <input [(ngModel)]="employee.position">
             </td>
             <td>
-              <input [(ngModel)]="employee.workgroupId">
+              <select [(ngModel)]="employee.workgroupId">
+                <option *ngFor="let workgroup of workgroups" value="{{workgroup.id}}">{{workgroup.name}}</option>
+              </select>
             </td>
             <td>
               <button (click)="update(employee)">Save</button>
