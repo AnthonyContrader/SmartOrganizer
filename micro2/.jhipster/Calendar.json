@@ -5,10 +5,8 @@
         {
             "relationshipName": "employee",
             "otherEntityName": "employee",
-            "relationshipType": "one-to-one",
-            "otherEntityField": "id",
-            "ownerSide": true,
-            "otherEntityRelationshipName": "calendar"
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         }
     ],
     "fields": [
@@ -25,7 +23,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20200122140723",
+    "changelogDate": "20200127093359",
     "dto": "mapstruct",
     "searchEngine": false,
     "service": "serviceImpl",

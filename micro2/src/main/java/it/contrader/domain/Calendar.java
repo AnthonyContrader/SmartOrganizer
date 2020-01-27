@@ -1,5 +1,6 @@
 package it.contrader.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
@@ -29,8 +30,8 @@ public class Calendar implements Serializable {
     @Column(name = "checkout")
     private String checkout;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
+    @JsonIgnoreProperties("")
     private Employee employee;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
