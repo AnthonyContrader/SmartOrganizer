@@ -1,53 +1,109 @@
-form{
-    margin-top:270px;
-    width: 55%;
+#sfondo {
+    background-image: url(/assets/img/sfondo.gif);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#divlogo {
+    width: 60%;
+    height: 60%;
+}
+
+#transizione {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding-top: 25pt;
+    background-color: yellow;
+}
+
+#divsinistra {
+    overflow: auto;
+    padding-top: 25pt;
+    width: 50%;
+    height: 100%;
+    background-color: #304ACE;
+}
+
+#divdestra {
+    background-color: transparent;
+    overflow: hidden;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+}
+
+#menu {}
+
+#paragrafo {
+    text-align: center;
+    font-family: 'Adlanta', Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    padding: 0mm;
+    border: none;
+    margin: 0px;
+}
+
+#cerchio {
+    color: white;
+    position: relative;
+    background-color: transparent;
+    border: 3px solid white;
+    height: 300px;
+    width: 300px;
+    margin: 1.75em;
+}
+
+.loginBtn {
+    border: 3px solid white;
     padding: 10px;
-    border-radius:0;
-    border-color: crimson;
+    border-radius: 100%;
+    background-color: #304ACE;
+    height: 150px;
+    width: 150px;
 }
 
-img{
-    position: inherit;
-    width:50%;
-    margin: 12%;
+.circle-container {
+    position: relative;
+    width: 40em;
+    height: 40em;
+    /*2.8em = 2em*1.4 (2em = half the width of a link with img, 1.4 = sqrt(2))*/
 }
 
-input, input:hover, input::selection, input:checked, input:focus{
-    border: 0;
-    background-color: darkorange;
-    border-radius: 0;
-    color: white;
-    border-bottom: 1px solid crimson;
-    margin: 0px; 
+.circle-container div {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6em;
+    height: 6em;
+    margin: -3em;
 }
 
-.container-fluid{
-    background-color: darkorange;
-    height: 100vh;
-}
-input::placeholder{
-    color: white;
-}
-.form-control{
-border: none;
-background-color: darkorange;
-color: white;
-border-bottom: 1px solid white;
+.deg0 {
+    transform: translate(14.5em);
 }
 
-.login{
-border: none;
-background-color: darkorange;
-color: white;
-border: 1px solid white;
-border-radius: 2px;
-padding-top: 10px;
-padding-right: auto;
-padding-bottom: 10px;
-padding-left: auto;
+
+/* 12em = half the width of the wrapper */
+
+.deg45 {
+    transform: rotate(45deg) translate(14.5em) rotate(-45deg);
 }
 
-p{
-font-size: 14px;
-color: white;
+.deg135 {
+    transform: rotate(135deg) translate(14.5em) rotate(-135deg);
+}
+
+.deg180 {
+    transform: translate(-14.5em);
+}
+
+.deg225 {
+    transform: rotate(225deg) translate(14.5em) rotate(-225deg);
+}
+
+.deg315 {
+    transform: rotate(315deg) translate(14.5em) rotate(-315deg);
 }
