@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/service/user.service';
 import { UserDTO } from 'src/dto/userdto';
 
+
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',

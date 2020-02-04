@@ -5,10 +5,12 @@ import { UserService } from 'src/service/user.service';
 import { Router } from '@angular/router';
 import { UserDTO } from 'src/dto/userdto';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+
 })
 export class LoginComponent implements OnInit {
 
@@ -18,6 +20,18 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+  visibile(){
+    document.getElementById("user").setAttribute("class","menuVisibile");
+    document.getElementById("pass").setAttribute("class","menuVisibile");
+    document.getElementById("enter").setAttribute("style","visibility: visible;")
+  }
+  muovi(){
+    document.getElementById("transizione").setAttribute("class","transizioneC");
+    setTimeout(this.visibile,1000)
+  
+  }
+ 
+   
 
   login(f: NgForm): void {
     this.loginDTO = new LoginDTO(f.value.username, f.value.password);
