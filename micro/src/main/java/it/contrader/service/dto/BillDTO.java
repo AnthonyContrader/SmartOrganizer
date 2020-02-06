@@ -13,7 +13,7 @@ public class BillDTO implements Serializable {
 
     private String customer;
 
-    private LocalDate date;
+    private LocalDate data;
 
     private Integer numberbill;
 
@@ -37,12 +37,12 @@ public class BillDTO implements Serializable {
         this.customer = customer;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDate getData() {
+        return data;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setData(LocalDate data) {
+        this.data = data;
     }
 
     public Integer getNumberbill() {
@@ -95,7 +95,7 @@ public class BillDTO implements Serializable {
         return "BillDTO{" +
             "id=" + getId() +
             ", customer='" + getCustomer() + "'" +
-            ", date='" + getDate() + "'" +
+            ", data='" + getData() + "'" +
             ", numberbill=" + getNumberbill() +
             ", price=" + getPrice() +
             ", location=" + getLocationId() +

@@ -6,7 +6,7 @@
     <!--
         Added the constraints for entity Bill.
     -->
-    <changeSet id="20200122143248-2" author="jhipster">
+    <changeSet id="20200206111121-2" author="jhipster">
         
         <addForeignKeyConstraint baseColumnNames="location_id"
                                  baseTableName="bill"

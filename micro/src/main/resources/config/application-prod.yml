@@ -48,13 +48,9 @@ spring:
         show-sql: false
         properties:
             hibernate.id.new_generator_mappings: true
-            hibernate.cache.use_second_level_cache: true
+            hibernate.cache.use_second_level_cache: false
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: false
-            hibernate.cache.region.factory_class: com.hazelcast.hibernate.HazelcastCacheRegionFactory
-            hibernate.cache.hazelcast.instance_name: SmartOrganizerMicro
-            hibernate.cache.use_minimal_puts: true
-            hibernate.cache.hazelcast.use_lite_member: true
     liquibase:
         contexts: prod
     mail:
@@ -119,7 +115,7 @@ jhipster:
     security:
         authentication:
             jwt:
-                secret: 50c01e8662b08e51dae2ef22f32188b51d015e4a
+                secret: 07688d60f2b04ba621f2130776ef297d52a0b648
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
                 token-validity-in-seconds-for-remember-me: 2592000

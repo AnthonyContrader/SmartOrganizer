@@ -11,7 +11,7 @@
     "serverPort": "8081",
     "authenticationType": "jwt",
     "cacheProvider": "hazelcast",
-    "enableHibernateCache": true,
+    "enableHibernateCache": false,
     "websocket": false,
     "databaseType": "sql",
     "devDatabaseType": "h2Disk",
@@ -21,11 +21,11 @@
     "serviceDiscoveryType": "consul",
     "buildTool": "maven",
     "enableSwaggerCodegen": false,
-    "jwtSecretKey": "50c01e8662b08e51dae2ef22f32188b51d015e4a",
+    "jwtSecretKey": "07688d60f2b04ba621f2130776ef297d52a0b648",
     "enableTranslation": false,
     "testFrameworks": [],
     "jhiPrefix": "jhi",
-    "clientPackageManager": "yarn",
+    "clientPackageManager": "npm",
     "skipClient": true,
     "skipUserManagement": true
   }

@@ -10,9 +10,11 @@ public class ToolDTO implements Serializable {
 
     private Long id;
 
+    private String toolname;
+
     private String rawmaterial;
 
-    private String toolname;
+    private Integer lifetime;
 
     public Long getId() {
         return id;
@@ -20,6 +22,14 @@ public class ToolDTO implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getToolname() {
+        return toolname;
+    }
+
+    public void setToolname(String toolname) {
+        this.toolname = toolname;
     }
 
     public String getRawmaterial() {
@@ -30,12 +40,12 @@ public class ToolDTO implements Serializable {
         this.rawmaterial = rawmaterial;
     }
 
-    public String getToolname() {
-        return toolname;
+    public Integer getLifetime() {
+        return lifetime;
     }
 
-    public void setToolname(String toolname) {
-        this.toolname = toolname;
+    public void setLifetime(Integer lifetime) {
+        this.lifetime = lifetime;
     }
 
     @Override
@@ -63,8 +73,9 @@ public class ToolDTO implements Serializable {
     public String toString() {
         return "ToolDTO{" +
             "id=" + getId() +
-            ", rawmaterial='" + getRawmaterial() + "'" +
             ", toolname='" + getToolname() + "'" +
+            ", rawmaterial='" + getRawmaterial() + "'" +
+            ", lifetime=" + getLifetime() +
             "}";
     }
 }

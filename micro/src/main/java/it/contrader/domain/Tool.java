@@ -1,7 +1,5 @@
 package it.contrader.domain;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 
@@ -13,7 +11,6 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "tool")
-@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Tool implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -22,11 +19,14 @@ public class Tool implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "toolname")
+    private String toolname;
+
     @Column(name = "rawmaterial")
     private String rawmaterial;
 
-    @Column(name = "toolname")
-    private String toolname;
+    @Column(name = "lifetime")
+    private Integer lifetime;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -35,6 +35,19 @@ public class Tool implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getToolname() {
+        return toolname;
+    }
+
+    public Tool toolname(String toolname) {
+        this.toolname = toolname;
+        return this;
+    }
+
+    public void setToolname(String toolname) {
+        this.toolname = toolname;
     }
 
     public String getRawmaterial() {
@@ -50,17 +63,17 @@ public class Tool implements Serializable {
         this.rawmaterial = rawmaterial;
     }
 
-    public String getToolname() {
-        return toolname;
+    public Integer getLifetime() {
+        return lifetime;
     }
 
-    public Tool toolname(String toolname) {
-        this.toolname = toolname;
+    public Tool lifetime(Integer lifetime) {
+        this.lifetime = lifetime;
         return this;
     }
 
-    public void setToolname(String toolname) {
-        this.toolname = toolname;
+    public void setLifetime(Integer lifetime) {
+        this.lifetime = lifetime;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
@@ -88,8 +101,9 @@ public class Tool implements Serializable {
     public String toString() {
         return "Tool{" +
             "id=" + getId() +
-            ", rawmaterial='" + getRawmaterial() + "'" +
             ", toolname='" + getToolname() + "'" +
+            ", rawmaterial='" + getRawmaterial() + "'" +
+            ", lifetime=" + getLifetime() +
             "}";
     }
 }

@@ -42,11 +42,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = SmartOrganizerMicroApp.class)
 public class ToolResourceIntTest {
 
+    private static final String DEFAULT_TOOLNAME = "AAAAAAAAAA";
+    private static final String UPDATED_TOOLNAME = "BBBBBBBBBB";
+
     private static final String DEFAULT_RAWMATERIAL = "AAAAAAAAAA";
     private static final String UPDATED_RAWMATERIAL = "BBBBBBBBBB";
 
-    private static final String DEFAULT_TOOLNAME = "AAAAAAAAAA";
-    private static final String UPDATED_TOOLNAME = "BBBBBBBBBB";
+    private static final Integer DEFAULT_LIFETIME = 1;
+    private static final Integer UPDATED_LIFETIME = 2;
 
     @Autowired
     private ToolRepository toolRepository;
@@ -94,8 +97,9 @@ public class ToolResourceIntTest {
      */
     public static Tool createEntity(EntityManager em) {
         Tool tool = new Tool()
+            .toolname(DEFAULT_TOOLNAME)
             .rawmaterial(DEFAULT_RAWMATERIAL)
-            .toolname(DEFAULT_TOOLNAME);
+            .lifetime(DEFAULT_LIFETIME);
         return tool;
     }
 
@@ -120,8 +124,9 @@ public class ToolResourceIntTest {
         List<Tool> toolList = toolRepository.findAll();
         assertThat(toolList).hasSize(databaseSizeBeforeCreate + 1);
         Tool testTool = toolList.get(toolList.size() - 1);
-        assertThat(testTool.getRawmaterial()).isEqualTo(DEFAULT_RAWMATERIAL);
         assertThat(testTool.getToolname()).isEqualTo(DEFAULT_TOOLNAME);
+        assertThat(testTool.getRawmaterial()).isEqualTo(DEFAULT_RAWMATERIAL);
+        assertThat(testTool.getLifetime()).isEqualTo(DEFAULT_LIFETIME);
     }
 
     @Test
@@ -155,8 +160,9 @@ public class ToolResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(tool.getId().intValue())))
+            .andExpect(jsonPath("$.[*].toolname").value(hasItem(DEFAULT_TOOLNAME.toString())))
             .andExpect(jsonPath("$.[*].rawmaterial").value(hasItem(DEFAULT_RAWMATERIAL.toString())))
-            .andExpect(jsonPath("$.[*].toolname").value(hasItem(DEFAULT_TOOLNAME.toString())));
+            .andExpect(jsonPath("$.[*].lifetime").value(hasItem(DEFAULT_LIFETIME)));
     }
     
 
@@ -171,8 +177,9 @@ public class ToolResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(tool.getId().intValue()))
+            .andExpect(jsonPath("$.toolname").value(DEFAULT_TOOLNAME.toString()))
             .andExpect(jsonPath("$.rawmaterial").value(DEFAULT_RAWMATERIAL.toString()))
-            .andExpect(jsonPath("$.toolname").value(DEFAULT_TOOLNAME.toString()));
+            .andExpect(jsonPath("$.lifetime").value(DEFAULT_LIFETIME));
     }
     @Test
     @Transactional
@@ -195,8 +202,9 @@ public class ToolResourceIntTest {
         // Disconnect from session so that the updates on updatedTool are not directly saved in db
         em.detach(updatedTool);
         updatedTool
+            .toolname(UPDATED_TOOLNAME)
             .rawmaterial(UPDATED_RAWMATERIAL)
-            .toolname(UPDATED_TOOLNAME);
+            .lifetime(UPDATED_LIFETIME);
         ToolDTO toolDTO = toolMapper.toDto(updatedTool);
 
         restToolMockMvc.perform(put("/api/tools")
@@ -208,8 +216,9 @@ public class ToolResourceIntTest {
         List<Tool> toolList = toolRepository.findAll();
         assertThat(toolList).hasSize(databaseSizeBeforeUpdate);
         Tool testTool = toolList.get(toolList.size() - 1);
-        assertThat(testTool.getRawmaterial()).isEqualTo(UPDATED_RAWMATERIAL);
         assertThat(testTool.getToolname()).isEqualTo(UPDATED_TOOLNAME);
+        assertThat(testTool.getRawmaterial()).isEqualTo(UPDATED_RAWMATERIAL);
+        assertThat(testTool.getLifetime()).isEqualTo(UPDATED_LIFETIME);
     }
 
     @Test

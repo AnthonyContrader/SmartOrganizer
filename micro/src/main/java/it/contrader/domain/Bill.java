@@ -1,7 +1,5 @@
 package it.contrader.domain;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 
@@ -14,7 +12,6 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "bill")
-@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Bill implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -26,8 +23,8 @@ public class Bill implements Serializable {
     @Column(name = "customer")
     private String customer;
 
-    @Column(name = "jhi_date")
-    private LocalDate date;
+    @Column(name = "data")
+    private LocalDate data;
 
     @Column(name = "numberbill")
     private Integer numberbill;
@@ -61,17 +58,17 @@ public class Bill implements Serializable {
         this.customer = customer;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDate getData() {
+        return data;
     }
 
-    public Bill date(LocalDate date) {
-        this.date = date;
+    public Bill data(LocalDate data) {
+        this.data = data;
         return this;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setData(LocalDate data) {
+        this.data = data;
     }
 
     public Integer getNumberbill() {
@@ -139,7 +136,7 @@ public class Bill implements Serializable {
         return "Bill{" +
             "id=" + getId() +
             ", customer='" + getCustomer() + "'" +
-            ", date='" + getDate() + "'" +
+            ", data='" + getData() + "'" +
             ", numberbill=" + getNumberbill() +
             ", price=" + getPrice() +
             "}";

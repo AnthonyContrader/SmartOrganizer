@@ -47,8 +47,8 @@ public class BillResourceIntTest {
     private static final String DEFAULT_CUSTOMER = "AAAAAAAAAA";
     private static final String UPDATED_CUSTOMER = "BBBBBBBBBB";
 
-    private static final LocalDate DEFAULT_DATE = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_DATE = LocalDate.now(ZoneId.systemDefault());
+    private static final LocalDate DEFAULT_DATA = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_DATA = LocalDate.now(ZoneId.systemDefault());
 
     private static final Integer DEFAULT_NUMBERBILL = 1;
     private static final Integer UPDATED_NUMBERBILL = 2;
@@ -103,7 +103,7 @@ public class BillResourceIntTest {
     public static Bill createEntity(EntityManager em) {
         Bill bill = new Bill()
             .customer(DEFAULT_CUSTOMER)
-            .date(DEFAULT_DATE)
+            .data(DEFAULT_DATA)
             .numberbill(DEFAULT_NUMBERBILL)
             .price(DEFAULT_PRICE);
         return bill;
@@ -131,7 +131,7 @@ public class BillResourceIntTest {
         assertThat(billList).hasSize(databaseSizeBeforeCreate + 1);
         Bill testBill = billList.get(billList.size() - 1);
         assertThat(testBill.getCustomer()).isEqualTo(DEFAULT_CUSTOMER);
-        assertThat(testBill.getDate()).isEqualTo(DEFAULT_DATE);
+        assertThat(testBill.getData()).isEqualTo(DEFAULT_DATA);
         assertThat(testBill.getNumberbill()).isEqualTo(DEFAULT_NUMBERBILL);
         assertThat(testBill.getPrice()).isEqualTo(DEFAULT_PRICE);
     }
@@ -168,7 +168,7 @@ public class BillResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(bill.getId().intValue())))
             .andExpect(jsonPath("$.[*].customer").value(hasItem(DEFAULT_CUSTOMER.toString())))
-            .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())))
+            .andExpect(jsonPath("$.[*].data").value(hasItem(DEFAULT_DATA.toString())))
             .andExpect(jsonPath("$.[*].numberbill").value(hasItem(DEFAULT_NUMBERBILL)))
             .andExpect(jsonPath("$.[*].price").value(hasItem(DEFAULT_PRICE.doubleValue())));
     }
@@ -186,7 +186,7 @@ public class BillResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(bill.getId().intValue()))
             .andExpect(jsonPath("$.customer").value(DEFAULT_CUSTOMER.toString()))
-            .andExpect(jsonPath("$.date").value(DEFAULT_DATE.toString()))
+            .andExpect(jsonPath("$.data").value(DEFAULT_DATA.toString()))
             .andExpect(jsonPath("$.numberbill").value(DEFAULT_NUMBERBILL))
             .andExpect(jsonPath("$.price").value(DEFAULT_PRICE.doubleValue()));
     }
@@ -212,7 +212,7 @@ public class BillResourceIntTest {
         em.detach(updatedBill);
         updatedBill
             .customer(UPDATED_CUSTOMER)
-            .date(UPDATED_DATE)
+            .data(UPDATED_DATA)
             .numberbill(UPDATED_NUMBERBILL)
             .price(UPDATED_PRICE);
         BillDTO billDTO = billMapper.toDto(updatedBill);
@@ -227,7 +227,7 @@ public class BillResourceIntTest {
         assertThat(billList).hasSize(databaseSizeBeforeUpdate);
         Bill testBill = billList.get(billList.size() - 1);
         assertThat(testBill.getCustomer()).isEqualTo(UPDATED_CUSTOMER);
-        assertThat(testBill.getDate()).isEqualTo(UPDATED_DATE);
+        assertThat(testBill.getData()).isEqualTo(UPDATED_DATA);
         assertThat(testBill.getNumberbill()).isEqualTo(UPDATED_NUMBERBILL);
         assertThat(testBill.getPrice()).isEqualTo(UPDATED_PRICE);
     }

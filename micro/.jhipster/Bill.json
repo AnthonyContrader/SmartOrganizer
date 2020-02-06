@@ -17,7 +17,7 @@
             "fieldType": "String"
         },
         {
-            "fieldName": "date",
+            "fieldName": "data",
             "fieldType": "LocalDate"
         },
         {
@@ -29,7 +29,7 @@
             "fieldType": "Float"
         }
     ],
-    "changelogDate": "20200122143248",
+    "changelogDate": "20200206111121",
     "dto": "mapstruct",
     "searchEngine": false,
     "service": "serviceImpl",

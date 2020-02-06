@@ -4,15 +4,19 @@
     "relationships": [],
     "fields": [
         {
+            "fieldName": "toolname",
+            "fieldType": "String"
+        },
+        {
             "fieldName": "rawmaterial",
             "fieldType": "String"
         },
         {
-            "fieldName": "toolname",
-            "fieldType": "String"
+            "fieldName": "lifetime",
+            "fieldType": "Integer"
         }
     ],
-    "changelogDate": "20200122142034",
+    "changelogDate": "20200206105945",
     "dto": "mapstruct",
     "searchEngine": false,
     "service": "serviceImpl",
