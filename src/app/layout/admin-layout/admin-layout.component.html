@@ -14,22 +14,25 @@
     </div>
 </div>-->
 
-<div class="sfondo">
-    <div class=" row menu">
+<div class="sfondo container-fluid">
+    <div class="row-1 justify-content-md-center menu">
+
         <div>
-            <img class="immagini" src="/assets/img/LogoSmartOrganizerSVG.svg" />
+
             <app-admin-menu></app-admin-menu>
         </div>
+
     </div>
     <div class="row">
-        <div class="col"></div>
-        <div class="col-7 align-content-center">
+        <div class="col-2"></div>
 
-            <div id="tabelle">
+        <div class="col-md-8  container">
+
+            <div id="tabelle" class="justify-content-md-center">
                 <router-outlet></router-outlet>
             </div>
         </div>
 
-        <div class="col"></div>
+        <div class="col-2"></div>
     </div>
 </div>

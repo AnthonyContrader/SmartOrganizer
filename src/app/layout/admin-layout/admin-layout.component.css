@@ -15,8 +15,22 @@
     height: 8vw;
 }
 
-.immagini {
-    float: right;
-    width: 80px;
-    height: 80px;
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#tabelle {
+    text-align: center;
+}
+
+.conainer {
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar-light,
+.text-light {
+    color: rgba(255, 255, 255, 0.986);
 }

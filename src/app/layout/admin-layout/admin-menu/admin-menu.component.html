@@ -1,90 +1,121 @@
-<div class="row">
-    <div class="col-md-12">
-        <div class="sidenav">
-            <button class="menubtn">
-                <a [routerLink]="['/admin-dashboard']"> <i class="fas fa-home" style="margin-right: 10px"> </i>
-                    Dashboard </a>
-            </button>
-            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#account" (click)="accountcollapse()">
-                <i class="fas fa-user" style="margin-right: 15px"></i> Account
-            </button>
-            <div class="collapsebtn" id="account" *ngIf="isAccountCollapsed">
-                <button class="menubtn" style="background-color: #334247; padding-left: 40px">
-                    <a [routerLink]="['/admin-dashboard/work-in-progress']"> <i class="fas fa-user-edit"
-                            style="margin-right: 15px"></i>
-                        Edit Profile</a>
-                </button>
-                <button class="menubtn" style="background-color: #334247; padding-left: 40px">
-                    <a [routerLink]="['/admin-dashboard/work-in-progress']"><i class="fas fa-file-alt"
-                            style="margin-right: 15px"></i>General Info</a>
-                </button>
-            </div>
-            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#users" (click)="userscollapse()">
-                <i class="fas fa-users" style="margin-right: 15px"></i>Users
-            </button>
-            <div class="collapsebtn" id="users" *ngIf="isUserCollapsed">
-                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
-                    <a [routerLink]="['/admin-dashboard/users']"> <i class="fas fa-edit" style="margin-right: 10px">
-                        </i> Manage Users </a>
-                </button>
-            </div>
-            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#employees" (click)="employeecollapse()">
-                <i class="fas fa-users" style="margin-right: 15px"></i>Employees
-            </button>
-            <div class="collapsebtn" id="employee" *ngIf="isEmployeeCollapsed">
-                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
-                    <a [routerLink]="['/admin-dashboard/employees']"> <i class="fas fa-edit" style="margin-right: 10px">
-                        </i> Manage Employees </a>
-                </button>
-            </div>
-            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#tools" (click)="toolscollapse()">
-                <i class="fas fa-tools" style="margin-right: 15px"></i>Tools
-            </button>
-            <div class="collapsebtn" id="tools" *ngIf="isToolCollapsed">
-                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
-                    <a [routerLink]="['/admin-dashboard/tools']"> <i class="fas fa-edit" style="margin-right: 10px">
-                        </i> Manage Tools </a>
-                </button>
-            </div>
-            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#bills" (click)="billscollapse()">
-            <i class="fas fa-book" style="margin-right: 15px"></i>Bills
-            </button>
-            <div class="collapsebtn" id="bills" *ngIf="isBillCollapsed">
-                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
-                <a [routerLink]="['/admin-dashboard/bills']"> <i class="fas fa-edit" style="margin-right: 10px">
-                    </i> Manage Bills </a>
-            </button>
-            </div>
-            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#locations" (click)="locationscollapse()">
-            <i class="fas fa-map-marker" style="margin-right: 15px"></i>Locations
-            </button>
-            <div class="collapsebtn" id="locations" *ngIf="isLocationCollapsed">
-                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
-                    <a [routerLink]="['/admin-dashboard/locations']"> <i class="fas fa-edit" style="margin-right: 10px">
-                        </i> Manage Locations </a>
-                </button>
-            </div>
-            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#calendars" (click)="calendarscollapse()">
-                <i class="fas fa-calendar-alt" style="margin-right: 15px"></i>Calendars
-            </button>
-            <div class="collapsebtn" id="Calendars" *ngIf="isCalendarCollapsed">
-                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
-                    <a [routerLink]="['/admin-dashboard/calendars']"> <i class="fas fa-edit" style="margin-right: 10px">
-                        </i> Manage Calendars </a>
-                </button>
-            </div>
-            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#workgroups" (click)="workgroupscollapse()">
-            <i class="fas fa-map-marker" style="margin-right: 15px"></i>Workgroups
-            </button>
-            <div class="collapsebtn" id="workgroups" *ngIf="isWorkgroupCollapsed">
-                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
-                    <a [routerLink]="['/admin-dashboard/workgroups']"> <i class="fas fa-edit" style="margin-right: 10px">
-                        </i> Manage Workgroups </a>
-                </button>
-            </div>
-            <button class="menubtn" (click)="logout()">
-                <i class="fas fa-sign-out-alt" style="margin-right: 15px"></i>Logout
-            </button>
-        </div>
+<!-- <button data-toggle="collapsebtn" data-target="#account" (click)="accountcollapse()"><i class="fas fa-user" ></i> Account
+    </button>
+
+    <div class="collapsebtn" id="account" *ngIf="isAccountCollapsed">
+        <button>
+                <a [routerLink]="['/admin-dashboard/work-in-progress']"> <i class="fas fa-user-edit"></i>Edit Profile</a>
+        </button>
+        <button>
+                <a [routerLink]="['/admin-dashboard/work-in-progress']"><i class="fas fa-file-alt"></i>General Info</a>
+        </button>
     </div>
+    -->
+<div class="container">
+    <nav class="navbar-dark navbar-expand-xl ">
+
+        <a class="navbar-brand" [routerLink]="['/admin-dashboard']">
+            <img src="/assets/img/LogoSmartOrganizerSVG.svg" width="50" height="50" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto justify-content-md-center">
+                <!--
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>-->
+
+
+                <li class="nav-item">
+                    <a class=" nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/users']">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/employees']">Employees</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/tools']">Tools</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/bills']">Bills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/locations']">Locations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/calendars']">Calendars</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/workgroups']">Workgroups</a>
+                </li>
+                <!--
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li> -->
+            </ul>
+
+
+        </div>
+    </nav>
 </div>
+
+<!--   
+<div>
+    <div>
+        <a [routerLink]="['/admin-dashboard']"><img class="immagini navbar-brand mr-3" src="/assets/img/LogoSmartOrganizerSVG.svg" /></a>
+    </div>
+
+    <button data-toggle="collapsebtn" data-target="#users" (click)="userscollapse()">Users
+        </button>
+    <div class="collapsebtn" id="users" *ngIf="isUserCollapsed">
+        <button>
+                <a [routerLink]="['/admin-dashboard/users']">  Manage Users </a>
+        </button>
+    </div>
+    <button data-toggle="collapsebtn" data-target="#employees" (click)="employeecollapse()">Employees
+        </button>
+    <div class="collapsebtn" id="employee" *ngIf="isEmployeeCollapsed">
+        <button>
+                <a [routerLink]="['/admin-dashboard/employees']">  Manage Employees </a>
+        </button>
+    </div>
+    <button data-toggle="collapsebtn" data-target="#tools" (click)="toolscollapse()">Tools
+        </button>
+    <div class="collapsebtn" id="tools" *ngIf="isToolCollapsed">
+        <button>
+                <a [routerLink]="['/admin-dashboard/tools']">  Manage Tools </a>
+        </button>
+    </div>
+    <button data-toggle="collapsebtn" data-target="#bills" (click)="billscollapse()">Bills
+        </button>
+    <div class="collapsebtn" id="bills" *ngIf="isBillCollapsed">
+        <button>
+                <a [routerLink]="['/admin-dashboard/bills']">Manage Bills </a>
+        </button>
+    </div>
+    <button data-toggle="collapsebtn" data-target="#locations" (click)="locationscollapse()">Locations
+        </button>
+    <div class="collapsebtn" id="locations" *ngIf="isLocationCollapsed">
+        <button>
+                <a [routerLink]="['/admin-dashboard/locations']"> Manage Locations </a>
+        </button>
+    </div>
+    <button data-toggle="collapsebtn" data-target="#calendars" (click)="calendarscollapse()">Calendars
+        </button>
+    <div class="collapsebtn" id="Calendars" *ngIf="isCalendarCollapsed">
+        <button>
+                <a [routerLink]="['/admin-dashboard/calendars']">Manage Calendars </a>
+        </button>
+    </div>
+    <button data-toggle="collapsebtn" data-target="#workgroups" (click)="workgroupscollapse()">Workgroups
+        </button>
+    <div class="collapsebtn" id="workgroups" *ngIf="isWorkgroupCollapsed">
+        <button>
+                <a [routerLink]="['/admin-dashboard/workgroups']"> Manage Workgroups </a>
+        </button>
+    </div>
+    <button (click)="logout()"><i class="fas fa-sign-out-alt" ></i>Logout
+        </button>
+</div>
+-->
