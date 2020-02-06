@@ -53,6 +53,49 @@ public class ToolResource {
         if (toolDTO.getId() != null) {
             throw new BadRequestAlertException("A new tool cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        
+        
+        
+        //simulazione di usura a cazzo
+        if(toolDTO.getLifetime()>0) {
+        	int life = toolDTO.getLifetime();
+        	
+        	
+        		//try {
+				//	Thread.sleep(500);
+        		
+        		/*codice vecchio
+        		 * 
+        		 * 
+        		 * 
+        		 * //Perditempo perditempo=new Perditempo;
+        		 *  //perditempo(toolDTO,life);
+        		 * perditempo.Usura();
+        		 * 
+        		 * 
+        		 * 
+        		 * 
+        		 * 
+        		 * 
+        		 * 
+        		 * 
+        		 * 
+        		 * 
+        		 * 
+        		 */
+        	
+					--life;
+		        	toolDTO.setLifetime(life);
+        	
+				//}
+        		//catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+				//	e.printStackTrace();
+				//	break;
+				//}
+        	
+        	
+        }
         ToolDTO result = toolService.save(toolDTO);
         return ResponseEntity.created(new URI("/api/tools/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
@@ -74,6 +117,13 @@ public class ToolResource {
         log.debug("REST request to update Tool : {}", toolDTO);
         if (toolDTO.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
+        }
+        
+        //simulatore di usura a cazzo
+        if(toolDTO.getLifetime()>0) {
+        	int life = toolDTO.getLifetime();
+        	--life;
+        	toolDTO.setLifetime(life);
         }
         ToolDTO result = toolService.save(toolDTO);
         return ResponseEntity.ok()
