@@ -4,6 +4,9 @@
 
         </div>
         <div class="col-md-10">
+            <div id="usurato">
+                <p>!!!tool da cambiare!!! <br> E FORZA AVELLINO!!!!</p><img src="/assets/img/avellino.png">
+            </div>
             <table>
                 <tr>
                     <th>
@@ -21,8 +24,13 @@
                     <th>
                         Tool
                     </th>
+                    <th>
+                        usura
+                    </th>
+
                 </tr>
                 <tr>
+
                     <td>
                         <input placeholder="toolname" [(ngModel)]="tooltoinsert.toolname">
                     </td>
@@ -52,6 +60,9 @@
                     </td>
                     <td>
                         <button (click)="delete(tool)">Delete</button>
+                    </td>
+                    <td>
+                        <button (click)="usura(tool)">usura</button>
                     </td>
                 </tr>
             </table>

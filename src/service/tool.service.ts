@@ -4,11 +4,12 @@ import { ToolDTO } from 'src/dto/tooldto';
 import { HttpClient } from '@angular/common/http';
 import {UserDTO} from'src/dto/userdto';
 import { from } from 'rxjs';
+import { AbstractServiceTool } from './abstracttoolsservice';
 
 @Injectable({
     providedIn: 'root'
 })
-export class ToolService extends AbstractService<ToolDTO>{
+export class ToolService extends AbstractServiceTool<ToolDTO>{
 
     constructor(http: HttpClient){
         super(http);
