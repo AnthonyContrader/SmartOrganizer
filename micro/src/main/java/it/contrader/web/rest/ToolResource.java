@@ -57,8 +57,8 @@ public class ToolResource {
         
         
         //simulazione di usura a cazzo
-        if(toolDTO.getLifetime()>0) {
-        	int life = toolDTO.getLifetime();
+     //   if(toolDTO.getLifetime()>0) {
+      //  	int life = toolDTO.getLifetime();
         	
         	
         		//try {
@@ -84,8 +84,8 @@ public class ToolResource {
         		 * 
         		 */
         	
-					--life;
-		        	toolDTO.setLifetime(life);
+					//--life;
+		        	//toolDTO.setLifetime(life);
         	
 				//}
         		//catch (InterruptedException e) {
@@ -95,7 +95,7 @@ public class ToolResource {
 				//}
         	
         	
-        }
+        //}
         ToolDTO result = toolService.save(toolDTO);
         return ResponseEntity.created(new URI("/api/tools/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
@@ -118,17 +118,39 @@ public class ToolResource {
         if (toolDTO.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         }
-        
+   /*     
         //simulatore di usura a cazzo
         if(toolDTO.getLifetime()>0) {
         	int life = toolDTO.getLifetime();
         	--life;
         	toolDTO.setLifetime(life);
         }
+        
+    */    
         ToolDTO result = toolService.save(toolDTO);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, toolDTO.getId().toString()))
             .body(result);
+    }
+    
+    @PutMapping("/tools/usura")
+    @Timed
+    public ResponseEntity<ToolDTO> usuraTool(@RequestBody ToolDTO toolDTO){
+    	log.debug("REST request to update Tool : {}",toolDTO);
+    	if(toolDTO.getId()==null) {
+    		new BadRequestAlertException("Invalid id",ENTITY_NAME, "idnull");
+    	}
+    	
+    	 if(toolDTO.getLifetime()>0) {
+         	int life = toolDTO.getLifetime();
+         	--life;
+         	toolDTO.setLifetime(life);
+         }
+    	
+    	ToolDTO result = toolService.save(toolDTO);
+    	return ResponseEntity.ok()
+    			.headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, toolDTO.getId().toString()))
+    			.body(result);
     }
 
     /**
