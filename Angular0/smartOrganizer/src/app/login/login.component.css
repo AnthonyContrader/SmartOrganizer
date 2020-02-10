@@ -12,7 +12,7 @@
 
 .transizioneC {
     position: absolute;
-    width: 450px;
+    width: 200vw;
     height: 60%;
     padding-top: 25pt;
     background-color: #304ACE;
@@ -40,7 +40,6 @@
 
 #divdestra {
     background-color: transparent;
-    overflow: hidden;
     text-align: center;
     width: 50%;
     height: 100%;
@@ -48,9 +47,11 @@
 
 input {
     text-align: center;
-    width: 180px;
+    position: relative;
+    margin: 1vw;
+    left: -2vw;
+    width: 16vw;
     height: 35px;
-    margin: 4px;
     color: white;
     border: 2px solid;
     border-color: white;
@@ -87,28 +88,29 @@ input {
 }
 
 #cerchio {
+    left: -5.5vw;
+    top: -12.5vw;
     color: white;
-    position: relative;
+    position: absolute;
     background-color: transparent;
-    border: 3px solid white;
-    height: 300px;
-    width: 300px;
-    margin: 1.75em;
+    border: 2px solid white;
+    height: 24vw;
+    width: 24vw;
 }
 
 .loginBtn {
-    border: 3px solid white;
+    border: 2px solid white;
     padding: 10px;
     border-radius: 100%;
     background-color: #304ACE;
-    height: 150px;
-    width: 150px;
+    height: 6vw;
+    width: 6vw;
 }
 
 .circle-container {
     position: relative;
-    width: 40em;
-    height: 40em;
+    width: 50vw;
+    height: 50vw;
     /*2.8em = 2em*1.4 (2em = half the width of a link with img, 1.4 = sqrt(2))*/
 }
 
@@ -117,40 +119,40 @@ input {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 6em;
-    height: 6em;
-    margin: -3em;
+    width: 5vw;
+    height: 5vw;
+    margin: -2.5em;
 }
 
 .deg0 {
-    transform: translate(14.5em);
+    transform: translate(12.5vw);
 }
 
 
 /* 12em = half the width of the wrapper */
 
 .deg45 {
-    transform: rotate(45deg) translate(14.5em) rotate(-45deg);
+    transform: rotate(45deg) translate(12.5vw) rotate(-45deg);
 }
 
 .deg135 {
-    transform: rotate(135deg) translate(14.5em) rotate(-135deg);
+    transform: rotate(135deg) translate(12.5vw) rotate(-135deg);
 }
 
 .deg180 {
-    transform: translate(-14.5em);
+    transform: translate(-12.5vw);
 }
 
 .deg225 {
-    transform: rotate(225deg) translate(14.5em) rotate(-225deg);
+    transform: rotate(225deg) translate(12.5vw) rotate(-225deg);
 }
 
 .deg315 {
-    transform: rotate(315deg) translate(14.5em) rotate(-315deg);
+    transform: rotate(315deg) translate(12.5vw) rotate(-315deg);
 }
 
 .deg90 {
-    transform: rotate(90deg) translate(14.5em) rotate(-90deg);
+    transform: rotate(90deg) translate(12.5vw) rotate(-90deg);
     visibility: hidden;
 }
 
