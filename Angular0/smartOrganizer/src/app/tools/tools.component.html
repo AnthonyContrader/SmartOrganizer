@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-1">
+
+        </div>
+        <div class="col-md-10">
+            <div id="usurato">
+                <p>!!!tool da cambiare!!! <br> E FORZA AVELLINO!!!!</p><img src="/assets/img/avellino.png">
+            </div>
+            <table>
+                <tr>
+                    <th>
+                        Toolname
+                    </th>
+                    <th>
+                        Rawmaterial
+                    </th>
+                    <th>
+                        Lifetime
+                    </th>
+                    <th>
+                        Employee
+                    </th>
+                    <th>
+                        Edit
+                    </th>
+                    <th>
+                        Tool
+                    </th>
+                    <th>
+                        usura
+                    </th>
+
+                </tr>
+                <tr>
+
+                    <td>
+                        <input placeholder="toolname" [(ngModel)]="tooltoinsert.toolname">
+                    </td>
+
+                    <td>
+                        <input placeholder="rawmaterial" [(ngModel)]="tooltoinsert.rawmaterial">
+                    </td>
+                    <td> <input placeholder="lifetime" [(ngModel)]="tooltoinsert.lifetime"></td>
+                    <td>
+                        <select placeholder="employee" [(ngModel)]="tooltoinsert.employeeId">
+                            <option *ngFor="let employee of employees" value="{{employee.id}}">{{employee.name}}
+                            </option>
+                        </select>
+                    </td>
+                    <td>
+                        <button (click)="insert(tooltoinsert)">Insert</button>
+                    </td>
+                    <td>
+                        <button (click)="clear()">Clear</button>
+                    </td>
+                </tr>
+                <tr *ngFor="let tool of tools">
+                    <td>
+                        <input [(ngModel)]="tool.toolname">
+                    </td>
+                    <td>
+                        <input [(ngModel)]="tool.rawmaterial">
+                    </td>
+                    <td>
+                        <input [(ngModel)]="tool.lifetime"> </td>
+                    <td>
+                        <select [(ngModel)]="tool.employeeId">
+                            <option *ngFor="let employee of employees" value="{{employee.id}}">{{employee.name}}
+                            </option>
+                        </select>
+                    </td>
+                    <td>
+                        <button (click)="update(tool)">Save</button>
+                    </td>
+                    <td>
+                        <button (click)="delete(tool)">Delete</button>
+                    </td>
+                    <td>
+                        <button (click)="usura(tool)">usura</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-1">
+
+        </div>
+    </div>
+</div>

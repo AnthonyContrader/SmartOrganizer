@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AdminLayoutComponent } from '../layout/admin-layout/admin-layout.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UsersComponent } from './users/users.component';
-import { EmployeesComponent } from '../employees/employees.component';
-import { ToolsComponent } from '../tools/tools.component';
-import {LocationsComponent} from '../location/locations.component'
-import { BillsComponent } from '../bills/bills.component';
-import { CalendarsComponent } from '../calendars/calendars.component';
-import {WorkgroupComponent} from '../workgroup/workgroup.component';
+import { AdminLayoutComponent } from 'src/app/layout/admin-layout/admin-layout.component';
+import { EmployeesComponent } from 'src/app/employees/employees.component';
+import { ToolsComponent } from 'src/app/tools/tools.component';
+import { LocationsComponent } from 'src/app/location/locations.component';
+import { BillsComponent } from 'src/app/bills/bills.component';
+import { CalendarsComponent } from 'src/app/calendars/calendars.component';
+import { WorkgroupComponent } from 'src/app/workgroup/workgroup.component';
+
 
 /**
  * Modulo di routing dell'admin. Qui ci sono i percorsi che un admin può seguire:

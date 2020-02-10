@@ -1,0 +1,64 @@
+* {
+    text-align: center;
+}
+
+
+/*Tables*/
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 2px;
+}
+
+td {
+    font-size: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+th {
+    background-color: rgb(0, 216, 18);
+    color: #ffffff;
+}
+
+a:hover {
+    color: #999999;
+}
+
+input,
+select {
+    background-color: rgba(191, 255, 179, 0.438);
+    font-size: inherit;
+}
+
+input:hover,
+input:active,
+input:focus {
+    border: 2px solid crimson;
+}
+
+button:hover {
+    background-color: crimson;
+}
+
+#usurato {
+    color: maroon;
+    font-size: 24pt;
+    height: 395px;
+    position: absolute;
+    width: 395px;
+    visibility: hidden;
+    background-image: url(/assets/img/avellino.png);
+    background-size: contain;
+    font-style: bold;
+}

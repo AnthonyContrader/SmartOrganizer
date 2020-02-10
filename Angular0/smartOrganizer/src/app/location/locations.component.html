@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row mt-5">
+      <div class="col-md-1">
+  
+      </div>
+      <div class="col-md-10">
+        <table>
+          <tr>
+            <th>
+            Address
+            </th>
+            <th>
+            City
+            </th>
+            <th>
+            typeoflocation
+            </th>
+            <th>
+            worktype
+            </th>
+                <th>
+                Edit
+                </th>
+            <th>
+              Location
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <input placeholder="address" [(ngModel)]="locationtoinsert.address">
+            </td>
+            <td>
+              <input placeholder="city" [(ngModel)]="locationtoinsert.city">
+            </td>
+            <td>
+                <input placeholder="typeoflocation" [(ngModel)]="locationtoinsert.typeoflocation">
+              </td>
+              <td>
+                <input placeholder="worktype" [(ngModel)]="locationtoinsert.worktype">
+              </td>
+            <td>
+              <button (click)="insert(locationtoinsert)">Insert</button>
+            </td>
+            <td>
+              <button (click)="clear()">Clear</button>
+            </td>
+          </tr>
+          <tr *ngFor="let location of locations">
+            <td>
+              <input [(ngModel)]="location.address">
+            </td>
+            <td>
+              <input [(ngModel)]="location.city">
+            </td>
+            <td>
+                <input [(ngModel)]="location.typeoflocation">
+              </td>
+              <td>
+                <input [(ngModel)]="location.worktype">
+              </td>
+            <td>
+              <button (click)="update(location)">Save</button>
+            </td>
+            <td>
+              <button (click)="delete(location)">Delete</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-1">
+  
+      </div>
+    </div>
+  </div>

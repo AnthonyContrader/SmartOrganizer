@@ -1,0 +1,87 @@
+<div class="container-fluid">
+    <div class="row mt-5">
+      <div class="col-md-50">
+  
+      </div>
+      <div class="col-md-10">
+        <table>
+          <tr>
+            <th>
+              Name
+            </th>
+            <th>
+              Surname
+            </th>
+            <th>
+              Fiscalcode
+            </th>
+            <th>
+              Position
+            </th>
+            <th>
+              Workgroup
+            </th>
+            <th>
+              Edit
+            </th>
+            <th>
+              Employees
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <input placeholder="Name" [(ngModel)]="employeetoinsert.name">
+            </td>
+            <td>
+              <input placeholder="Surname" [(ngModel)]="employeetoinsert.surname">
+            </td>
+            <td>
+              <input placeholder="Fiscalcode" [(ngModel)]="employeetoinsert.fiscalcode">
+            </td>
+            <td>
+              <input placeholder="Position" [(ngModel)]="employeetoinsert.position">
+            </td>
+            <td>
+              <select placeholder="Workgroup" [(ngModel)]="employeetoinsert.workgroupId">
+                <option *ngFor="let workgroup of workgroups" value="{{workgroup.id}}">{{workgroup.name}}</option>
+              </select>
+            </td>
+            <td>
+              <button (click)="insert(employeetoinsert)">Insert</button>
+            </td>
+            <td>
+              <button (click)="clear()">Clear</button>
+            </td>
+            </tr>
+            <tr *ngFor="let employee of employees">
+            <td>
+              <input [(ngModel)]="employee.name">
+            </td>
+            <td>
+              <input [(ngModel)]="employee.surname">
+            </td>
+            <td>
+              <input [(ngModel)]="employee.fiscalcode">
+            </td>
+            <td>
+              <input [(ngModel)]="employee.position">
+            </td>
+            <td>
+              <select [(ngModel)]="employee.workgroupId">
+                <option *ngFor="let workgroup of workgroups" value="{{workgroup.id}}">{{workgroup.name}}</option>
+              </select>
+            </td>
+            <td>
+              <button (click)="update(employee)">Save</button>
+            </td>
+            <td>
+              <button (click)="delete(employee)">Delete</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-10">
+  
+      </div>
+    </div>
+  </div>

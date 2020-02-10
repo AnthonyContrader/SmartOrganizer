@@ -7,6 +7,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { LoginModule } from './login/login.module';
 import { HttpClientModule } from '@angular/common/http';
+import { LayoutModule } from './layout/layout.module';
+import { AdminModule } from 'src/admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     
     NgbModule,
+    LayoutModule,
+    AdminModule,
     LoginModule,
     BrowserModule,
     AppRoutingModule,
