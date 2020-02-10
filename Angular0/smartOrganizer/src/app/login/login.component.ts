@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginDTO } from 'src/dto/logindto';
+import { UserService } from 'src/service/user.service';
+import { Router } from '@angular/router';
+import { UserDTO } from 'src/dto/userdto';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
