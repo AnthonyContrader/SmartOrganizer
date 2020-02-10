@@ -14,7 +14,7 @@ export class ToolService extends AbstractServiceTool<ToolDTO>{
     constructor(http: HttpClient){
         super(http);
         this.type = 'tools';
-        this.name = 'SmartOrganizerMicro';
+        this.name = 'micro2';
         this.port = '8080';
     }
 

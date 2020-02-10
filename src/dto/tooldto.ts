@@ -4,4 +4,5 @@ export class ToolDTO{
     toolname: string;
     rawmaterial: string;
     lifetime:number;
+    employeeId: number;
 }

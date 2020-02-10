@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ToolDTO } from 'src/dto/tooldto';
 import { ToolService } from 'src/service/tool.service';
 import { timer } from 'rxjs';
+import { EmployeeDTO } from 'src/dto/employeedto';
+import { EmployeeService } from 'src/service/employee.service';
 
 @Component({
   selector: 'app-tools',
@@ -12,8 +14,9 @@ export class ToolsComponent implements OnInit {
 
   tools: ToolDTO[];
   tooltoinsert: ToolDTO = new ToolDTO();
+  employees: EmployeeDTO[];
 
-  constructor(private service: ToolService) { }
+  constructor(private service: ToolService, private empser: EmployeeService) { }
 
 
   forzaavellino(){
@@ -22,6 +25,7 @@ export class ToolsComponent implements OnInit {
 
   ngOnInit() {
     this.getTools();
+    this.empser.getAll().subscribe(employees => this.employees = employees);
   }
 
   getTools(){

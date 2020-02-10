@@ -19,6 +19,9 @@
                         Lifetime
                     </th>
                     <th>
+                        Employee
+                    </th>
+                    <th>
                         Edit
                     </th>
                     <th>
@@ -40,6 +43,12 @@
                     </td>
                     <td> <input placeholder="lifetime" [(ngModel)]="tooltoinsert.lifetime"></td>
                     <td>
+                        <select placeholder="employee" [(ngModel)]="tooltoinsert.employeeId">
+                            <option *ngFor="let employee of employees" value="{{employee.id}}">{{employee.name}}
+                            </option>
+                        </select>
+                    </td>
+                    <td>
                         <button (click)="insert(tooltoinsert)">Insert</button>
                     </td>
                     <td>
@@ -55,6 +64,12 @@
                     </td>
                     <td>
                         <input [(ngModel)]="tool.lifetime"> </td>
+                    <td>
+                        <select [(ngModel)]="tool.employeeId">
+                            <option *ngFor="let employee of employees" value="{{employee.id}}">{{employee.name}}
+                            </option>
+                        </select>
+                    </td>
                     <td>
                         <button (click)="update(tool)">Save</button>
                     </td>
