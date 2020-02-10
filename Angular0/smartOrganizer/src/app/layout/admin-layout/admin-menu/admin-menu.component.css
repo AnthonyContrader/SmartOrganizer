@@ -1,0 +1,24 @@
+.immagini {
+    float: left;
+    width: 80px;
+    height: 80px;
+}
+
+.nav-item {
+    text-align: center;
+    text-shadow: 5mm;
+    font-size: 18pt;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+#vocemenu {
+    color: white;
+}
+
+.bianco {
+    color: white;
+}

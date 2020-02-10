@@ -1,0 +1,83 @@
+<!-- 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-7">
+      <img src="https://vectorified.com/images/sop-icon-38.png" alt="logo">
+    </div>
+    <div class="col-md-5">
+      <form #f="ngForm">
+        <p>Please insert username and password to Login or Sign Up</p>
+        <div class="form-group">
+          <input class="form-control" type="text" id="user" name="username" placeholder="Username" ngModel>
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="password" id="pass" name="password" placeholder="Password" ngModel>
+        </div>
+        <button type="submit" (click)="login(f)">Login</button>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</div> -->
+
+<div id="sfondo" class="row align-items-center">
+
+
+    <div class="col">
+
+    </div>
+
+
+    <div class="col-md-12; row" id="divlogo">
+
+
+        <div id="divsinistra" style="text-align: center;">
+
+            <img src="/assets/img/LogoSmartOrganizerSVG.svg" />
+
+            <p id="paragrafo" style="font-size: 51pt;">Smart</p>
+            <p id="paragrafo" style="font-size: 29pt; margin-top: -15pt;">Organizer </p>
+        </div>
+
+        <div class="row align-items-center" id="divdestra">
+            <div class="col"></div>
+
+            <div id="transizione" class=""></div>
+
+            <div class="col">
+                <div class="rounded-circle circle-container" id="cerchio">
+                    <form #f="ngForm">
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col-md-12">
+                                <p id="paragrafo" style=" right: 5.5vw; position: relative;">
+                                    <input class="menu form-control" type="text" id="user" name="username" placeholder="Username" ngModel>
+                                    <input class="menu form-control" type="password" id="pass" name="password" placeholder="Password" ngModel>
+                                    <!--<button type="submit" (click)="login(f)">Login</button>-->
+                                </p>
+
+                            </div>
+                            <div class="col"></div>
+                        </div>
+
+                        <div href='#' class='row deg0 loginBtn align-items-center'><i class="fab fa-facebook-f fa-3x"></i></div>
+                        <div href='#' class='row deg45 loginBtn align-items-center' (click)="muovi()"><i class="fas fa-user fa-3x "></i></div>
+                        <div href='#' class='row deg135 loginBtn align-items-center' (click)="register(f)"><i class="fas fa-user-plus fa-3x "></i></div>
+                        <div href='#' class='row deg180 loginBtn align-items-center'><i class="fas fa-question fa-3x "></i></div>
+                        <div href='#' class='row deg225 loginBtn align-items-center'><i class="fab fa-linkedin-in fa-3x "></i></div>
+                        <div href='#' class='row deg315 loginBtn align-items-center'><i class="fab fa-google-plus-g fa-3x "></i></div>
+                        <div id="enter" href='#' class='row deg90 loginBtn align-items-center' (click)="login(f)"><i class="fas fa-sign-in-alt fa-3x "></i></div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="col "></div>
+        </div>
+    </div>
+
+    <div class="col ">
+
+    </div>
+
+
+</div>
