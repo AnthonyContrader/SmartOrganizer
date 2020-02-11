@@ -1,165 +1,242 @@
-#sfondo {
-    background-image: url(/assets/img/sfondo.gif);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-#divlogo {
-    width: 60%;
-    height: 60%;
-}
-
-.transizioneC {
-    position: absolute;
-    width: 200vw;
-    height: 60%;
-    padding-top: 25pt;
-    background-color: #304ACE;
-    animation-name: animazioneLaterale;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes animazioneLaterale {
-    from {
-        width: 0px;
+    #sfondo {
+        background-image: url(/assets/img/sfondo.gif);
+        position: absolute;
+        overflow: auto;
+        width: 100%;
+        height: 100%;
     }
-    to {
-        width: 450px;
+    
+    #divlogo {
+        width: 60%;
+        height: 60%;
     }
-}
+    
+    .transizioneC {
+        position: absolute;
+        width: 200vw;
+        height: 60%;
+        padding-top: 25pt;
+        background-color: #304ACE;
+        animation-name: animazioneLaterale;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+    
+    @keyframes animazioneLaterale {
+        from {
+            width: 0px;
+        }
+        to {
+            width: 450px;
+        }
+    }
+    
+    #divsinistra {
+        overflow: hidden;
+        padding-top: 25pt;
+        width: 50%;
+        height: 100%;
+        background-color: #304ACE;
+    }
+    
+    #divdestra {
+        text-align: center;
+        width: 50%;
+        height: 100%;
+    }
+    /*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!INIZIO RESPONSIVE!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-#divsinistra {
-    overflow: hidden;
-    padding-top: 25pt;
-    width: 50%;
-    height: 100%;
-    background-color: #304ACE;
-}
 
-#divdestra {
-    background-color: transparent;
-    text-align: center;
-    width: 50%;
-    height: 100%;
-}
 
-input {
-    text-align: center;
-    position: relative;
-    margin: 1vw;
-    left: -2vw;
-    width: 16vw;
-    height: 35px;
-    color: white;
-    border: 2px solid;
-    border-color: white;
-    border-radius: 25px;
-    background-color: #304ACE;
-}
+*/
+    
+    @media only screen and (max-width: 768px) {
+        #divsinistra {
+            float: left;
+            overflow: hidden;
+            padding-top: 25pt;
+            width: 100%;
+            height: 100%;
+        }
+        #divdestra {
+            top: 0mm;
+            margin-left: 0mm;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            ;
+        }
+        #responsiblecircle {
+            height: 60px;
+            width: 60px;
+            position: absolute;
+            float: left;
+        }
+        #enter {
+            height: 60px;
+            width: 60px;
+            position: absolute;
+            float: left;
+        }
+        #paragrafo {
+            top: 40mm;
+            left: 0mm;
+            position: absolute;
+            text-align: center;
+            font-family: 'Adlanta', Arial, Helvetica, sans-serif;
+            color: rgb(255, 255, 255);
+            padding: 0mm;
+            border: 5mm;
+            margin: 5px;
+        }
+        .transizioneC {
+            margin-left: -80px;
+            border-radius: 50px;
+            position: absolute;
+            width: 20%;
+            height: 50%;
+            padding-top: 25pt;
+            background-color: ;
+        }
+    }
+    /*
 
-.menu {
-    visibility: hidden;
-}
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-.menuVisibile {
-    animation-name: appari;
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
-}
+!!!!!!!FINE RESPONSIVE!!!!!!!!
 
-@keyframes appari {
-    from {
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*/
+    
+    input {
+        text-align: center;
+        position: relative;
+        margin: 1vw;
+        left: -2vw;
+        width: 16vw;
+        height: 35px;
+        color: white;
+        border: 2px solid;
+        border-color: white;
+        border-radius: 25px;
+        background-color: #304ACE;
+    }
+    
+    .menu {
         visibility: hidden;
     }
-    to {
+    
+    .menuVisibile {
+        animation-name: appari;
+        animation-delay: 2s;
+        animation-fill-mode: forwards;
+    }
+    
+    @keyframes appari {
+        from {
+            visibility: hidden;
+        }
+        to {
+            visibility: visible;
+        }
+    }
+    
+    #paragrafo {
+        text-align: center;
+        font-family: 'Adlanta', Arial, Helvetica, sans-serif;
+        color: rgb(255, 255, 255);
+        padding: 0mm;
+        border: none;
+        margin: 0px;
+    }
+    
+    #paragrafo2 {
+        text-align: center;
+        font-family: 'Adlanta', Arial, Helvetica, sans-serif;
+        color: rgb(255, 255, 255);
+        padding: 0mm;
+        border: none;
+        margin: 0px;
+    }
+    
+    #cerchio {
+        left: -5.5vw;
+        top: -12.5vw;
+        color: white;
+        position: absolute;
+        background-color: transparent;
+        border: 2px solid white;
+        height: 24vw;
+        width: 24vw;
+    }
+    
+    .loginBtn {
+        border: 2px solid white;
+        padding: 10px;
+        border-radius: 100%;
+        background-color: #304ACE;
+        height: 6vw;
+        width: 6vw;
+    }
+    
+    .circle-container {
+        position: relative;
+        width: 50vw;
+        height: 50vw;
+        /*2.8em = 2em*1.4 (2em = half the width of a link with img, 1.4 = sqrt(2))*/
+    }
+    
+    .circle-container div {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5vw;
+        height: 5vw;
+        margin: -2.5em;
+    }
+    
+    .deg0 {
+        transform: translate(12.5vw);
+    }
+    /* 12em = half the width of the wrapper */
+    
+    .deg45 {
+        transform: rotate(45deg) translate(12.5vw) rotate(-45deg);
+    }
+    
+    .deg135 {
+        transform: rotate(135deg) translate(12.5vw) rotate(-135deg);
+    }
+    
+    .deg180 {
+        transform: translate(-12.5vw);
+    }
+    
+    .deg225 {
+        transform: rotate(225deg) translate(12.5vw) rotate(-225deg);
+    }
+    
+    .deg315 {
+        transform: rotate(315deg) translate(12.5vw) rotate(-315deg);
+    }
+    
+    .deg90 {
+        transform: rotate(90deg) translate(12.5vw) rotate(-90deg);
+        visibility: hidden;
+    }
+    
+    .invisibile {
+        visibility: hidden;
+    }
+    
+    .visibile {
         visibility: visible;
     }
-}
-
-#paragrafo {
-    text-align: center;
-    font-family: 'Adlanta', Arial, Helvetica, sans-serif;
-    color: rgb(255, 255, 255);
-    padding: 0mm;
-    border: none;
-    margin: 0px;
-}
-
-#cerchio {
-    left: -5.5vw;
-    top: -12.5vw;
-    color: white;
-    position: absolute;
-    background-color: transparent;
-    border: 2px solid white;
-    height: 24vw;
-    width: 24vw;
-}
-
-.loginBtn {
-    border: 2px solid white;
-    padding: 10px;
-    border-radius: 100%;
-    background-color: #304ACE;
-    height: 6vw;
-    width: 6vw;
-}
-
-.circle-container {
-    position: relative;
-    width: 50vw;
-    height: 50vw;
-    /*2.8em = 2em*1.4 (2em = half the width of a link with img, 1.4 = sqrt(2))*/
-}
-
-.circle-container div {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 5vw;
-    height: 5vw;
-    margin: -2.5em;
-}
-
-.deg0 {
-    transform: translate(12.5vw);
-}
-
-
-/* 12em = half the width of the wrapper */
-
-.deg45 {
-    transform: rotate(45deg) translate(12.5vw) rotate(-45deg);
-}
-
-.deg135 {
-    transform: rotate(135deg) translate(12.5vw) rotate(-135deg);
-}
-
-.deg180 {
-    transform: translate(-12.5vw);
-}
-
-.deg225 {
-    transform: rotate(225deg) translate(12.5vw) rotate(-225deg);
-}
-
-.deg315 {
-    transform: rotate(315deg) translate(12.5vw) rotate(-315deg);
-}
-
-.deg90 {
-    transform: rotate(90deg) translate(12.5vw) rotate(-90deg);
-    visibility: hidden;
-}
-
-.invisibile {
-    visibility: hidden;
-}
-
-.visibile {
-    visibility: visible;
-}

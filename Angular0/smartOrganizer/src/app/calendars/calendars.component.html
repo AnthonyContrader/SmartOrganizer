@@ -1,78 +1,79 @@
-<div class="container">
-  <div class="row mt-5">
-    <div class="col-md-1">
+<div id="riga" class="container">
+    <div class="row mt-5">
+        <div class="col-md-1">
 
-    </div>
-    <div class="col-md-10">
-      <table>
-        <tr>
-          <th>
-            Date
-          </th>
-          <th>
-            Checkin
-          </th>
-          <th>
-            Checkout
-          </th>
-          <th>
-            Employee
-          </th>
-          <th>
-            Edit
-          </th>
-          <th>
-            Calendar
-          </th>
-        </tr>
-        <tr>
-          <td>
-            <input type="date" placeholder="date" [(ngModel)]="calendartoinsert.date">
-          </td>
-          <td>
-            <input type='time' placeholder="checkin" [(ngModel)]="calendartoinsert.checkin">
-          </td>
-          <td>
-            <input type='time' placeholder="checkout" [(ngModel)]="calendartoinsert.checkout">
-          </td>
-          <td>
-            <select placeholder="employee" [(ngModel)]="calendartoinsert.employeeId">
+        </div>
+        <div id="tabelle" class="col-md-10">
+
+            <table>
+                <tr>
+                    <th>
+                        Date
+                    </th>
+                    <th>
+                        Checkin
+                    </th>
+                    <th>
+                        Checkout
+                    </th>
+                    <th>
+                        Employee
+                    </th>
+                    <th>
+                        Edit
+                    </th>
+                    <th>
+                        Calendar
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="date" placeholder="date" [(ngModel)]="calendartoinsert.date">
+                    </td>
+                    <td>
+                        <input type='time' placeholder="checkin" [(ngModel)]="calendartoinsert.checkin">
+                    </td>
+                    <td>
+                        <input type='time' placeholder="checkout" [(ngModel)]="calendartoinsert.checkout">
+                    </td>
+                    <td>
+                        <select placeholder="employee" [(ngModel)]="calendartoinsert.employeeId">
               <option *ngFor="let employee of employees" value="{{employee.id}}">{{employee.name}}</option>
             </select>
-          </td>
-          <td>
-            <button (click)="insert(calendartoinsert)">Insert</button>
-          </td>
-          <td>
-            <button (click)="clear()">Clear</button>
-          </td>
-        </tr>
-        <tr *ngFor="let calendar of calendars">
-          <td>
-            <input type="date" [(ngModel)]="calendar.date">
-          </td>
-          <td>
-            <input type='time' [(ngModel)]="calendar.checkin">
-          </td>
-          <td>
-            <input type='time' [(ngModel)]="calendar.checkout">
-          </td>
-          <td>
-            <select [(ngModel)]="calendar.employeeId">
+                    </td>
+                    <td>
+                        <button (click)="insert(calendartoinsert)">Insert</button>
+                    </td>
+                    <td>
+                        <button (click)="clear()">Clear</button>
+                    </td>
+                </tr>
+                <tr *ngFor="let calendar of calendars">
+                    <td>
+                        <input type="date" [(ngModel)]="calendar.date">
+                    </td>
+                    <td>
+                        <input type='time' [(ngModel)]="calendar.checkin">
+                    </td>
+                    <td>
+                        <input type='time' [(ngModel)]="calendar.checkout">
+                    </td>
+                    <td>
+                        <select [(ngModel)]="calendar.employeeId">
               <option *ngFor="let employee of employees" value="{{employee.id}}">{{employee.name}}</option>
             </select>
-          </td>
-          <td>
-            <button (click)="update(calendar)">Save</button>
-          </td>
-          <td>
-            <button (click)="delete(calendar)">Delete</button>
-          </td>
-        </tr>
-      </table>
-    </div>
-    <div class="col-md-1">
+                    </td>
+                    <td>
+                        <button (click)="update(calendar)">Save</button>
+                    </td>
+                    <td>
+                        <button (click)="delete(calendar)">Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-1">
 
+        </div>
     </div>
-  </div>
 </div>

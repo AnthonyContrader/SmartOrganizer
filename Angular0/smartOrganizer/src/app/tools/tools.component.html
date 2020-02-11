@@ -1,14 +1,14 @@
-<div class="container">
+<div id="riga" class="container">
     <div class="row mt-5">
         <div class="col-md-1">
 
         </div>
-        <div class="col-md-10">
+        <div id="tabelle" class="col-md-10">
             <div id="usurato">
-                <p>!!!tool da cambiare!!! <br> E FORZA AVELLINO!!!!</p><img src="/assets/img/avellino.png">
+                <p>!!!tool da cambiare!!! <br> E FORZA AVELLINO!!!!</p>
             </div>
             <table>
-                <tr>
+                <tr id="linea1">
                     <th>
                         Toolname
                     </th>
@@ -32,14 +32,14 @@
                     </th>
 
                 </tr>
-                <tr>
+                <tr id="linea1">
 
                     <td>
-                        <input placeholder="toolname" [(ngModel)]="tooltoinsert.toolname">
+                        <input placeholder="insert toolname" [(ngModel)]="tooltoinsert.toolname">
                     </td>
 
                     <td>
-                        <input placeholder="rawmaterial" [(ngModel)]="tooltoinsert.rawmaterial">
+                        <input placeholder="insert rawmaterial" [(ngModel)]="tooltoinsert.rawmaterial">
                     </td>
                     <td> <input placeholder="lifetime" [(ngModel)]="tooltoinsert.lifetime"></td>
                     <td>
@@ -54,8 +54,9 @@
                     <td>
                         <button (click)="clear()">Clear</button>
                     </td>
+                    <td></td>
                 </tr>
-                <tr *ngFor="let tool of tools">
+                <tr id="linea1" *ngFor="let tool of tools">
                     <td>
                         <input [(ngModel)]="tool.toolname">
                     </td>

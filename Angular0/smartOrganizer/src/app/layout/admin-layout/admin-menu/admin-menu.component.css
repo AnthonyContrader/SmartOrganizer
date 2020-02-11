@@ -1,19 +1,48 @@
 .container-fluid {
-    background-color: rgba(58, 43, 226, 0.537);
+    vertical-align: middle;
+    background-color: #304ACE;
 }
 
 #centro {
+    font-family: 'Adlanta', Arial, Helvetica, sans-serif;
     text-align: center;
 }
 
 .row {
-    padding: 2vw;
-    justify-content: center;
-    vertical-align: bottom;
-    position: relative;
+    justify-items: center;
+    min-height: 90px;
+    justify-content: left;
+    padding: 2.5vw;
+    vertical-align: center;
 }
 
 a {
-    color: white;
-    margin: 1vw;
+    font-family: 'Adlanta', Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: rgba(23, 23, 23, 0.734);
+    margin: 3vw;
+}
+
+a:hover {
+    font-family: 'Adlanta', Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font: outline;
+}
+
+#logo {
+    margin: 0mm;
+    text-align: center;
+    margin-top: 0.5vw;
+    height: 8vw;
+    width: 8vw;
+    float: left;
+}
+
+#testologo {
+    font-family: 'Adlanta', Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    margin-left: 3vw;
+    margin-top: 0pt;
 }
