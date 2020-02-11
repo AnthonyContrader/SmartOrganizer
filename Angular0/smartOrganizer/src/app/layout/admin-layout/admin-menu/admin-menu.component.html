@@ -1,43 +1,46 @@
-<div class="container">
-    <nav class="navbar-dark navbar-expand-xl ">
-
-        <a class="navbar-brand" [routerLink]="['/admin-dashboard']">
-            <img src="/assets/img/LogoSmartOrganizerSVG.svg" width="50" height="50" alt="">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto justify-content-md-center">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-8">
+            <nav class="navbar-light navbar-expand-xl ">
 
 
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                <li class="nav-item">
-                    <a class=" nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/users']">Users</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/employees']">Employees</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/tools']">Tools</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/bills']">Bills</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/locations']">Locations</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/calendars']">Calendars</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/workgroups']">Workgroups</a>
-                </li>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ">
+                        <li [routerLink]="['/admin-dashboard']">
+                            <img src="/assets/img/LogoSmartOrganizerSVG.svg" width="50" height="50" alt="">
+                        </li>
+                        <li>
+                            <a [routerLink]="['/admin-dashboard/users']">Users</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/admin-dashboard/employees']">Employees</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/admin-dashboard/tools']">Tools</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/admin-dashboard/bills']">Bills</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/admin-dashboard/locations']">Locations</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/admin-dashboard/calendars']">Calendars</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/admin-dashboard/workgroups']">Workgroups</a>
+                        </li>
 
-            </ul>
+                    </ul>
 
 
+                </div>
+            </nav>
         </div>
-    </nav>
+
+    </div>
 </div>

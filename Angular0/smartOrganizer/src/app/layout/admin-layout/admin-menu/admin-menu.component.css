@@ -1,24 +1,19 @@
-.immagini {
-    float: left;
-    width: 80px;
-    height: 80px;
+.container-fluid {
+    background-color: rgba(58, 43, 226, 0.537);
 }
 
-.nav-item {
+#centro {
     text-align: center;
-    text-shadow: 5mm;
-    font-size: 18pt;
-    color: white;
+}
+
+.row {
+    padding: 2vw;
+    justify-content: center;
+    vertical-align: bottom;
+    position: relative;
 }
 
 a {
     color: white;
-}
-
-#vocemenu {
-    color: white;
-}
-
-.bianco {
-    color: white;
+    margin: 1vw;
 }

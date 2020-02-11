@@ -1,22 +1,5 @@
-<div class="sfondo container-fluid">
-    <div class="row-1 justify-content-md-center menu">
+<app-admin-menu></app-admin-menu>
 
-        <div>
-
-            <app-admin-menu></app-admin-menu>
-        </div>
-
-    </div>
-    <div class="row">
-        <div class="col-2"></div>
-
-        <div class="col-md-8  container">
-
-            <div id="tabelle" class="justify-content-md-center">
-                <router-outlet></router-outlet>
-            </div>
-        </div>
-
-        <div class="col-2"></div>
-    </div>
+<div class="sfondo">
+    <router-outlet></router-outlet>
 </div>
