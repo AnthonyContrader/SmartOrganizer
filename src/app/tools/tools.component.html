@@ -1,14 +1,16 @@
-<div class="container">
+<div id="riga" class="container">
     <div class="row mt-5">
         <div class="col-md-1">
 
         </div>
-        <div class="col-md-10">
+        <div id="tabelle" class="col-md-10">
             <div id="usurato">
-                <p>!!!tool da cambiare!!! <br> E FORZA AVELLINO!!!!</p><img src="/assets/img/avellino.png">
+
+                <p>!!!tool da cambiare!!! </p><br>
+                <a (click)="chiudi()">chiudi</a>
             </div>
-            <table>
-                <tr>
+            <table style="overflow: auto;">
+                <tr id="linea1">
                     <th>
                         Toolname
                     </th>
@@ -21,6 +23,13 @@
                     <th>
                         Employee
                     </th>
+                    date
+                    <th>
+                        Start time using tool
+                    </th>
+                    <th>
+                        end time using tool
+                    </th>
                     <th>
                         Edit
                     </th>
@@ -32,16 +41,17 @@
                     </th>
 
                 </tr>
-                <tr>
+                <tr id="linea1">
 
                     <td>
-                        <input placeholder="toolname" [(ngModel)]="tooltoinsert.toolname">
+                        <input placeholder="insert toolname" [(ngModel)]="tooltoinsert.toolname">
                     </td>
 
                     <td>
-                        <input placeholder="rawmaterial" [(ngModel)]="tooltoinsert.rawmaterial">
+                        <input placeholder="insert rawmaterial" [(ngModel)]="tooltoinsert.rawmaterial">
                     </td>
-                    <td> <input placeholder="lifetime" [(ngModel)]="tooltoinsert.lifetime"></td>
+                    <td> </td>
+
                     <td>
                         <select placeholder="employee" [(ngModel)]="tooltoinsert.employeeId">
                             <option *ngFor="let employee of employees" value="{{employee.id}}">{{employee.name}}
@@ -49,13 +59,24 @@
                         </select>
                     </td>
                     <td>
+                        <input type="date" placeholder="insert the start date of using tool" [(ngModel)]="tooltoinsert.date">
+
+                    </td>
+                    <td>
+                        <input type="time" placeholder="insert the start time of using tool" [(ngModel)]="tooltoinsert.starttime">
+                    </td>
+                    <td>
+                        <input type="time" placeholder="insert the end time of using tool " [(ngModel)]="tooltoinsert.endtime">
+                    </td>
+                    <td>
                         <button (click)="insert(tooltoinsert)">Insert</button>
                     </td>
                     <td>
                         <button (click)="clear()">Clear</button>
                     </td>
+                    <td></td>
                 </tr>
-                <tr *ngFor="let tool of tools">
+                <tr id="linea1" *ngFor="let tool of tools | paginate:{itemsPerPage:15,currentPage:pageC}">
                     <td>
                         <input [(ngModel)]="tool.toolname">
                     </td>
@@ -71,19 +92,33 @@
                         </select>
                     </td>
                     <td>
+                        <input type="date" [(ngModel)]="tool.date">
+                    </td>
+                    <td>
+                        <input type="time" [(ngModel)]="tool.starttime">
+                    </td>
+
+                    <td>
+                        <input type="time" [(ngModel)]="tool.endtime">
+                    </td>
+                    <td>
                         <button (click)="update(tool)">Save</button>
                     </td>
                     <td>
-                        <button (click)="delete(tool)">Delete</button>
+                        <button id="delete" style="visibility:visible;" (click)="delete(tool)">Delete</button>
                     </td>
                     <td>
                         <button (click)="usura(tool)">usura</button>
                     </td>
                 </tr>
             </table>
+
+
+
         </div>
         <div class="col-md-1">
 
         </div>
     </div>
+    <pagination-controls (pageChange)="pageC  = $event"></pagination-controls>
 </div>

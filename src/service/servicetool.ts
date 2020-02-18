@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
  * 
  * @see AbstractService
  */
-export interface Service<DTO> {
+export interface ServiceTool<DTO> {
 
     read(id: number): Observable<DTO> ;
 
@@ -19,5 +19,7 @@ export interface Service<DTO> {
     insert(dto: DTO): Observable<any>;
 
     getAll(): Observable<DTO[]>;
+
+    getAllPageable(): Observable<DTO[]>;
 
 }

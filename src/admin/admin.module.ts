@@ -10,6 +10,7 @@ import { LocationsComponent } from 'src/app/location/locations.component';
 import { BillsComponent } from 'src/app/bills/bills.component';
 import { CalendarsComponent } from 'src/app/calendars/calendars.component';
 import { WorkgroupComponent } from 'src/app/workgroup/workgroup.component';
+import{NgxPaginationModule} from 'ngx-pagination';
 
 
 /**
@@ -25,7 +26,7 @@ import { WorkgroupComponent } from 'src/app/workgroup/workgroup.component';
   imports: [
     CommonModule,
     AdminRoutingModule,
-    FormsModule
+    FormsModule,NgxPaginationModule
   ]
 })
 export class AdminModule { }

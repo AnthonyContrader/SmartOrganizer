@@ -5,12 +5,14 @@ import { timer } from 'rxjs';
 import { EmployeeDTO } from 'src/dto/employeedto';
 import { EmployeeService } from 'src/service/employee.service';
 
+
 @Component({
   selector: 'app-tools',
   templateUrl: './tools.component.html',
   styleUrls: ['./tools.component.css']
 })
 export class ToolsComponent implements OnInit {
+  pageC : number =1 ;
 
   tools: ToolDTO[];
   tooltoinsert: ToolDTO = new ToolDTO();
@@ -18,9 +20,14 @@ export class ToolsComponent implements OnInit {
 
   constructor(private service: ToolService, private empser: EmployeeService) { }
 
+  
 
   forzaavellino(){
     document.getElementById("usurato").setAttribute("style","visibility:visible");
+  }
+
+  chiudi(){
+    document.getElementById("usurato").setAttribute("style","visibility:hidden"); 
   }
 
   ngOnInit() {
@@ -29,7 +36,9 @@ export class ToolsComponent implements OnInit {
   }
 
   getTools(){
-    this.service.getAll().subscribe(tools => this.tools = tools);
+    //this.service.getFirstPage().subscribe(tools => this.tools = tools)
+    this.service.getAllPageable().subscribe(tools => this.tools = tools);
+    
   }
 
   delete(tool: ToolDTO){
@@ -45,21 +54,25 @@ export class ToolsComponent implements OnInit {
   }
 
  async usura(tool:ToolDTO){
-    
-for(var i=0; i<100;i++)
+  
+  document.getElementById("delete").setAttribute("style","visibility:hidden");
+  
+for(var i=0; i<=100;i++)
 {
  // var life : number;
- // life=i;
+ // life=i; 
   
 
     await new Promise(resolve => setTimeout(()=>resolve(), 500)).then(()=>this.service.usura(tool).subscribe(()=>this.getTools()));
     tool.lifetime = 100-i;
+
     
   }
-  if (tool.lifetime==1){
+  if (tool.lifetime==0){
     this.forzaavellino();
     
   }
+
 }
  
 

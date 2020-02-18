@@ -1,65 +1,67 @@
-<div class="container">
-  <div class="row mt-5">
-    <div class="col-md-1">
+<div id="riga" class="container">
+    <div class="row mt-5">
+        <div class="col-md-1">
 
-    </div>
-    <div class="col-md-10">
-      <table>
-        <tr>
-          <th>
-            Name
-          </th>
-          <th>
-            Responsible
-          </th>
-          <th>
-            Work
-          </th>
-          <th>
-            Edit
-          </th>
-          <th>
-            Workgroup
-          </th>
-        </tr>
-        <tr>
-          <td>
-            <input placeholder="name" [(ngModel)]="workgrouptoinsert.name">
-          </td>
-          <td>
-            <input placeholder="responsible" [(ngModel)]="workgrouptoinsert.responsible">
-          </td>
-          <td>
-            <input placeholder="work" [(ngModel)]="workgrouptoinsert.work">
-          </td>
-          <td>
-            <button (click)="insert(workgrouptoinsert)">Insert</button>
-          </td>
-          <td>
-            <button (click)="clear()">Clear</button>
-          </td>
-        </tr>
-        <tr *ngFor="let workgroup of workgroups">
-          <td>
-            <input [(ngModel)]="workgroup.name">
-          </td>
-          <td>
-            <input [(ngModel)]="workgroup.responsible">
-          </td>
-          <td>
-            <input [(ngModel)]="workgroup.work">
-          </td>
-          <td>
-            <button (click)="update(workgroup)">Save</button>
-          </td>
-          <td>
-            <button (click)="delete(workgroup)">Delete</button>
-          </td>
-        </tr>
-      </table>
-    </div>
-    <div class="col-md-1">
+        </div>
+        <div id="tabelle" class="col-md-10">
 
+
+            <table>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Responsible
+                    </th>
+                    <th>
+                        Work
+                    </th>
+                    <th>
+                        Edit
+                    </th>
+                    <th>
+                        Workgroup
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <input placeholder="name" [(ngModel)]="workgrouptoinsert.name">
+                    </td>
+                    <td>
+                        <input placeholder="responsible" [(ngModel)]="workgrouptoinsert.responsible">
+                    </td>
+                    <td>
+                        <input placeholder="work" [(ngModel)]="workgrouptoinsert.work">
+                    </td>
+                    <td>
+                        <button (click)="insert(workgrouptoinsert)">Insert</button>
+                    </td>
+                    <td>
+                        <button (click)="clear()">Clear</button>
+                    </td>
+                </tr>
+                <tr *ngFor="let workgroup of workgroups">
+                    <td>
+                        <input [(ngModel)]="workgroup.name">
+                    </td>
+                    <td>
+                        <input [(ngModel)]="workgroup.responsible">
+                    </td>
+                    <td>
+                        <input [(ngModel)]="workgroup.work">
+                    </td>
+                    <td>
+                        <button (click)="update(workgroup)">Save</button>
+                    </td>
+                    <td>
+                        <button (click)="delete(workgroup)">Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-1">
+
+        </div>
     </div>
-  </div>
 </div>

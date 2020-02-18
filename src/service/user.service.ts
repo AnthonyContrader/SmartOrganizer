@@ -36,6 +36,7 @@ export class UserService extends AbstractUService<UserDTO>{
     }
   }
 
+
   login(loginDTO: LoginDTO): Observable<UserDTO> {
     return this.http.post<any>('http://localhost:8080/api/authenticate', loginDTO);
   }
@@ -48,6 +49,10 @@ export class UserService extends AbstractUService<UserDTO>{
         Authorization: this.auth()
       }
     });
+  }
+
+  param(param:string){
+
   }
 
 }

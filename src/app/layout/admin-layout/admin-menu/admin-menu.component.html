@@ -1,121 +1,59 @@
-<!-- <button data-toggle="collapsebtn" data-target="#account" (click)="accountcollapse()"><i class="fas fa-user" ></i> Account
-    </button>
-
-    <div class="collapsebtn" id="account" *ngIf="isAccountCollapsed">
-        <button>
-                <a [routerLink]="['/admin-dashboard/work-in-progress']"> <i class="fas fa-user-edit"></i>Edit Profile</a>
-        </button>
-        <button>
-                <a [routerLink]="['/admin-dashboard/work-in-progress']"><i class="fas fa-file-alt"></i>General Info</a>
-        </button>
-    </div>
-    -->
-<div class="container">
-    <nav class="navbar-dark navbar-expand-xl ">
-
-        <a class="navbar-brand" [routerLink]="['/admin-dashboard']">
-            <img src="/assets/img/LogoSmartOrganizerSVG.svg" width="50" height="50" alt="">
+<div class="container-fluid">
+    <div id="logo">
+        <a [routerLink]="['/admin-dashboard']">
+            <img src="/assets/img/LogoSmartOrganizerSVG.svg" width="50px" height="auto" alt="">
+            <br>
+            <p id="testologo">Smart<br>Organizer</p>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    </div>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto justify-content-md-center">
-                <!--
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>-->
+    <div class="row">
+
+        <div class="col-12">
+            <nav class="navbar-light navbar-expand-xl ">
 
 
-                <li class="nav-item">
-                    <a class=" nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/users']">Users</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/employees']">Employees</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/tools']">Tools</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/bills']">Bills</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/locations']">Locations</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/calendars']">Calendars</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="vocemenu" [routerLink]="['/admin-dashboard/workgroups']">Workgroups</a>
-                </li>
-                <!--
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li> -->
-            </ul>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <ul class="navbar-nav">
+
+                        <li>
+                            <a [routerLink]="['/admin-dashboard/users']">Users</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/admin-dashboard/employees']">Employees</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/admin-dashboard/tools']">Tools</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/admin-dashboard/bills']">Bills</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/admin-dashboard/locations']">Locations</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/admin-dashboard/calendars']">Calendars</a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/admin-dashboard/workgroups']">Workgroups</a>
+                        </li>
+
+
+
+
+                    </ul>
+
+
+                </div>
+            </nav>
 
 
         </div>
-    </nav>
-</div>
 
-<!--   
-<div>
-    <div>
-        <a [routerLink]="['/admin-dashboard']"><img class="immagini navbar-brand mr-3" src="/assets/img/LogoSmartOrganizerSVG.svg" /></a>
     </div>
-
-    <button data-toggle="collapsebtn" data-target="#users" (click)="userscollapse()">Users
-        </button>
-    <div class="collapsebtn" id="users" *ngIf="isUserCollapsed">
-        <button>
-                <a [routerLink]="['/admin-dashboard/users']">  Manage Users </a>
-        </button>
-    </div>
-    <button data-toggle="collapsebtn" data-target="#employees" (click)="employeecollapse()">Employees
-        </button>
-    <div class="collapsebtn" id="employee" *ngIf="isEmployeeCollapsed">
-        <button>
-                <a [routerLink]="['/admin-dashboard/employees']">  Manage Employees </a>
-        </button>
-    </div>
-    <button data-toggle="collapsebtn" data-target="#tools" (click)="toolscollapse()">Tools
-        </button>
-    <div class="collapsebtn" id="tools" *ngIf="isToolCollapsed">
-        <button>
-                <a [routerLink]="['/admin-dashboard/tools']">  Manage Tools </a>
-        </button>
-    </div>
-    <button data-toggle="collapsebtn" data-target="#bills" (click)="billscollapse()">Bills
-        </button>
-    <div class="collapsebtn" id="bills" *ngIf="isBillCollapsed">
-        <button>
-                <a [routerLink]="['/admin-dashboard/bills']">Manage Bills </a>
-        </button>
-    </div>
-    <button data-toggle="collapsebtn" data-target="#locations" (click)="locationscollapse()">Locations
-        </button>
-    <div class="collapsebtn" id="locations" *ngIf="isLocationCollapsed">
-        <button>
-                <a [routerLink]="['/admin-dashboard/locations']"> Manage Locations </a>
-        </button>
-    </div>
-    <button data-toggle="collapsebtn" data-target="#calendars" (click)="calendarscollapse()">Calendars
-        </button>
-    <div class="collapsebtn" id="Calendars" *ngIf="isCalendarCollapsed">
-        <button>
-                <a [routerLink]="['/admin-dashboard/calendars']">Manage Calendars </a>
-        </button>
-    </div>
-    <button data-toggle="collapsebtn" data-target="#workgroups" (click)="workgroupscollapse()">Workgroups
-        </button>
-    <div class="collapsebtn" id="workgroups" *ngIf="isWorkgroupCollapsed">
-        <button>
-                <a [routerLink]="['/admin-dashboard/workgroups']"> Manage Workgroups </a>
-        </button>
-    </div>
-    <button (click)="logout()"><i class="fas fa-sign-out-alt" ></i>Logout
-        </button>
 </div>
--->

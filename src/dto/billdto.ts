@@ -1,4 +1,4 @@
-import { LocationDTO } from './locationdto';
+
 
 export class BillDTO {
 
@@ -8,7 +8,7 @@ export class BillDTO {
  
     date: Date;
  
-    location: number;
+    locationId: number;
  
     position: string;
  

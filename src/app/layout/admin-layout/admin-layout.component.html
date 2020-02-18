@@ -1,38 +1,5 @@
-<!--<div class="row no-gutters" style="height: 8vh">
-    <div class="col-md-12 no-gutters">
-        <app-header></app-header>
-    </div>
-</div>
-<div class="row no-gutters" style="height: 92vh">
-    <div class="col-md-2 no-gutters" style="height: 92vh">
-        <div id="menu">
-            <app-admin-menu></app-admin-menu>
-        </div>
-    </div>
-    <div class="col-md-10 no-gutters" style="height: 92vh">
-        <router-outlet></router-outlet>
-    </div>
-</div>-->
+<app-admin-menu></app-admin-menu>
 
-<div class="sfondo container-fluid">
-    <div class="row-1 justify-content-md-center menu">
-
-        <div>
-
-            <app-admin-menu></app-admin-menu>
-        </div>
-
-    </div>
-    <div class="row">
-        <div class="col-2"></div>
-
-        <div class="col-md-8  container">
-
-            <div id="tabelle" class="justify-content-md-center">
-                <router-outlet></router-outlet>
-            </div>
-        </div>
-
-        <div class="col-2"></div>
-    </div>
+<div class="sfondo">
+    <router-outlet></router-outlet>
 </div>
